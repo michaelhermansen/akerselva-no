@@ -4,6 +4,7 @@ export default {
       {
         id: 1,
         attributes: {
+          NavigationTitle: "Rutebåt",
           Title: "Rutebåt mellom Vaterland og Bjørvika",
           Subtitle: "Aktivitet Vår / Sommer",
           ImageTitle: "Opplev Akerselvas nye rutebåt, gjennom kulverten.",
@@ -18,6 +19,7 @@ export default {
       {
         id: 2,
         attributes: {
+          NavigationTitle: "Inger Munch og Akerselva",
           Title: "Inger Munch og Akerselva",
           Subtitle: "Digital utstilling",
           ImageTitle: "",
@@ -25,7 +27,7 @@ export default {
             "I 1927 fikk Inger et kamera av sin bror Edvard Munch og med tiden ble hun en flink fotograf som på oppfordring av sin bror fotograferte akerselven fra Maridalen i nord til kysten i sør. I vår digitale utstilling kan du oppleve Akerselva slik Inger Munch så den.",
           Link: {
             LinkText: "Se digital utstilling",
-            LinkUrl: "https://google.com",
+            LinkUrl: "/inger-munch",
           },
         },
       },
