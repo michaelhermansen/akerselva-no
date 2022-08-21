@@ -1,12 +1,12 @@
 import { kebabCase } from "lodash";
 import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import AboutSection from "../components/AboutSection";
-import Footer from "../components/Footer";
-import HeaderSection from "../components/HeaderSection";
-import LandingPageSection from "../components/LandingPageSection";
+import AboutSection from "../components/modules/AboutSection";
+import Footer from "../components/modules/Footer";
+import HeaderSection from "../components/modules/HeaderSection";
+import LandingPageSection from "../components/modules/LandingPageSection";
 import Metadata from "../components/Metadata";
-import NewsletterSection from "../components/NewsletterSection";
+import NewsletterSection from "../components/modules/NewsletterSection";
 import { getEntries } from "../lib/api";
 
 export default function Home({

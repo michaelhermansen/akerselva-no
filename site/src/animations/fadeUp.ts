@@ -11,7 +11,7 @@ export const fadeUp: Variants = {
     transition: {
       type: "tween",
       ease: "easeOut",
-      duration: 0.5,
+      duration: 0.4,
       delay: 0.2,
     },
   },

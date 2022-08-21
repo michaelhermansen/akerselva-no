@@ -4,12 +4,12 @@
 
 @layer components {
   .btn {
-    @apply flex max-w-max items-center rounded-lg bg-white py-2 px-5 transition-all hover:rounded-3xl hover:bg-zinc-800 hover:text-white;
+    @apply flex max-w-max items-center rounded-xs bg-white py-2 px-5 transition-all hover:rounded-full hover:bg-gray-medium hover:text-white;
   }
 }
 
 html,
 body {
   scroll-behavior: smooth;
-  @apply scroll-pt-12 bg-zinc-50;
+  @apply scroll-pt-10 bg-gray-light;
 }

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { FormEvent, useState } from "react";
-import { fadeUp } from "../animations/fadeUp";
-import Button from "./Button";
-import Container from "./Container";
+import { fadeUp } from "../../animations/fadeUp";
+import Button from "../Button";
+import Container from "../Container";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -38,7 +38,7 @@ export default function NewsletterSection() {
               id="email"
               required
               placeholder="E-post"
-              className="w-full max-w-xs rounded-lg py-3 px-5"
+              className="w-full max-w-xs rounded-sm py-3 px-5"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
-import Container from "./Container";
+import Container from "../Container";
 
 export default function Footer() {
   const router = useRouter();
@@ -11,7 +11,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-zinc-900 pt-12 text-white">
+    <footer className="bg-black pt-12 text-white">
       <button
         onClick={handleScrollToTop}
         className="mx-auto block max-w-max p-4 text-xl opacity-50 transition-opacity hover:opacity-100"
