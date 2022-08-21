@@ -14,17 +14,17 @@ export default function Footer() {
     <footer className="bg-black pt-12 text-white">
       <button
         onClick={handleScrollToTop}
-        className="mx-auto block max-w-max p-4 text-xl opacity-50 transition-opacity hover:opacity-100"
+        className="mx-auto hidden max-w-max p-4 text-xl opacity-50 transition-opacity hover:opacity-100 lg:block"
       >
         Til toppen
       </button>
 
-      <Container className="grid grid-cols-2 gap-12 pb-48 pt-32">
-        <div className="flex justify-center">
+      <Container className="grid gap-4 py-20 lg:grid-cols-2 lg:pb-48 lg:pt-32">
+        <div className="justify-center py-1 text-2xl lg:flex lg:text-base">
           <p>Akerselva Friluftsmuseum</p>
         </div>
 
-        <div className="flex justify-center">
+        <div className="justify-center lg:flex">
           <ul>
             <ListLink href="tel:+47 98 69 20 42">+47 98 69 20 42</ListLink>
             <ListLink href="mailto:hei@akerselva.no">hei@akerselva.no</ListLink>

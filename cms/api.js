@@ -6,8 +6,11 @@ export default {
         attributes: {
           NavigationTitle: "Rutebåt",
           Title: "Rutebåt mellom Vaterland og Bjørvika",
-          Subtitle: "Aktivitet Vår / Sommer",
+          Subtitle: "Aktivitet – Vår / Sommer",
           ImageTitle: "Opplev Akerselvas nye rutebåt, gjennom kulverten.",
+          Image: {
+            url: "/assets/boat-thumb.png",
+          },
           Description:
             "Under togsporene på Oslo S, mellom Vaterland og Bjørvika ligger Akerselva i kulvert. Vi jobber for å tilgjengeliggjøre den siste delen av Akerselva gjennom kunst- og kulturopplevelser!",
           Link: {
@@ -22,6 +25,9 @@ export default {
           NavigationTitle: "Inger Munch og Akerselva",
           Title: "Inger Munch og Akerselva",
           Subtitle: "Digital utstilling",
+          Image: {
+            url: "/assets/exhibition-thumb.png",
+          },
           ImageTitle: "",
           Description:
             "I 1927 fikk Inger et kamera av sin bror Edvard Munch og med tiden ble hun en flink fotograf som på oppfordring av sin bror fotograferte akerselven fra Maridalen i nord til kysten i sør. I vår digitale utstilling kan du oppleve Akerselva slik Inger Munch så den.",

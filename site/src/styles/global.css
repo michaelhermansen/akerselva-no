@@ -4,7 +4,7 @@
 
 @layer components {
   .btn {
-    @apply flex max-w-max items-center rounded-xs bg-white py-2 px-5 transition-all hover:rounded-full hover:bg-gray-medium hover:text-white;
+    @apply flex max-w-max items-center rounded-xs border border-black border-opacity-5 bg-white py-3 px-5 transition-all hover:rounded-full hover:bg-gray-medium hover:text-white;
   }
 }
 

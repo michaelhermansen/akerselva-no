@@ -14,7 +14,7 @@ export default function NewsletterSection() {
 
   return (
     <Container>
-      <section className="py-52">
+      <section className="py-44 lg:py-56">
         <form
           className="grid place-items-center"
           onSubmit={handleNewsletterSignUp}
@@ -26,19 +26,21 @@ export default function NewsletterSection() {
             viewport={{ once: true }}
             className="grid place-items-center gap-4"
           >
-            <h2 className="max-w-lg pb-4 text-center text-4xl leading-tight">
+            <h2 className="max-w-[25ch] pb-4 text-center text-3xl leading-snug lg:text-5xl">
               Motta flaskepost for nye arrangementer og oppdateringer
             </h2>
+
             <label htmlFor="email" className="sr-only">
               E-post
             </label>
+
             <input
               type="email"
               name="email"
               id="email"
               required
               placeholder="E-post"
-              className="w-full max-w-xs rounded-sm py-3 px-5"
+              className="w-full max-w-sm rounded-xs border border-black border-opacity-5 py-3 px-5"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />

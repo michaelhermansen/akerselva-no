@@ -12,7 +12,7 @@ interface HeaderSectionProps {
 export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
   return (
     <Container>
-      <header className="grid grid-cols-4 gap-12 py-12">
+      <header className="grid gap-12 py-12 lg:grid-cols-4">
         <div className="col-span-1">
           <Link href="/">
             <h1 className="mb-8 max-w-max text-xl leading-tight">
@@ -26,7 +26,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
             {navigationLinks.map((link) => (
               <li key={link.linkUrl}>
                 <Link
-                  className="py-1 text-black text-opacity-50 transition-colors hover:text-opacity-100"
+                  className="inline-block py-1 text-black text-opacity-50 transition-colors hover:text-opacity-100"
                   href={link.linkUrl}
                 >
                   {link.linkText}
@@ -36,16 +36,19 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
           </ul>
         </div>
 
-        <Link href="#om-oss" className="group col-span-3 block">
-          <div className="h-[760px] rounded-md bg-gray-medium py-10 px-14 transition-all duration-300 group-hover:rounded-lg">
-            <p className="max-w-[20ch] text-5xl leading-tight text-white">
-              Kunst- og kulturopplevelser langs Akerselva
-              <MdArrowDownward
-                className="mx-2 inline transition-transform group-hover:scale-90"
-                size={42}
-              />
-            </p>
-          </div>
+        <Link href="#om-oss" className="group relative col-span-3 block">
+          <div className="h-[600px] scale-[1.01] rounded-md bg-gray-medium transition-all duration-300 group-hover:scale-100 group-hover:rounded-lg lg:h-[760px]" />
+          <p className="absolute top-0 max-w-[25ch] py-12 px-8 text-4xl leading-tight text-white lg:px-14 lg:text-5xl">
+            Kunst- og kulturopplevelser langs Akerselva
+            <MdArrowDownward
+              className="mx-2 hidden transition-transform group-hover:scale-90 lg:inline"
+              size={44}
+            />
+            <MdArrowDownward
+              className="mx-2 inline transition-transform group-hover:scale-90 lg:hidden"
+              size={22}
+            />
+          </p>
         </Link>
       </header>
     </Container>

@@ -9,6 +9,9 @@ export const apiLandingPageSections = z.object({
         Title: z.string(),
         Subtitle: z.string(),
         ImageTitle: z.string(),
+        Image: z.object({
+          url: z.string(),
+        }),
         Description: z.string(),
         Link: z.object({
           LinkText: z.string(),
