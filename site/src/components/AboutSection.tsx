@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ButtonLink } from "./Button";
 import Container from "./Container";
 
 export default function AboutSection() {
@@ -18,9 +18,7 @@ export default function AboutSection() {
             Friluftsmuseum jobber for å tilgjengeliggjøre elva i dag og
             synliggjøre den historiske viktigheten. Tjo og hei!
           </p>
-          <Link className="btn" href="mailto:hei@akerselva.no">
-            Kontakt
-          </Link>
+          <ButtonLink href="mailto:hei@akerselva.no">Kontakt</ButtonLink>
         </div>
       </section>
     </Container>

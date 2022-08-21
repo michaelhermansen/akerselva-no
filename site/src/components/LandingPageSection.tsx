@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { ApiLandingPageSections } from "../lib/validation/landingPageSection";
-import Container from "./Container";
 import { motion } from "framer-motion";
-import { fadeUp } from "../animations/fadeUp";
 import { kebabCase } from "lodash";
+import { fadeUp } from "../animations/fadeUp";
+import { ApiLandingPageSections } from "../lib/validation/landingPageSection";
+import { ButtonLink } from "./Button";
+import Container from "./Container";
 
 interface LandingPageSectionProps {
   section: ApiLandingPageSections["data"][0];
@@ -39,9 +39,10 @@ export default function LandingPageSection({
           <p className="max-w-[70ch] px-1 text-xl leading-relaxed text-zinc-600">
             {section.attributes.Description}
           </p>
-          <Link className="btn" href={section.attributes.Link.LinkUrl}>
+
+          <ButtonLink href={section.attributes.Link.LinkUrl}>
             {section.attributes.Link.LinkText}
-          </Link>
+          </ButtonLink>
         </motion.div>
       </section>
     </Container>

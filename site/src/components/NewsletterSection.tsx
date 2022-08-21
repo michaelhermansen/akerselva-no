@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FormEvent, useState } from "react";
 import { fadeUp } from "../animations/fadeUp";
+import Button from "./Button";
 import Container from "./Container";
 
 export default function NewsletterSection() {
@@ -41,7 +42,7 @@ export default function NewsletterSection() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button className="btn">Meld meg på</button>
+            <Button type="submit">Meld meg på</Button>
           </motion.div>
         </form>
       </section>
