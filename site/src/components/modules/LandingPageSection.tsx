@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
 import { kebabCase } from "lodash";
 import Link from "next/link";
-import { fadeUp } from "../../animations/fadeUp";
 import { ApiLandingPageSections } from "../../lib/validation/landingPageSection";
 import { ButtonLink } from "../Button";
 import Container from "../Container";

@@ -23,17 +23,19 @@ export default function Home({
     <>
       <Metadata title="Akerselva Friluftsmuseum" description="..." />
 
-      <HeaderSection navigationLinks={navigationLinks} />
-      <AboutSection />
+      <div className="bg-gray-light">
+        <HeaderSection navigationLinks={navigationLinks} />
+        <AboutSection />
 
-      <div className="space-y-16 pt-28 pb-12">
-        {landingPageSections?.data.map((section) => (
-          <LandingPageSection key={section.id} section={section} />
-        ))}
+        <div className="space-y-16 pt-28 pb-12">
+          {landingPageSections?.data.map((section) => (
+            <LandingPageSection key={section.id} section={section} />
+          ))}
+        </div>
+
+        <NewsletterSection />
+        <Footer />
       </div>
-
-      <NewsletterSection />
-      <Footer />
     </>
   );
 }

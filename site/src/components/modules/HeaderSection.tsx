@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { MdArrowDownward } from "react-icons/md";
-import { fadeUp } from "../../animations/fadeUp";
 import Container from "../Container";
 
 interface HeaderSectionProps {

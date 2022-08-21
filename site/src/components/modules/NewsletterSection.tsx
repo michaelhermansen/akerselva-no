@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FormEvent, useState } from "react";
-import { fadeUp } from "../../animations/fadeUp";
+import { fadeUp } from "../../lib/animations/fadeUp";
 import Button from "../Button";
 import Container from "../Container";
 

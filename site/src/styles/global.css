@@ -10,6 +10,5 @@
 
 html,
 body {
-  scroll-behavior: smooth;
   @apply scroll-pt-10 bg-gray-light;
 }
