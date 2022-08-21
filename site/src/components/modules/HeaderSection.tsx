@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { MdArrowDownward } from "react-icons/md";
 import Container from "../Container";
+import { motion } from "framer-motion";
+import { fadeUp } from "../../lib/animations/fadeUp";
 
 interface HeaderSectionProps {
   navigationLinks: {
@@ -36,20 +38,27 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
           </ul>
         </div>
 
-        <Link href="#om-oss" className="group relative col-span-3 block">
-          <div className="h-[600px] scale-[1.01] rounded-md bg-gray-medium transition-all duration-300 group-hover:scale-100 group-hover:rounded-lg lg:h-[760px]" />
-          <p className="absolute top-0 max-w-[25ch] py-12 px-8 text-4xl leading-tight text-white lg:px-14 lg:text-5xl">
-            Kunst- og kulturopplevelser langs Akerselva
-            <MdArrowDownward
-              className="mx-2 hidden transition-transform group-hover:scale-90 lg:inline"
-              size={44}
-            />
-            <MdArrowDownward
-              className="mx-2 inline transition-transform group-hover:scale-90 lg:hidden"
-              size={22}
-            />
-          </p>
-        </Link>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="col-span-3"
+        >
+          <Link href="#om-oss" className="group relative block">
+            <div className="h-[600px] scale-[1.01] rounded-md bg-gray-medium transition-all duration-300 group-hover:scale-100 group-hover:rounded-lg lg:h-[760px]" />
+            <p className="absolute top-0 max-w-[25ch] py-12 px-8 text-3xl leading-tight text-white lg:px-14 lg:text-5xl">
+              Kunst- og kulturopplevelser langs Akerselva
+              <MdArrowDownward
+                className="mx-2 hidden transition-transform group-hover:translate-y-1 lg:inline"
+                size={44}
+              />
+              <MdArrowDownward
+                className="mx-2 inline transition-transform group-hover:translate-y-1 lg:hidden"
+                size={22}
+              />
+            </p>
+          </Link>
+        </motion.div>
       </header>
     </Container>
   );
