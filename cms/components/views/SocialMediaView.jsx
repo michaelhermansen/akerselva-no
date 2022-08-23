@@ -23,12 +23,12 @@ export function SocialMediaView(props) {
               Twitter - Mobile
             </Label>
             <Card border radius={2} style={{width: 224}}>
-              {doc.ogimage?.asset ? (
+              {doc.ogImage?.asset ? (
                 <Card style={{width: 224}}>
                   <img
                     style={{width: 224, height: 224}}
-                    src={urlFor(doc.ogimage).width(448).height(448).url()}
-                    alt="OG Image preview"
+                    src={urlFor(doc.ogImage).width(448).height(448).url()}
+                    alt=""
                   />
                   <Box padding={3}>
                     <Stack space={2}>
@@ -53,12 +53,12 @@ export function SocialMediaView(props) {
               Twitter - Desktop
             </Label>
             <Card border radius={2}>
-              {doc.ogimage?.asset ? (
+              {doc.ogImage?.asset ? (
                 <Card style={{width: 584}}>
                   <img
                     style={{width: 584, height: 220}}
-                    src={urlFor(doc.ogimage).width(1168).height(440).url()}
-                    alt="OG Image preview"
+                    src={urlFor(doc.ogImage).width(1168).height(440).url()}
+                    alt=""
                   />
                   <Box padding={4}>
                     <Stack space={3}>
@@ -84,12 +84,12 @@ export function SocialMediaView(props) {
               Facebook
             </Label>
             <Card border radius={2}>
-              {doc.ogimage?.asset ? (
+              {doc.ogImage?.asset ? (
                 <Card style={{width: 584}}>
                   <img
                     style={{width: 584, height: 274}}
-                    src={urlFor(doc.ogimage).width(1168).height(548).url()}
-                    alt="OG Image preview"
+                    src={urlFor(doc.ogImage).width(1168).height(548).url()}
+                    alt=""
                   />
                   <Box padding={4}>
                     <Stack space={3}>

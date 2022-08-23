@@ -1,32 +1,29 @@
-import {LinkIcon} from '@sanity/icons'
+import { LinkIcon } from "@sanity/icons";
 
 export default {
-  title: 'Link',
-  name: 'link',
-  type: 'object',
+  title: "Link",
+  name: "link",
+  type: "object",
   icon: LinkIcon,
   fields: [
     {
-      title: 'Name',
-      name: 'name',
-      type: 'string',
-    },
-    {
-      title: 'URL',
-      name: 'href',
-      type: 'url',
+      title: "Link text",
+      name: "linkText",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Open in new window',
-      name: 'openInNewWindow',
-      type: 'boolean',
+      title: "Href value",
+      description: "An URL or another valid href value.",
+      name: "href",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: 'name',
-      subtitle: 'href',
+      title: "linkText",
+      subtitle: "linkUrl",
     },
   },
-}
+};
