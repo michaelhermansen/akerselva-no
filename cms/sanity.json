@@ -34,10 +34,6 @@
       "path": "plugins/sanity-plugin-tutorial/CustomDefaultLayout"
     },
     {
-      "implements": "part:@sanity/base/brand-logo",
-      "path": "./components/logo/petsProjectLogo.jsx"
-    },
-    {
       "implements": "part:@sanity/base/theme/variables/override-style",
       "path": "./style.css"
     }
