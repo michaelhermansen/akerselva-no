@@ -2,7 +2,7 @@ import {
   apiLandingPageSections,
   ApiLandingPageSections,
 } from "./validation/landingPageSection";
-import api from "../../../data/api";
+import api from "./data/api";
 
 type ValidEntry = "landing-page-sections";
 
