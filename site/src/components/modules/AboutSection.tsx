@@ -23,7 +23,9 @@ export default function AboutSection() {
             Friluftsmuseum jobber for å tilgjengeliggjøre elva i dag og
             synliggjøre den historiske viktigheten. Tjo og hei!
           </p>
-          <ButtonLink href="mailto:hei@akerselva.no">Kontakt</ButtonLink>
+          <ButtonLink href="mailto:hei@akerselva.no">
+            Kontakt på e-post
+          </ButtonLink>
         </div>
       </section>
     </Container>
