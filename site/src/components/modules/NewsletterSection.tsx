@@ -14,7 +14,7 @@ export default function NewsletterSection() {
 
   return (
     <Container>
-      <section className="py-44 lg:py-56">
+      <section className="py-32 md:py-44 lg:py-56">
         <form
           className="grid place-items-center"
           onSubmit={handleNewsletterSignUp}
@@ -26,7 +26,7 @@ export default function NewsletterSection() {
             viewport={{ once: true }}
             className="grid place-items-center gap-4"
           >
-            <h2 className="max-w-[25ch] pb-4 text-center text-3xl leading-snug lg:text-5xl">
+            <h2 className="max-w-[25ch] pb-4 text-center text-3xl leading-snug md:text-4xl lg:text-5xl">
               Motta flaskepost for nye arrangementer og oppdateringer
             </h2>
 

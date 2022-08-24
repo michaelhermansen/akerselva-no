@@ -26,13 +26,13 @@ export default function LandingPageSection({
           </p>
         </div>
 
-        <div className="col-span-3 space-y-6">
+        <div className="col-span-3 space-y-4 md:space-y-6">
           <Link
             href={section.attributes.Link.LinkUrl}
             className="group relative block"
           >
             <Image
-              className="h-[490px] scale-[1.01] rounded-md bg-gray-medium object-cover transition-all duration-300 hover:scale-100 group-hover:rounded-lg"
+              className="h-[390px] scale-[1.01] rounded-md bg-gray-medium object-cover transition-all duration-300 hover:scale-100 group-hover:rounded-lg md:h-[490px]"
               src={section.attributes.Image.url}
               alt=""
               width={1200}
@@ -53,7 +53,7 @@ export default function LandingPageSection({
             </h2>
           </div>
 
-          <p className="max-w-[70ch] text-xl leading-relaxed text-black">
+          <p className="max-w-[70ch] leading-relaxed text-black md:text-xl">
             {section.attributes.Description}
           </p>
 

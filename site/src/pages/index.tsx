@@ -27,7 +27,7 @@ export default function Home({
         <HeaderSection navigationLinks={navigationLinks} />
         <AboutSection />
 
-        <div className="space-y-16 pt-28 pb-12">
+        <div className="space-y-16 pt-24 pb-12 md:pt-28">
           {landingPageSections?.data.map((section) => (
             <LandingPageSection key={section.id} section={section} />
           ))}
