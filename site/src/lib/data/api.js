@@ -1,4 +1,4 @@
-export default {
+const api = {
   "landing-page-sections": {
     data: [
       {
@@ -40,3 +40,5 @@ export default {
     ],
   },
 };
+
+export default api;
