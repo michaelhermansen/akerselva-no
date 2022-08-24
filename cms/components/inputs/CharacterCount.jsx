@@ -56,6 +56,7 @@ export const CharacterCount = forwardRef(function CharacterCount(props, ref) {
           onBlur={onBlur} // Handles blur events
           ref={ref}
           onChange={handleChange} // A function to call when the input value changes
+          rows={3}
         />
 
         <Flex>

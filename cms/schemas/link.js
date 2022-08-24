@@ -1,10 +1,7 @@
-import { LinkIcon } from "@sanity/icons";
-
 export default {
   title: "Link",
   name: "link",
   type: "object",
-  icon: LinkIcon,
   fields: [
     {
       title: "Link text",

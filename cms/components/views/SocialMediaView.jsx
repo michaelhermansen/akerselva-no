@@ -33,7 +33,7 @@ export function SocialMediaView(props) {
                   <Box padding={3}>
                     <Stack space={2}>
                       <Text size={1} muted>
-                        Sanity.io
+                        akerselva.no
                       </Text>
                       <Text size={2} weight="medium">
                         {doc.title ?? 'Title not specified'}
@@ -67,7 +67,7 @@ export function SocialMediaView(props) {
                         {doc.description ?? 'Description not specified'}
                       </TextWithEllipsis>
                       <Text size={1} muted>
-                        Sanity.io
+                        akerselva.no
                       </Text>
                     </Stack>
                   </Box>
@@ -93,7 +93,7 @@ export function SocialMediaView(props) {
                   />
                   <Box padding={4}>
                     <Stack space={3}>
-                      <Label>Sanity.io</Label>
+                      <Label>akerselva.no</Label>
                       <Heading size={1}>{doc.title ?? 'Title not specified'}</Heading>
                       <TextWithEllipsis size={1}>
                         {doc.description ?? 'Description not specified'}

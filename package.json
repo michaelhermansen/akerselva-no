@@ -2,5 +2,14 @@
   "devDependencies": {
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13"
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "lodash": "^4.17.21"
+  },
+  "scripts": {
+    "dev:cms": "cd cms && yarn start",
+    "dev:site": "cd site && yarn dev",
+    "dev": "concurrently \"yarn dev:cms\" \"yarn dev:site\""
   }
 }
