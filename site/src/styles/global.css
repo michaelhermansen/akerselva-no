@@ -8,6 +8,10 @@
   }
 }
 
+::selection {
+  @apply bg-black bg-opacity-10;
+}
+
 html,
 body {
   @apply scroll-pt-10 bg-gray-light;
