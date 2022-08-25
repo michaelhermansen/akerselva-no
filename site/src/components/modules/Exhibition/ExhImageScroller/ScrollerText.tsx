@@ -1,0 +1,38 @@
+import classNames from "classnames";
+import { Dispatch, SetStateAction } from "react";
+import { useInView } from "react-intersection-observer";
+
+export interface ScrollerItem {
+  id: number;
+  text: string;
+  image: string;
+}
+
+export interface ScrollerTextProps {
+  item: ScrollerItem;
+  itemInView: ScrollerItem;
+  setItemInView: Dispatch<SetStateAction<ScrollerItem>>;
+}
+
+export default function ScrollerText({
+  item,
+  itemInView,
+  setItemInView,
+}: ScrollerTextProps) {
+  const { ref } = useInView({
+    rootMargin: "-40% 0px -60% 0px",
+    onChange: (inView) => inView && setItemInView(item),
+  });
+
+  return (
+    <li
+      ref={ref}
+      className={classNames(
+        "py-2 text-lg text-white text-opacity-50 transition-colors duration-100 sm:text-2xl",
+        { "text-opacity-100": itemInView.id === item.id }
+      )}
+    >
+      {item.text}
+    </li>
+  );
+}

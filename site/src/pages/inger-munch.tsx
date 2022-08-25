@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import Container from "../components/Container";
 import Metadata from "../components/Metadata";
 import ExhHeader from "../components/modules/Exhibition/ExhHeader";
 import ExhImageQuote from "../components/modules/Exhibition/ExhImageQuote";
 import ExhImageScroller from "../components/modules/Exhibition/ExhImageScroller";
+import { fadeUp } from "../lib/animations";
 
 export default function ContactPage() {
   return (
@@ -47,9 +48,15 @@ export default function ContactPage() {
 
       <section>
         <Container>
-          <h2 className="pt-48 pb-24 text-center text-2xl text-white">
-            Opplev Akerselva slik Inger Munch så den
-          </h2>
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="px-4 pt-48 pb-20 text-center text-2xl leading-normal text-white sm:pb-24 sm:text-3xl"
+          >
+            Opplev Akerselva slik Inger&nbsp;Munch så den
+          </motion.h2>
 
           <ExhImageScroller />
           <div className="h-[2000px]" />
