@@ -8,6 +8,11 @@
   }
 }
 
+.hide-play-button::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 ::selection {
   @apply bg-yellow bg-opacity-75;
 }
