@@ -52,7 +52,7 @@ export default function ContactPage() {
           </h2>
 
           <ExhImageScroller />
-          <div className="h-[2000px]">Nyhetsbrev</div>
+          <div className="h-[2000px]" />
         </Container>
       </section>
 

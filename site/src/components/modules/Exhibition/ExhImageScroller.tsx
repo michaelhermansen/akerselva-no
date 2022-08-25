@@ -11,7 +11,7 @@ export default function ExhImageScroller() {
   const [itemInView, setItemInView] = useState(scrollerItems[0]);
 
   const { ref, inView } = useInView({
-    rootMargin: "-50% 0px -50% 0px",
+    rootMargin: "-35% 0px -65% 0px",
   });
 
   const windowHeight = typeof window === "undefined" ? 0 : window.innerHeight;
@@ -84,7 +84,7 @@ function ScrollerText({ item, itemInView, setItemInView }: ScrollerTextProps) {
     <li
       ref={ref}
       className={classNames(
-        "py-2 text-2xl text-white text-opacity-50 transition-colors duration-100",
+        "py-2 text-lg text-white text-opacity-50 transition-colors duration-100 sm:text-2xl",
         {
           "text-opacity-100": itemInView.id === item.id,
         }
