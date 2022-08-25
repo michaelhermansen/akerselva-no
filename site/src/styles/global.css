@@ -9,7 +9,7 @@
 }
 
 ::selection {
-  @apply bg-black bg-opacity-10;
+  @apply bg-yellow bg-opacity-75;
 }
 
 html,

@@ -11,6 +11,7 @@ module.exports = {
         medium: "#333333",
       },
       black: "#000000",
+      yellow: "#F7BB34",
     },
     borderRadius: {
       none: "0",

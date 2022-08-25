@@ -1,3 +1,14 @@
 {
-  "eslint.workingDirectories": ["./site", "./cms"]
+  "eslint.workingDirectories": [
+    "./site",
+    "./cms"
+  ],
+  "cSpell.words": [
+    "ældre",
+    "aktuel",
+    "bleven",
+    "hygeligt",
+    "udmærket",
+    "udvikle"
+  ]
 }

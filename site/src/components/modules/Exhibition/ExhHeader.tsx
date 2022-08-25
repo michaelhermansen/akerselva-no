@@ -2,20 +2,21 @@ import { motion } from "framer-motion";
 import Image from "next/future/image";
 import Link from "next/link";
 import { MdArrowBack, MdArrowDownward } from "react-icons/md";
-import Container from "../Container";
+import Container from "../../Container";
+import IngerMunchLogo from "../../IngerMunchLogo";
 
 export default function ExhHeader() {
   return (
-    <header className="relative h-[700px] overflow-hidden overflow-y-hidden md:h-[800px] lg:min-h-screen">
+    <header className="relative h-[740px] max-h-screen overflow-hidden overflow-y-hidden sm:h-[740px] md:h-[800px] lg:h-screen">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ type: "tween", duration: 0.8, delay: 0.2 }}
+        className="absolute inset-0"
       >
         <Image
-          className="absolute top-0 z-0 block h-[840px] w-full object-cover"
+          className="block object-cover"
           fill
-          sizes="100%"
           alt=""
           src="/assets/img-1.png"
           priority
@@ -39,7 +40,7 @@ export default function ExhHeader() {
         </div>
 
         <motion.div
-          className="grid place-items-center"
+          className="relative z-50 grid w-[240px] place-items-center py-12 sm:w-[340px] md:w-[440px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -48,18 +49,11 @@ export default function ExhHeader() {
             ease: "easeOut",
           }}
         >
-          <Image
-            src="/assets/ima-logo.svg"
-            alt=""
-            className="h-[280px] w-[280px] object-fill lg:h-[420px] lg:w-[420px]"
-            width={440}
-            height={440}
-            priority
-          />
+          <IngerMunchLogo />
         </motion.div>
 
         <Link
-          href="#intro"
+          href="#content"
           className="group flex max-w-max flex-col items-center gap-1 p-2"
         >
           <span className="text-lg">Se mer</span>

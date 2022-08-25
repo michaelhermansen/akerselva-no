@@ -16,7 +16,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    videoRef.current?.play();
+    // videoRef.current?.play();
   }, []);
 
   return (
@@ -35,7 +35,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
             {navigationLinks.map((link) => (
               <li key={link.linkUrl}>
                 <Link
-                  className="inline-block py-1 text-black text-opacity-50 transition-colors hover:text-opacity-100"
+                  className="inline-block pb-1 text-black text-opacity-50 transition-colors hover:text-opacity-100"
                   href={link.linkUrl}
                 >
                   {link.linkText}

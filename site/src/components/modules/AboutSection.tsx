@@ -14,7 +14,7 @@ export default function AboutSection() {
           </h2>
         </div>
         <div className="col-span-3 space-y-6">
-          <p className="max-w-[70ch] leading-relaxed text-black md:text-xl">
+          <p className="max-w-[70ch] leading-loose text-black md:text-xl">
             Akerselva er en av Oslos viktigste attraksjoner og historiske
             holdepunkter. Akerselva Friluftsmuseum jobber for å
             tilgjengeliggjøre elva i dag og synliggjøre den historiske
