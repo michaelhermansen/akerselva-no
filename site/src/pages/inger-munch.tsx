@@ -4,6 +4,8 @@ import Metadata from "../components/Metadata";
 import ExhHeader from "../components/modules/Exhibition/ExhHeader";
 import ExhImageQuote from "../components/modules/Exhibition/ExhImageQuote";
 import ExhImageScroller from "../components/modules/Exhibition/ExhImageScroller";
+import ExhNewsletterSection from "../components/modules/Exhibition/ExhNewsletterSection";
+import Footer from "../components/modules/Footer";
 import { fadeUp } from "../lib/animations";
 
 export default function ContactPage() {
@@ -59,9 +61,12 @@ export default function ContactPage() {
           </motion.h2>
 
           <ExhImageScroller />
-          <div className="h-[2000px]" />
         </Container>
       </section>
+
+      <ExhNewsletterSection />
+
+      <Footer />
 
       <style jsx global>{`
         html,

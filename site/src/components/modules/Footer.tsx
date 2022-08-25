@@ -11,7 +11,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-black pt-12 text-white">
+    <footer className="border-t border-white border-opacity-10 bg-black pt-12 text-white">
       <button
         onClick={handleScrollToTop}
         className="mx-auto hidden max-w-max p-4 text-xl opacity-50 transition-opacity hover:opacity-100 lg:block"
