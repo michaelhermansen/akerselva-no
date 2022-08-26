@@ -1,15 +1,11 @@
 import { useButton } from "@react-aria/button";
-import classNames from "classnames";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
 import { useRef } from "react";
-import Map from "react-map-gl";
 import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
+import Map from "./Map";
 import { ScrollerItem } from "./ScrollerText";
-
-const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-const MAPBOX_STYLE = "mapbox://styles/mapbox/dark-v10";
 
 interface FrameContentProps {
   showMap: boolean;
@@ -41,10 +37,9 @@ export default function FrameContent({
       <div
         ref={buttonRef}
         {...buttonProps}
-        className={classNames(
-          "group absolute inset-0 isolate z-20 transition-opacity",
-          { "pointer-events-none opacity-0": showMap }
-        )}
+        className="group absolute inset-0 isolate z-20"
+        aria-hidden={showMap}
+        hidden={showMap}
       >
         <Image
           key={itemInView.id}
@@ -60,27 +55,11 @@ export default function FrameContent({
       </div>
 
       <div
-        className={classNames(
-          "pointer-events-none absolute inset-0 z-30 transition-opacity",
-          { "z-10 opacity-0": !showMap }
-        )}
+        className={"pointer-events-none absolute inset-0 z-30"}
+        aria-hidden={!showMap}
+        hidden={!showMap}
       >
-        <Map
-          id="scrollerMap"
-          mapboxAccessToken={MAPBOX_TOKEN}
-          mapStyle={MAPBOX_STYLE}
-          viewState={{
-            longitude: 10.7668,
-            latitude: 59.9403,
-            zoom: 11,
-            bearing: -25,
-            pitch: 0,
-            padding: { top: 0, right: 0, bottom: 0, left: 0 },
-            width: 0,
-            height: 0,
-          }}
-          logoPosition="top-left"
-        />
+        <Map />
       </div>
     </>
   );

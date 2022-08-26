@@ -51,32 +51,47 @@ export default function ImageFocus({
   }, [focusImage, idFocused]);
 
   useEffect(() => {
-    const wrapperElement = wrapperRef.current;
-    if (document.activeElement !== prevImageButtonRef.current) {
-      nextImageButtonRef.current?.focus();
-    }
+    const wrapperEl = wrapperRef.current;
+    const prevButtonEl = prevImageButtonRef.current;
+    const nextButtonEl = nextImageButtonRef.current;
 
     function handleClick(e: MouseEvent) {
-      if (e.target === wrapperElement) closeFocus();
+      if (e.target === wrapperEl) closeFocus();
     }
 
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") return closeFocus();
+
       if (e.key === "ArrowLeft") {
         prevImage();
-        prevImageButtonRef.current?.focus();
+        prevButtonEl?.focus();
+        return;
       }
+
       if (e.key === "ArrowRight") {
         nextImage();
-        nextImageButtonRef.current?.focus();
+        nextButtonEl?.focus();
+        return;
+      }
+
+      if (e.key === "Tab") {
+        e.preventDefault();
+        if (document.activeElement !== prevButtonEl) {
+          prevButtonEl?.focus();
+          return;
+        }
+        if (document.activeElement !== nextButtonEl) {
+          nextButtonEl?.focus();
+          return;
+        }
       }
     }
 
-    wrapperElement?.addEventListener("click", handleClick);
+    wrapperEl?.addEventListener("click", handleClick);
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      wrapperElement?.removeEventListener("click", handleClick);
+      wrapperEl?.removeEventListener("click", handleClick);
       document?.removeEventListener("keydown", handleKeyDown);
     };
   }, [closeFocus, prevImage, nextImage]);
@@ -97,12 +112,11 @@ export default function ImageFocus({
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
       className="fixed inset-0 z-[99] flex items-center justify-center gap-10 bg-black px-6"
     >
-      <div className="absolute bottom-12 z-10 -translate-x-12 pt-8 md:relative md:translate-x-0">
+      <div className="absolute bottom-12 z-10 mt-8 -translate-x-12 md:relative md:translate-x-0">
         <button
           className="rounded-full bg-white bg-opacity-20 p-4 text-white shadow-lg backdrop-blur-lg"
           ref={prevImageButtonRef}
           onClick={prevImage}
-          onBlur={() => nextImageButtonRef.current?.focus()}
         >
           <MdArrowBack size={24} />
         </button>
@@ -135,12 +149,11 @@ export default function ImageFocus({
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute bottom-12 z-10 translate-x-12 pt-8 md:relative md:translate-x-0">
+      <div className="absolute bottom-12 z-10 mt-8 translate-x-12 md:relative md:translate-x-0">
         <button
           className="rounded-full bg-white bg-opacity-20 p-4 text-white shadow-lg backdrop-blur-lg"
           ref={nextImageButtonRef}
           onClick={nextImage}
-          onBlur={() => prevImageButtonRef.current?.focus()}
         >
           <MdArrowForward size={24} />
         </button>

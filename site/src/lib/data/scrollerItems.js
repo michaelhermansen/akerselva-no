@@ -3,6 +3,7 @@ const scrollerItems = [
     id: 1,
     text: "Maridalsvannet med Nordmarka i bakgrunnen.",
     image: "/",
+    geopoint: { lng: 10.78779235475608, lat: 59.96904428446832 },
   },
   {
     id: 2,
