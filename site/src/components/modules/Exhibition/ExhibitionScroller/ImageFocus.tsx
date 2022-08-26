@@ -120,7 +120,7 @@ export default function ImageFocus({
           <div className="relative grid aspect-video max-h-[80vh] w-full max-w-5xl place-items-center">
             <Image
               src={`https://picsum.photos/seed/${idFocused}/1200/800`}
-              alt=""
+              alt={selectedItem.text}
               fill
               className="rounded-lg object-cover"
               priority

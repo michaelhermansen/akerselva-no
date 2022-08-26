@@ -22,26 +22,25 @@ export default function FrameContent({
 }: FrameContentProps) {
   const router = useRouter();
 
+  function handleFocusImage() {
+    router.replace({ query: { focus: itemInView.id } }, undefined, {
+      shallow: true,
+    });
+  }
+
   return (
     <>
       <button
         disabled={showMap}
-        onClick={() =>
-          router.replace({ query: { focus: itemInView.id } }, undefined, {
-            shallow: true,
-          })
-        }
-        className={classNames(
-          "absolute inset-0 z-20 grid place-items-center p-6 transition-opacity",
-          {
-            "opacity-0": showMap,
-          }
-        )}
+        onClick={handleFocusImage}
+        className={classNames("absolute inset-0 z-20 transition-opacity", {
+          "opacity-0": showMap,
+        })}
       >
         <Image
           key={itemInView.id}
           src={`https://picsum.photos/seed/${itemInView.id}/1200/800`}
-          alt=""
+          alt={itemInView.text}
           fill
           className="object-cover"
           priority
