@@ -3,7 +3,7 @@ import Container from "../components/Container";
 import Metadata from "../components/Metadata";
 import ExhHeader from "../components/modules/Exhibition/ExhHeader";
 import ExhImageQuote from "../components/modules/Exhibition/ExhImageQuote";
-import ExhImageScroller from "../components/modules/Exhibition/ExhImageScroller";
+import ExhibitionScroller from "../components/modules/Exhibition/ExhibitionScroller";
 import ExhNewsletterSection from "../components/modules/Exhibition/ExhNewsletterSection";
 import Footer from "../components/modules/Footer";
 import { fadeUp } from "../lib/animations";
@@ -60,7 +60,7 @@ export default function ContactPage() {
             Opplev Akerselva slik Inger&nbsp;Munch så den
           </motion.h2>
 
-          <ExhImageScroller />
+          <ExhibitionScroller />
         </Container>
       </section>
 
