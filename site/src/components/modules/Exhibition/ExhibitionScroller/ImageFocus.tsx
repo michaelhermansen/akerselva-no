@@ -97,7 +97,7 @@ export default function ImageFocus({
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
       className="fixed inset-0 z-[99] flex items-center justify-center gap-10 bg-black px-6"
     >
-      <div className="absolute bottom-12 z-10 -translate-x-10 pt-8 md:relative md:translate-x-0">
+      <div className="absolute bottom-12 z-10 -translate-x-12 pt-8 md:relative md:translate-x-0">
         <button
           className="rounded-full bg-white bg-opacity-20 p-4 text-white shadow-lg backdrop-blur-lg"
           ref={prevImageButtonRef}
@@ -120,8 +120,9 @@ export default function ImageFocus({
           <div className="relative grid aspect-video max-h-[80vh] w-full max-w-5xl place-items-center">
             <Image
               src={`https://picsum.photos/seed/${idFocused}/1200/800`}
-              alt={selectedItem.text}
+              alt=""
               fill
+              sizes="100%"
               className="rounded-lg object-cover"
               priority
               placeholder="blur"
@@ -134,7 +135,7 @@ export default function ImageFocus({
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute bottom-12 z-10 translate-x-10 pt-8 md:relative md:translate-x-0">
+      <div className="absolute bottom-12 z-10 translate-x-12 pt-8 md:relative md:translate-x-0">
         <button
           className="rounded-full bg-white bg-opacity-20 p-4 text-white shadow-lg backdrop-blur-lg"
           ref={nextImageButtonRef}

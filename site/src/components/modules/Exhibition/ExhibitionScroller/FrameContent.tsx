@@ -1,7 +1,9 @@
+import { useButton } from "@react-aria/button";
 import classNames from "classnames";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
+import { useRef } from "react";
 import Map from "react-map-gl";
 import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import { ScrollerItem } from "./ScrollerText";
@@ -21,6 +23,7 @@ export default function FrameContent({
   imagePlaceholders,
 }: FrameContentProps) {
   const router = useRouter();
+  const buttonRef = useRef(null);
 
   function handleFocusImage() {
     router.replace({ query: { focus: itemInView.id } }, undefined, {
@@ -28,26 +31,33 @@ export default function FrameContent({
     });
   }
 
+  const { buttonProps } = useButton(
+    { elementType: "div", onPress: handleFocusImage },
+    buttonRef
+  );
+
   return (
     <>
-      <button
-        disabled={showMap}
-        onClick={handleFocusImage}
-        className={classNames("absolute inset-0 z-20 transition-opacity", {
-          "opacity-0": showMap,
-        })}
+      <div
+        ref={buttonRef}
+        {...buttonProps}
+        className={classNames(
+          "group absolute inset-0 isolate z-20 transition-opacity",
+          { "pointer-events-none opacity-0": showMap }
+        )}
       >
         <Image
           key={itemInView.id}
           src={`https://picsum.photos/seed/${itemInView.id}/1200/800`}
-          alt={itemInView.text}
+          alt=""
           fill
-          className="object-cover"
+          sizes="100%"
+          className="rounded-sm object-cover transition-opacity group-focus-visible:opacity-75"
           priority
           placeholder="blur"
           blurDataURL={imagePlaceholders[itemInView.id]}
         />
-      </button>
+      </div>
 
       <div
         className={classNames(
