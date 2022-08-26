@@ -7,8 +7,21 @@ import ExhibitionScroller from "../components/modules/Exhibition/ExhibitionScrol
 import ExhNewsletterSection from "../components/modules/Exhibition/ExhNewsletterSection";
 import Footer from "../components/modules/Footer";
 import { fadeUp } from "../lib/animations";
+import scrollerItems from "../lib/data/scrollerItems";
+import { getPlaiceholder } from "plaiceholder";
+import { InferGetStaticPropsType } from "next";
 
-export default function ContactPage() {
+export type ImagePlaceholdersType = InferGetStaticPropsType<
+  typeof getStaticProps
+>["imagePlaceholders"];
+
+interface ExhibitionPageProps {
+  imagePlaceholders: ImagePlaceholdersType;
+}
+
+export default function ExhibitionPage({
+  imagePlaceholders,
+}: ExhibitionPageProps) {
   return (
     <>
       <Metadata title="Inger Munch og Akerselva" description="..." />
@@ -60,7 +73,7 @@ export default function ContactPage() {
             Opplev Akerselva slik Inger&nbsp;Munch så den
           </motion.h2>
 
-          <ExhibitionScroller />
+          <ExhibitionScroller imagePlaceholders={imagePlaceholders} />
         </Container>
       </section>
 
@@ -76,4 +89,29 @@ export default function ContactPage() {
       `}</style>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const placeholderPromisesArr = scrollerItems.map((item) =>
+    getPlaiceholder(`https://picsum.photos/seed/${item.id}/120/80`)
+  );
+
+  // Get array of all placeholders
+  const placeholdersArr = await Promise.all(placeholderPromisesArr);
+
+  // Initialize a new map that will be populated with a placeholder for every image ID
+  const imagePlaceholdersMap = new Map();
+
+  scrollerItems.forEach((item, i) => {
+    const placeholder = placeholdersArr[i].base64;
+    imagePlaceholdersMap.set(item.id, placeholder);
+  });
+
+  const imagePlaceholders = Object.fromEntries(imagePlaceholdersMap.entries());
+
+  return {
+    props: {
+      imagePlaceholders,
+    },
+  };
 }

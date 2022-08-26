@@ -52,13 +52,13 @@ export default function ExhHeader() {
           <IngerMunchLogo />
         </motion.div>
 
-        <a
+        <Link
           href="#content"
           className="group flex max-w-max flex-col items-center gap-1 p-2"
         >
           <span className="text-lg">Se mer</span>
           <MdArrowDownward className="transition-transform group-hover:translate-y-1" />
-        </a>
+        </Link>
       </Container>
     </header>
   );

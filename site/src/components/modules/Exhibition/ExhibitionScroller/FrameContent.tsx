@@ -1,9 +1,10 @@
-import Map from "react-map-gl";
-import { ScrollerItem } from "./ScrollerText";
-import "mapbox-gl/dist/mapbox-gl.css";
 import classNames from "classnames";
-import Link from "next/link";
+import "mapbox-gl/dist/mapbox-gl.css";
+import Image from "next/future/image";
 import { useRouter } from "next/router";
+import Map from "react-map-gl";
+import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
+import { ScrollerItem } from "./ScrollerText";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 const MAPBOX_STYLE = "mapbox://styles/mapbox/dark-v10";
@@ -11,11 +12,13 @@ const MAPBOX_STYLE = "mapbox://styles/mapbox/dark-v10";
 interface FrameContentProps {
   showMap: boolean;
   itemInView: ScrollerItem;
+  imagePlaceholders: ImagePlaceholdersType;
 }
 
 export default function FrameContent({
   showMap,
   itemInView,
+  imagePlaceholders,
 }: FrameContentProps) {
   const router = useRouter();
 
@@ -28,11 +31,23 @@ export default function FrameContent({
             shallow: true,
           })
         }
-        className={classNames("absolute inset-0 z-20 p-6 transition-opacity", {
-          "opacity-0": showMap,
-        })}
+        className={classNames(
+          "absolute inset-0 z-20 grid place-items-center p-6 transition-opacity",
+          {
+            "opacity-0": showMap,
+          }
+        )}
       >
-        Bilde {itemInView.id}
+        <Image
+          key={itemInView.id}
+          src={`https://picsum.photos/seed/${itemInView.id}/1200/800`}
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          placeholder="blur"
+          blurDataURL={imagePlaceholders[itemInView.id]}
+        />
       </button>
 
       <div
