@@ -1,27 +1,15 @@
 import { motion } from "framer-motion";
+import { MapProvider } from "react-map-gl";
 import Container from "../components/Container";
 import Metadata from "../components/Metadata";
 import ExhHeader from "../components/modules/Exhibition/ExhHeader";
-import ExhImageQuote from "../components/modules/Exhibition/ExhImageQuote";
 import ExhibitionScroller from "../components/modules/Exhibition/ExhibitionScroller";
+import ExhImageQuote from "../components/modules/Exhibition/ExhImageQuote";
 import ExhNewsletterSection from "../components/modules/Exhibition/ExhNewsletterSection";
 import Footer from "../components/modules/Footer";
 import { fadeUp } from "../lib/animations";
-import scrollerItems from "../lib/data/scrollerItems";
-import { getPlaiceholder } from "plaiceholder";
-import { InferGetStaticPropsType } from "next";
-import { MapProvider } from "react-map-gl";
 
-export type ImagePlaceholdersType = InferGetStaticPropsType<
-  typeof getStaticProps
->["imagePlaceholders"];
-
-interface ExhibitionPageProps {
-  imagePlaceholders: ImagePlaceholdersType;
-}
-export default function ExhibitionPage({
-  imagePlaceholders,
-}: ExhibitionPageProps) {
+export default function ExhibitionPage() {
   return (
     <>
       <Metadata title="Inger Munch og Akerselva" description="..." />
@@ -72,8 +60,9 @@ export default function ExhibitionPage({
           >
             Opplev Akerselva slik Inger&nbsp;Munch så den
           </motion.h2>
+
           <MapProvider>
-            <ExhibitionScroller imagePlaceholders={imagePlaceholders} />
+            <ExhibitionScroller />
           </MapProvider>
         </Container>
       </section>
@@ -90,29 +79,4 @@ export default function ExhibitionPage({
       `}</style>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const placeholderPromisesArr = scrollerItems.map((item) =>
-    getPlaiceholder(`/assets/exhibition-scroller/${item.id}.jpg`)
-  );
-
-  // Get array of all placeholders
-  const placeholdersArr = await Promise.all(placeholderPromisesArr);
-
-  // Initialize a new map that will be populated with a placeholder for every image ID
-  const imagePlaceholdersMap = new Map();
-
-  scrollerItems.forEach((item, i) => {
-    const placeholder = placeholdersArr[i].base64;
-    imagePlaceholdersMap.set(item.id, placeholder);
-  });
-
-  const imagePlaceholders = Object.fromEntries(imagePlaceholdersMap.entries());
-
-  return {
-    props: {
-      imagePlaceholders,
-    },
-  };
 }

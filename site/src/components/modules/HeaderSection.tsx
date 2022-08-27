@@ -1,14 +1,14 @@
-import Link from "next/link";
-import { MdArrowDownward } from "react-icons/md";
-import Container from "../Container";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { useRef } from "react";
+import { MdArrowDownward } from "react-icons/md";
 import { fadeUp } from "../../lib/animations";
-import { useEffect, useRef } from "react";
+import Container from "../Container";
 
 interface HeaderSectionProps {
   navigationLinks: {
     linkText: string;
-    linkUrl: string;
+    hash: string;
   }[];
 }
 
@@ -29,10 +29,11 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
 
           <ul className="text-lg">
             {navigationLinks.map((link) => (
-              <li key={link.linkUrl}>
+              <li key={link.hash}>
                 <Link
+                  onTouchStart={() => videoRef.current?.play()}
                   className="inline-block py-1 text-black text-opacity-50 transition-colors hover:text-opacity-100"
-                  href={link.linkUrl}
+                  href={{ hash: link.hash }}
                 >
                   {link.linkText}
                 </Link>
@@ -47,17 +48,24 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
           animate="visible"
           className="col-span-3"
         >
-          <Link href="#om-oss" className="group relative block">
+          <Link
+            href={{ hash: "om-oss" }}
+            className="group relative block"
+            onTouchEnd={(e) => {
+              if (videoRef.current?.paused) e.preventDefault();
+              videoRef.current?.play();
+            }}
+          >
             <div className="relative h-[450px] scale-[1.01] overflow-hidden rounded-md transition-all duration-300 group-hover:scale-100 group-hover:rounded-lg md:h-[600px] lg:h-[760px]">
               <video
+                ref={videoRef}
+                src="/assets/header_video.mp4"
                 muted
                 autoPlay
+                playsInline
                 loop
-                ref={videoRef}
-                className="hide-play-button h-full w-auto object-cover"
-              >
-                <source src="/assets/header_video.mp4" />
-              </video>
+                className="h-full w-auto object-cover"
+              />
               <div className="absolute inset-0 bg-black bg-opacity-20" />
             </div>
 

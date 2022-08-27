@@ -5,22 +5,13 @@ import { useEffect, useState } from "react";
 import { MdCameraAlt, MdLocationPin } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
 import { useMap } from "react-map-gl";
-import NoSSR from "react-no-ssr";
-import useMeasure from "react-use-measure";
+import RenderIfVisible from "react-render-if-visible";
 import scrollerItems from "../../../../lib/data/scrollerItems";
-import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import FrameContent from "./FrameContent";
 import ImageFocus from "./ImageFocus";
 import ScrollerText from "./ScrollerText";
 
-interface ImageScrollerProps {
-  imagePlaceholders: ImagePlaceholdersType;
-}
-
-export default function ImageScroller({
-  imagePlaceholders,
-}: ImageScrollerProps) {
-  const [frameRef, frameBounds] = useMeasure();
+export default function ImageScroller() {
   const [itemInView, setItemInView] = useState(scrollerItems[0]);
   const [showMap, setShowMap] = useState(false);
   const router = useRouter();
@@ -34,9 +25,10 @@ export default function ImageScroller({
     rootMargin: "-40% 0px -60% 0px",
   });
 
-  const selectedItem = scrollerItems.find(
-    (item) => item.id.toString() === router.query.focus
-  );
+  const selectedItem =
+    scrollerItems.find(
+      (item) => String(item.id) === String(router.query.focus)
+    ) || scrollerItems[0];
 
   useEffect(() => {
     mapMobile?.resize();
@@ -46,39 +38,28 @@ export default function ImageScroller({
   return (
     <>
       <AnimatePresence>
-        {focusedItem && (
-          <ImageFocus
-            imagePlaceholders={imagePlaceholders}
-            selectedItem={selectedItem}
-          />
-        )}
+        {focusedItem && <ImageFocus selectedItem={selectedItem} />}
       </AnimatePresence>
 
       <div ref={ref} className="block gap-8 text-white md:flex">
         {/* Sticky frame on desktop */}
-        <NoSSR>
-          <div
-            ref={frameRef}
-            className="sticky hidden h-[400px] flex-1 overflow-hidden rounded-sm bg-gray-medium md:block"
-            style={{
-              top: `${windowHeight * 0.4 - frameBounds.height * 0.5}px`,
-            }}
+        <div className="sticky top-[calc(40vh-200px)] hidden h-[400px] flex-1 overflow-hidden rounded-sm bg-gray-medium md:block">
+          <button
+            onClick={toggleMap}
+            className="absolute bottom-4 left-4 z-50 flex items-center gap-2 rounded-full bg-black bg-opacity-75 py-2 pl-4 pr-6 text-white text-opacity-75 shadow-lg backdrop-blur-lg transition-colors hover:text-opacity-100"
           >
-            <button
-              onClick={toggleMap}
-              className="absolute bottom-4 left-4 z-50 flex items-center gap-2 rounded-full bg-black bg-opacity-75 py-2 pl-4 pr-6 text-white text-opacity-75 shadow-lg backdrop-blur-lg transition-colors hover:text-opacity-100"
-            >
-              {showMap ? <MdCameraAlt /> : <MdLocationPin />}
-              <span>{showMap ? "Se bilde" : "Se kart"}</span>
-            </button>
+            {showMap ? <MdCameraAlt /> : <MdLocationPin />}
+            <span>{showMap ? "Se bilde" : "Se kart"}</span>
+          </button>
 
+          <RenderIfVisible visibleOffset={500} stayRendered>
             <FrameContent
               showMap={showMap}
               itemInView={itemInView}
               mapId="mapDesktop"
             />
-          </div>
-        </NoSSR>
+          </RenderIfVisible>
+        </div>
 
         {/* Fixed frame on mobile */}
         <div
@@ -96,19 +77,21 @@ export default function ImageScroller({
             {!showMap && <MdLocationPin size={24} />}
           </button>
 
-          <FrameContent
-            showMap={showMap}
-            itemInView={itemInView}
-            mapId="mapMobile"
-          />
+          <RenderIfVisible visibleOffset={500} stayRendered>
+            <FrameContent
+              showMap={showMap}
+              itemInView={itemInView}
+              mapId="mapMobile"
+            />
+          </RenderIfVisible>
         </div>
 
         {/* Text scroller */}
         <div
           className="flex-1"
           style={{
-            paddingTop: frameBounds.height / 3,
-            paddingBottom: `${frameBounds.height * 0.5}px`,
+            paddingTop: 400 / 3,
+            paddingBottom: 400 * 0.5,
           }}
         >
           <ul>

@@ -5,7 +5,6 @@ import Image from "next/future/image";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import scrollerItems from "../../../../lib/data/scrollerItems";
-import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import Map from "./Map";
 import { ScrollerItem } from "./ScrollerText";
 

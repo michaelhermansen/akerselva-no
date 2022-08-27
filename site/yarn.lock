@@ -2445,6 +2445,11 @@ react-no-ssr@^1.1.0:
   dependencies:
     babel-runtime "6.x.x"
 
+react-render-if-visible@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-render-if-visible/-/react-render-if-visible-2.1.0.tgz#2a8d3c3e2f32394c78967bb58ee7546666831605"
+  integrity sha512-mOLrj0eDezdTB9zxjBaOOP+cOHVKhoCQCk6qZlHev9a6Edb0eQs2CfHqBa1PNq3kfCW28NAS8QJMXXMJsUonxw==
+
 react-use-measure@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-use-measure/-/react-use-measure-2.1.1.tgz#5824537f4ee01c9469c45d5f7a8446177c6cc4ba"

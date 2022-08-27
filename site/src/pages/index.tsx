@@ -16,7 +16,7 @@ export default function Home({
   const navigationLinks =
     landingPageSections?.data.map((section) => ({
       linkText: section.attributes.NavigationTitle,
-      linkUrl: `#${kebabCase(section.attributes.NavigationTitle)}`,
+      hash: kebabCase(section.attributes.NavigationTitle),
     })) || [];
 
   return (

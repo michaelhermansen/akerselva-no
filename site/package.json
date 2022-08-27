@@ -24,6 +24,7 @@
     "react-intersection-observer": "^9.4.0",
     "react-map-gl": "^7.0.19",
     "react-no-ssr": "^1.1.0",
+    "react-render-if-visible": "^2.1.0",
     "react-use-measure": "^2.1.1",
     "sharp": "^0.30.7",
     "tua-body-scroll-lock": "^1.2.1",

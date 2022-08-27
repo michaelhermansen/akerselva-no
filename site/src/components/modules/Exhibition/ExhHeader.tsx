@@ -54,7 +54,7 @@ export default function ExhHeader() {
         </motion.div>
 
         <Link
-          href="#content"
+          href={{ hash: "content" }}
           className="group flex max-w-max flex-col items-center gap-1 p-2"
         >
           <span className="text-lg">Se mer</span>

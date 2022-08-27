@@ -6,24 +6,17 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 import { lock, unlock } from "tua-body-scroll-lock";
 import { fadeUp } from "../../../../lib/animations";
 import scrollerItems from "../../../../lib/data/scrollerItems";
-import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import { ScrollerItem } from "./ScrollerText";
 
 interface ImageFocusProps {
-  selectedItem: ScrollerItem | undefined;
-  imagePlaceholders: ImagePlaceholdersType;
+  selectedItem: ScrollerItem;
 }
 
-export default function ImageFocus({
-  selectedItem,
-  imagePlaceholders,
-}: ImageFocusProps) {
+export default function ImageFocus({ selectedItem }: ImageFocusProps) {
   const router = useRouter();
   const wrapperRef = useRef<HTMLDivElement>(null);
   const prevImageButtonRef = useRef<HTMLButtonElement>(null);
   const nextImageButtonRef = useRef<HTMLButtonElement>(null);
-
-  const idFocused = selectedItem?.id;
 
   const focusImage = useCallback(
     (id: number) => {
@@ -37,18 +30,14 @@ export default function ImageFocus({
   }, [router]);
 
   const nextImage = useCallback(() => {
-    if (!idFocused) return null;
-
-    if (idFocused >= scrollerItems.length) focusImage(1);
-    else focusImage(idFocused + 1);
-  }, [focusImage, idFocused]);
+    if (selectedItem.id >= scrollerItems.length) focusImage(1);
+    else focusImage(selectedItem.id + 1);
+  }, [focusImage, selectedItem.id]);
 
   const prevImage = useCallback(() => {
-    if (!idFocused) return null;
-
-    if (idFocused <= 1) focusImage(scrollerItems.length);
-    else focusImage(idFocused - 1);
-  }, [focusImage, idFocused]);
+    if (selectedItem.id <= 1) focusImage(scrollerItems.length);
+    else focusImage(selectedItem.id - 1);
+  }, [focusImage, selectedItem.id]);
 
   // Handle keyboard/swipe events
   useEffect(() => {
@@ -139,7 +128,7 @@ export default function ImageFocus({
     return () => unlock(target);
   }, []);
 
-  if (!idFocused) return null;
+  if (!selectedItem.id) return null;
 
   return (
     <motion.div
@@ -162,7 +151,7 @@ export default function ImageFocus({
 
       <AnimatePresence mode="popLayout">
         <motion.div
-          key={idFocused}
+          key={selectedItem.id}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -171,18 +160,16 @@ export default function ImageFocus({
         >
           <div className="relative grid aspect-video max-h-[80vh] w-full max-w-5xl place-items-center">
             <Image
-              src={`/assets/exhibition-scroller/${idFocused}.jpg`}
-              alt=""
+              src={`/assets/exhibition-scroller/${selectedItem.id}.jpg`}
+              alt={selectedItem.text}
               fill
               sizes="80vw"
               className="rounded-lg object-cover"
               draggable={false}
-              placeholder="blur"
-              blurDataURL={imagePlaceholders[idFocused]}
             />
           </div>
           <p className="max-w-3xl px-2 pt-4 pb-10 text-white text-opacity-75">
-            {selectedItem?.text}
+            {selectedItem.text}
           </p>
         </motion.div>
       </AnimatePresence>
