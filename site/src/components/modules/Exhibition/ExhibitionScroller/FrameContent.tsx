@@ -4,6 +4,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
 import { useRef } from "react";
+import { MdOpenInFull } from "react-icons/md";
 import RenderIfVisible from "react-render-if-visible";
 import scrollerItems from "../../../../lib/data/scrollerItems";
 import Map from "./Map";
@@ -43,6 +44,9 @@ export default function FrameContent({
         aria-hidden={showMap}
         hidden={showMap}
       >
+        <div className="absolute inset-0 z-40 grid place-items-center bg-black bg-opacity-25 opacity-0 transition-opacity hover:opacity-100 group-focus-visible:opacity-100">
+          <MdOpenInFull size={24} />
+        </div>
         {scrollerItems.map((item) => (
           <Image
             key={item.id}
@@ -50,9 +54,12 @@ export default function FrameContent({
             alt={itemInView.text}
             fill
             sizes="80vw"
-            className={classNames("scale-105 object-cover", {
-              hidden: item.id !== itemInView.id,
-            })}
+            className={classNames(
+              "scale-105 object-cover transition-opacity duration-75",
+              {
+                "opacity-0": item.id !== itemInView.id,
+              }
+            )}
           />
         ))}
       </div>
@@ -62,7 +69,7 @@ export default function FrameContent({
         aria-hidden={!showMap}
         hidden={!showMap}
       >
-        <RenderIfVisible visibleOffset={800} stayRendered>
+        <RenderIfVisible stayRendered>
           <Map selectedItem={itemInView} mapId={mapId} />
         </RenderIfVisible>
       </div>

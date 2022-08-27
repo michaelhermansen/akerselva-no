@@ -41,10 +41,10 @@ export default function ImageScroller() {
 
       <div ref={ref} className="block gap-8 text-white md:flex">
         {/* Sticky frame on desktop */}
-        <div className="sticky top-[calc(40vh-200px)] hidden h-[400px] flex-1 overflow-hidden rounded-sm bg-gray-medium md:block">
+        <div className="sticky top-[calc(40vh-200px)] hidden h-[400px] flex-1 overflow-hidden rounded-sm bg-white bg-opacity-20 md:block">
           <button
             onClick={toggleMap}
-            className="absolute bottom-4 left-4 z-50 flex items-center gap-2 rounded-full bg-black bg-opacity-75 py-2 pl-4 pr-6 text-white text-opacity-75 shadow-lg backdrop-blur-lg transition-colors hover:text-opacity-100"
+            className="absolute bottom-4 left-4 z-50 flex items-center gap-2 rounded-full bg-black bg-opacity-70 py-2 pl-4 pr-6 text-white text-opacity-75 shadow-lg backdrop-blur-lg transition-colors hover:text-opacity-100"
           >
             {showMap ? <MdCameraAlt /> : <MdLocationPin />}
             <span>{showMap ? "Se bilde" : "Se kart"}</span>
@@ -60,13 +60,13 @@ export default function ImageScroller() {
         {/* Fixed frame on mobile */}
         <div
           className={classNames(
-            "fixed bottom-6 right-6 z-50 h-[180px] w-2/3 flex-1 overflow-hidden rounded-sm bg-gray-medium shadow-2xl transition-opacity duration-300 sm:h-[250px] sm:w-2/3 md:hidden",
+            "fixed bottom-6 right-6 z-50 h-[180px] w-2/3 flex-1 overflow-hidden rounded-sm bg-white bg-opacity-20 shadow-2xl transition-opacity duration-300 sm:h-[250px] sm:w-2/3 md:hidden",
             { "pointer-events-none opacity-0": !inView }
           )}
         >
           <button
             onClick={toggleMap}
-            className="absolute top-4 right-4 z-50 grid h-12 w-12 place-items-center rounded-full bg-black bg-opacity-75 text-white text-opacity-75 shadow-lg backdrop-blur-lg transition-colors hover:text-opacity-100"
+            className="absolute top-4 right-4 z-50 grid h-12 w-12 place-items-center rounded-full bg-black bg-opacity-70 text-white text-opacity-75 shadow-lg backdrop-blur-lg transition-colors hover:text-opacity-100"
             title={showMap ? "Se bilde" : "Se kart"}
           >
             {showMap && <MdCameraAlt size={24} />}
