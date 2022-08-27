@@ -49,7 +49,7 @@ export default function FrameContent({
             src={`/assets/exhibition-scroller/${item.id}.jpg`}
             alt={itemInView.text}
             fill
-            sizes="50vw"
+            sizes="80vw"
             className={classNames("scale-105 object-cover", {
               hidden: item.id !== itemInView.id,
             })}
