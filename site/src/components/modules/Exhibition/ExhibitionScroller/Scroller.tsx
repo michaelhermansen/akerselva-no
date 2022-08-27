@@ -73,7 +73,6 @@ export default function ImageScroller({
             </button>
 
             <FrameContent
-              imagePlaceholders={imagePlaceholders}
               showMap={showMap}
               itemInView={itemInView}
               mapId="mapDesktop"
@@ -98,7 +97,6 @@ export default function ImageScroller({
           </button>
 
           <FrameContent
-            imagePlaceholders={imagePlaceholders}
             showMap={showMap}
             itemInView={itemInView}
             mapId="mapMobile"

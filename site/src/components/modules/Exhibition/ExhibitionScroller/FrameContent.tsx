@@ -1,8 +1,10 @@
 import { useButton } from "@react-aria/button";
+import classNames from "classnames";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import scrollerItems from "../../../../lib/data/scrollerItems";
 import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import Map from "./Map";
 import { ScrollerItem } from "./ScrollerText";
@@ -10,14 +12,12 @@ import { ScrollerItem } from "./ScrollerText";
 interface FrameContentProps {
   showMap: boolean;
   itemInView: ScrollerItem;
-  imagePlaceholders: ImagePlaceholdersType;
   mapId: string;
 }
 
 export default function FrameContent({
   showMap,
   itemInView,
-  imagePlaceholders,
   mapId,
 }: FrameContentProps) {
   const router = useRouter();
@@ -43,17 +43,18 @@ export default function FrameContent({
         aria-hidden={showMap}
         hidden={showMap}
       >
-        <Image
-          key={itemInView.id}
-          src={`/assets/exhibition-scroller/${itemInView.id}.jpg`}
-          alt=""
-          fill
-          sizes="50vw"
-          priority
-          className="scale-105 object-cover"
-          placeholder="blur"
-          blurDataURL={imagePlaceholders[itemInView.id]}
-        />
+        {scrollerItems.map((item) => (
+          <Image
+            key={item.id}
+            src={`/assets/exhibition-scroller/${item.id}.jpg`}
+            alt={itemInView.text}
+            fill
+            sizes="50vw"
+            className={classNames("scale-105 object-cover", {
+              hidden: item.id !== itemInView.id,
+            })}
+          />
+        ))}
       </div>
 
       <div

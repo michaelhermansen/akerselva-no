@@ -175,7 +175,6 @@ export default function ImageFocus({
               alt=""
               fill
               sizes="80vw"
-              priority
               className="rounded-lg object-cover"
               draggable={false}
               placeholder="blur"
