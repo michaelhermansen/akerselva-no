@@ -19,3 +19,29 @@ export const selectedItemBgStyle: LayerProps = {
     "circle-color": "#000000",
   },
 };
+
+export const entirePathStyle: LayerProps = {
+  id: "entire-path",
+  type: "line",
+  paint: {
+    "line-color": "#aaaaaa",
+    "line-width": 3,
+  },
+  layout: {
+    "line-cap": "round",
+    "line-join": "round",
+  },
+};
+
+export const visiblePathStyle: LayerProps = {
+  id: "visible-path",
+  type: "line",
+  paint: {
+    "line-color": "#000000",
+    "line-width": 3,
+  },
+  layout: {
+    "line-cap": "round",
+    "line-join": "round",
+  },
+};

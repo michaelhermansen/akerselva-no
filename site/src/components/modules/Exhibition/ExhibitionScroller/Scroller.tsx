@@ -19,7 +19,6 @@ export default function ImageScroller() {
 
   const focusedItem = router.query.focus;
   const toggleMap = () => setShowMap((bool) => !bool);
-  const windowHeight = typeof window === "undefined" ? 0 : window.innerHeight;
 
   const { ref, inView } = useInView({
     rootMargin: "-40% 0px -60% 0px",
@@ -52,7 +51,7 @@ export default function ImageScroller() {
             <span>{showMap ? "Se bilde" : "Se kart"}</span>
           </button>
 
-          <RenderIfVisible visibleOffset={500} stayRendered>
+          <RenderIfVisible visibleOffset={800} stayRendered>
             <FrameContent
               showMap={showMap}
               itemInView={itemInView}
@@ -77,7 +76,7 @@ export default function ImageScroller() {
             {!showMap && <MdLocationPin size={24} />}
           </button>
 
-          <RenderIfVisible visibleOffset={500} stayRendered>
+          <RenderIfVisible visibleOffset={800} stayRendered>
             <FrameContent
               showMap={showMap}
               itemInView={itemInView}

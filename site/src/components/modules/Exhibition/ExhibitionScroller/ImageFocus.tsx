@@ -156,7 +156,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="h-auto w-full max-w-5xl"
+          className="h-auto w-full max-w-5xl origin-top"
         >
           <div className="relative grid aspect-video max-h-[80vh] w-full max-w-5xl place-items-center">
             <Image
