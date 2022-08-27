@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { delay } from "lodash";
 import Image from "next/future/image";
 import Link from "next/link";
 import { MdArrowBack, MdArrowDownward } from "react-icons/md";
@@ -11,14 +12,15 @@ export default function ExhHeader() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ type: "tween", duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.4, delay: 0.1 }}
         className="absolute inset-0"
       >
         <Image
           className="block object-cover"
           fill
+          sizes="100%"
           alt=""
-          src="/assets/img-1.png"
+          src="/assets/exhibition-header.jpeg"
           priority
         />
       </motion.div>
@@ -44,8 +46,7 @@ export default function ExhHeader() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            type: "tween",
-            duration: 1,
+            duration: 0.6,
             ease: "easeOut",
           }}
         >

@@ -32,7 +32,7 @@ export default function ScrollerText({
     <li
       ref={ref}
       className={classNames(
-        "py-2 text-lg text-white text-opacity-50 transition-colors duration-100 sm:text-2xl",
+        "py-3 text-xl text-white text-opacity-50 sm:text-2xl",
         { "text-opacity-100": itemInView.id === item.id }
       )}
     >

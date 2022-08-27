@@ -6,17 +6,17 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 import { lock, unlock } from "tua-body-scroll-lock";
 import { fadeUp } from "../../../../lib/animations";
 import scrollerItems from "../../../../lib/data/scrollerItems";
-import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
+import { ImagePlaceholderType } from "../../../../pages/inger-munch";
 import { ScrollerItem } from "./ScrollerText";
 
 interface ImageFocusProps {
   selectedItem: ScrollerItem | undefined;
-  imagePlaceholders: ImagePlaceholdersType;
+  imagePlaceholder: ImagePlaceholderType;
 }
 
 export default function ImageFocus({
   selectedItem,
-  imagePlaceholders,
+  imagePlaceholder,
 }: ImageFocusProps) {
   const router = useRouter();
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -50,10 +50,43 @@ export default function ImageFocus({
     else focusImage(idFocused - 1);
   }, [focusImage, idFocused]);
 
+  // Handle keyboard/swipe events
   useEffect(() => {
     const wrapperEl = wrapperRef.current;
     const prevButtonEl = prevImageButtonRef.current;
     const nextButtonEl = nextImageButtonRef.current;
+
+    let touchStartY: number | undefined;
+    let touchStartX: number | undefined;
+
+    function handleTouchStart(e: TouchEvent) {
+      touchStartY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
+    }
+
+    function handleTouchMove(e: TouchEvent) {
+      if (!touchStartY || !touchStartX) return;
+      if (e.target === nextButtonEl || e.target === prevButtonEl) return;
+
+      const touchEndY = e.changedTouches[0].clientY;
+      const touchEndX = e.changedTouches[0].clientX;
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+
+      const threshold = 50;
+
+      const swipe = {
+        up: deltaY < threshold * -1,
+        down: deltaY > threshold,
+        left: deltaX < threshold * -1,
+        right: deltaX > threshold,
+      };
+
+      if (swipe.up) return;
+      if (swipe.down) return closeFocus();
+      if (swipe.left) return nextImage();
+      if (swipe.right) return prevImage();
+    }
 
     function handleClick(e: MouseEvent) {
       if (e.target === wrapperEl) closeFocus();
@@ -87,10 +120,14 @@ export default function ImageFocus({
       }
     }
 
+    wrapperEl?.addEventListener("touchstart", handleTouchStart);
+    wrapperEl?.addEventListener("touchmove", handleTouchMove);
     wrapperEl?.addEventListener("click", handleClick);
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      wrapperEl?.removeEventListener("touchstart", handleTouchStart);
+      wrapperEl?.removeEventListener("touchmove", handleTouchMove);
       wrapperEl?.removeEventListener("click", handleClick);
       document?.removeEventListener("keydown", handleKeyDown);
     };
@@ -108,13 +145,14 @@ export default function ImageFocus({
     <motion.div
       ref={wrapperRef}
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.2 } }}
-      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
       className="fixed inset-0 z-[99] flex items-center justify-center gap-10 bg-black px-6"
     >
       <div className="absolute bottom-12 z-10 mt-8 -translate-x-14 md:relative md:translate-x-0">
         <button
-          className="rounded-full bg-gray-medium p-6 text-white transition-colors hover:bg-opacity-75"
+          className="rounded-full bg-gray-medium p-6 text-white transition-colors active:bg-opacity-75"
           ref={prevImageButtonRef}
           onClick={prevImage}
         >
@@ -133,17 +171,16 @@ export default function ImageFocus({
         >
           <div className="relative grid aspect-video max-h-[80vh] w-full max-w-5xl place-items-center">
             <Image
-              src={`https://picsum.photos/seed/${idFocused}/1200/800`}
+              src={`/assets/exhibition-scroller/${idFocused}.jpg`}
               alt=""
               fill
               sizes="100%"
               className="rounded-lg object-cover"
-              priority
               placeholder="blur"
-              blurDataURL={imagePlaceholders[idFocused]}
+              blurDataURL={imagePlaceholder}
             />
           </div>
-          <p className="max-w-3xl py-4 px-2 text-white text-opacity-75">
+          <p className="max-w-3xl px-2 pt-4 pb-10 text-white text-opacity-75">
             {selectedItem?.text}
           </p>
         </motion.div>
@@ -151,7 +188,7 @@ export default function ImageFocus({
 
       <div className="absolute bottom-12 z-10 mt-8 translate-x-14 md:relative md:translate-x-0">
         <button
-          className="rounded-full bg-gray-medium p-6 text-white transition-colors hover:bg-opacity-75"
+          className="rounded-full bg-gray-medium p-6 text-white transition-colors active:bg-opacity-75"
           ref={nextImageButtonRef}
           onClick={nextImage}
         >

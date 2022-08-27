@@ -6,9 +6,6 @@ const nextConfig = {
     newNextLinkBehavior: true,
     images: { allowFutureImage: true },
   },
-  images: {
-    domains: ["picsum.photos"],
-  },
 };
 
 module.exports = nextConfig;

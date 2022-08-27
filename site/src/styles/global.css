@@ -20,4 +20,6 @@
 html,
 body {
   @apply scroll-pt-10 bg-gray-light;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }

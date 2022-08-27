@@ -3,21 +3,21 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
 import { useRef } from "react";
-import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
+import { ImagePlaceholderType } from "../../../../pages/inger-munch";
 import Map from "./Map";
 import { ScrollerItem } from "./ScrollerText";
 
 interface FrameContentProps {
   showMap: boolean;
   itemInView: ScrollerItem;
-  imagePlaceholders: ImagePlaceholdersType;
+  imagePlaceholder: ImagePlaceholderType;
   mapId: string;
 }
 
 export default function FrameContent({
   showMap,
   itemInView,
-  imagePlaceholders,
+  imagePlaceholder,
   mapId,
 }: FrameContentProps) {
   const router = useRouter();
@@ -45,14 +45,13 @@ export default function FrameContent({
       >
         <Image
           key={itemInView.id}
-          src={`https://picsum.photos/seed/${itemInView.id}/1200/800`}
+          src={`/assets/exhibition-scroller/${itemInView.id}.jpg`}
           alt=""
           fill
           sizes="100%"
-          className="rounded-sm object-cover transition-opacity group-focus-visible:opacity-75"
-          priority
+          className="scale-105 object-cover"
           placeholder="blur"
-          blurDataURL={imagePlaceholders[itemInView.id]}
+          blurDataURL={imagePlaceholder}
         />
       </div>
 

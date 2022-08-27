@@ -8,17 +8,17 @@ import { useMap } from "react-map-gl";
 import NoSSR from "react-no-ssr";
 import useMeasure from "react-use-measure";
 import scrollerItems from "../../../../lib/data/scrollerItems";
-import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
+import { ImagePlaceholderType } from "../../../../pages/inger-munch";
 import FrameContent from "./FrameContent";
 import ImageFocus from "./ImageFocus";
 import ScrollerText from "./ScrollerText";
 
 interface ImageScrollerProps {
-  imagePlaceholders: ImagePlaceholdersType;
+  imagePlaceholder: ImagePlaceholderType;
 }
 
 export default function ImageScroller({
-  imagePlaceholders,
+  imagePlaceholder,
 }: ImageScrollerProps) {
   const [frameRef, frameBounds] = useMeasure();
   const [itemInView, setItemInView] = useState(scrollerItems[0]);
@@ -48,7 +48,7 @@ export default function ImageScroller({
       <AnimatePresence>
         {focusedItem && (
           <ImageFocus
-            imagePlaceholders={imagePlaceholders}
+            imagePlaceholder={imagePlaceholder}
             selectedItem={selectedItem}
           />
         )}
@@ -73,7 +73,7 @@ export default function ImageScroller({
             </button>
 
             <FrameContent
-              imagePlaceholders={imagePlaceholders}
+              imagePlaceholder={imagePlaceholder}
               showMap={showMap}
               itemInView={itemInView}
               mapId="mapDesktop"
@@ -84,7 +84,7 @@ export default function ImageScroller({
         {/* Fixed frame on mobile */}
         <div
           className={classNames(
-            "fixed bottom-6 right-6 z-50 h-[220px] w-3/4 flex-1 overflow-hidden rounded-sm bg-gray-medium shadow-2xl transition-opacity duration-300 sm:h-[250px] sm:w-2/3 md:hidden",
+            "fixed bottom-6 right-6 z-50 h-[180px] w-2/3 flex-1 overflow-hidden rounded-sm bg-gray-medium shadow-2xl transition-opacity duration-300 sm:h-[250px] sm:w-2/3 md:hidden",
             { "pointer-events-none opacity-0": !inView }
           )}
         >
@@ -98,7 +98,7 @@ export default function ImageScroller({
           </button>
 
           <FrameContent
-            imagePlaceholders={imagePlaceholders}
+            imagePlaceholder={imagePlaceholder}
             showMap={showMap}
             itemInView={itemInView}
             mapId="mapMobile"
