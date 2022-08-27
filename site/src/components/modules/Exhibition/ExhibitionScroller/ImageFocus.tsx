@@ -6,17 +6,17 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 import { lock, unlock } from "tua-body-scroll-lock";
 import { fadeUp } from "../../../../lib/animations";
 import scrollerItems from "../../../../lib/data/scrollerItems";
-import { ImagePlaceholderType } from "../../../../pages/inger-munch";
+import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import { ScrollerItem } from "./ScrollerText";
 
 interface ImageFocusProps {
   selectedItem: ScrollerItem | undefined;
-  imagePlaceholder: ImagePlaceholderType;
+  imagePlaceholders: ImagePlaceholdersType;
 }
 
 export default function ImageFocus({
   selectedItem,
-  imagePlaceholder,
+  imagePlaceholders,
 }: ImageFocusProps) {
   const router = useRouter();
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -174,11 +174,12 @@ export default function ImageFocus({
               src={`/assets/exhibition-scroller/${idFocused}.jpg`}
               alt=""
               fill
-              sizes="100%"
+              sizes="80%"
+              priority
               className="rounded-lg object-cover"
               draggable={false}
-              // placeholder="blur"
-              // blurDataURL={imagePlaceholder}
+              placeholder="blur"
+              blurDataURL={imagePlaceholders[idFocused]}
             />
           </div>
           <p className="max-w-3xl px-2 pt-4 pb-10 text-white text-opacity-75">

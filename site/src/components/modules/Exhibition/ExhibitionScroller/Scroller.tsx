@@ -8,17 +8,17 @@ import { useMap } from "react-map-gl";
 import NoSSR from "react-no-ssr";
 import useMeasure from "react-use-measure";
 import scrollerItems from "../../../../lib/data/scrollerItems";
-import { ImagePlaceholderType } from "../../../../pages/inger-munch";
+import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import FrameContent from "./FrameContent";
 import ImageFocus from "./ImageFocus";
 import ScrollerText from "./ScrollerText";
 
 interface ImageScrollerProps {
-  imagePlaceholder: ImagePlaceholderType;
+  imagePlaceholders: ImagePlaceholdersType;
 }
 
 export default function ImageScroller({
-  imagePlaceholder,
+  imagePlaceholders,
 }: ImageScrollerProps) {
   const [frameRef, frameBounds] = useMeasure();
   const [itemInView, setItemInView] = useState(scrollerItems[0]);
@@ -48,7 +48,7 @@ export default function ImageScroller({
       <AnimatePresence>
         {focusedItem && (
           <ImageFocus
-            imagePlaceholder={imagePlaceholder}
+            imagePlaceholders={imagePlaceholders}
             selectedItem={selectedItem}
           />
         )}
@@ -73,7 +73,7 @@ export default function ImageScroller({
             </button>
 
             <FrameContent
-              imagePlaceholder={imagePlaceholder}
+              imagePlaceholders={imagePlaceholders}
               showMap={showMap}
               itemInView={itemInView}
               mapId="mapDesktop"
@@ -98,7 +98,7 @@ export default function ImageScroller({
           </button>
 
           <FrameContent
-            imagePlaceholder={imagePlaceholder}
+            imagePlaceholders={imagePlaceholders}
             showMap={showMap}
             itemInView={itemInView}
             mapId="mapMobile"

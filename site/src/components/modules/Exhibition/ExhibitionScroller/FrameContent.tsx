@@ -2,22 +2,22 @@ import { useButton } from "@react-aria/button";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
-import { useRef } from "react";
-import { ImagePlaceholderType } from "../../../../pages/inger-munch";
+import { useRef, useState } from "react";
+import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import Map from "./Map";
 import { ScrollerItem } from "./ScrollerText";
 
 interface FrameContentProps {
   showMap: boolean;
   itemInView: ScrollerItem;
-  imagePlaceholder: ImagePlaceholderType;
+  imagePlaceholders: ImagePlaceholdersType;
   mapId: string;
 }
 
 export default function FrameContent({
   showMap,
   itemInView,
-  imagePlaceholder,
+  imagePlaceholders,
   mapId,
 }: FrameContentProps) {
   const router = useRouter();
@@ -48,10 +48,11 @@ export default function FrameContent({
           src={`/assets/exhibition-scroller/${itemInView.id}.jpg`}
           alt=""
           fill
-          sizes="100%"
+          sizes="50vw"
+          priority
           className="scale-105 object-cover"
-          // placeholder="empty"
-          // blurDataURL={imagePlaceholder}
+          placeholder="blur"
+          blurDataURL={imagePlaceholders[itemInView.id]}
         />
       </div>
 

@@ -18,7 +18,7 @@ export default function ExhHeader() {
         <Image
           className="block object-cover"
           fill
-          sizes="100%"
+          sizes="100vw"
           alt=""
           src="/assets/exhibition-header.jpeg"
           priority

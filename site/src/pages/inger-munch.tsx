@@ -12,16 +12,15 @@ import { getPlaiceholder } from "plaiceholder";
 import { InferGetStaticPropsType } from "next";
 import { MapProvider } from "react-map-gl";
 
-export type ImagePlaceholderType = InferGetStaticPropsType<
+export type ImagePlaceholdersType = InferGetStaticPropsType<
   typeof getStaticProps
->["imagePlaceholder"];
+>["imagePlaceholders"];
 
 interface ExhibitionPageProps {
-  imagePlaceholder: ImagePlaceholderType;
+  imagePlaceholders: ImagePlaceholdersType;
 }
-
 export default function ExhibitionPage({
-  imagePlaceholder,
+  imagePlaceholders,
 }: ExhibitionPageProps) {
   return (
     <>
@@ -74,7 +73,7 @@ export default function ExhibitionPage({
             Opplev Akerselva slik Inger&nbsp;Munch så den
           </motion.h2>
           <MapProvider>
-            <ExhibitionScroller imagePlaceholder={imagePlaceholder} />
+            <ExhibitionScroller imagePlaceholders={imagePlaceholders} />
           </MapProvider>
         </Container>
       </section>
@@ -94,11 +93,26 @@ export default function ExhibitionPage({
 }
 
 export async function getStaticProps() {
-  const { base64 } = await getPlaiceholder(`/assets/exhibition-scroller/2.jpg`);
+  const placeholderPromisesArr = scrollerItems.map((item) =>
+    getPlaiceholder(`/assets/exhibition-scroller/${item.id}.jpg`)
+  );
+
+  // Get array of all placeholders
+  const placeholdersArr = await Promise.all(placeholderPromisesArr);
+
+  // Initialize a new map that will be populated with a placeholder for every image ID
+  const imagePlaceholdersMap = new Map();
+
+  scrollerItems.forEach((item, i) => {
+    const placeholder = placeholdersArr[i].base64;
+    imagePlaceholdersMap.set(item.id, placeholder);
+  });
+
+  const imagePlaceholders = Object.fromEntries(imagePlaceholdersMap.entries());
 
   return {
     props: {
-      imagePlaceholder: base64,
+      imagePlaceholders,
     },
   };
 }
