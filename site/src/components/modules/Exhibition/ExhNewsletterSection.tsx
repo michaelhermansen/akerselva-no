@@ -22,7 +22,7 @@ export default function ExhNewsletterSection() {
             viewport={{ once: true }}
             className="gap-4 text-white"
           >
-            <h2 className="mx-auto max-w-[25ch] pb-12 text-center text-2xl leading-snug md:text-4xl lg:text-3xl">
+            <h2 className="mx-auto max-w-[25ch] pb-6 text-center text-2xl leading-snug md:pb-12 md:text-4xl lg:text-3xl">
               Meld deg på nyhetsbrev for nye arrangementer og oppdateringer
             </h2>
 

@@ -50,8 +50,8 @@ export default function FrameContent({
           fill
           sizes="100%"
           className="scale-105 object-cover"
-          placeholder="blur"
-          blurDataURL={imagePlaceholder}
+          // placeholder="empty"
+          // blurDataURL={imagePlaceholder}
         />
       </div>
 

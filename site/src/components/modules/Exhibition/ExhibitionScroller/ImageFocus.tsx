@@ -176,8 +176,9 @@ export default function ImageFocus({
               fill
               sizes="100%"
               className="rounded-lg object-cover"
-              placeholder="blur"
-              blurDataURL={imagePlaceholder}
+              draggable={false}
+              // placeholder="blur"
+              // blurDataURL={imagePlaceholder}
             />
           </div>
           <p className="max-w-3xl px-2 pt-4 pb-10 text-white text-opacity-75">
