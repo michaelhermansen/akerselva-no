@@ -6,6 +6,10 @@ export interface ScrollerItem {
   id: number;
   text: string;
   image: string;
+  geopoint?: {
+    lng: number;
+    lat: number;
+  };
 }
 
 export interface ScrollerTextProps {

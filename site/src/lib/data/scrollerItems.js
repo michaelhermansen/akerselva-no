@@ -3,32 +3,37 @@ const scrollerItems = [
     id: 1,
     text: "Maridalsvannet med Nordmarka i bakgrunnen.",
     image: "/",
-    geopoint: { lng: 10.78779235475608, lat: 59.96904428446832 },
+    geopoint: { lat: 59.96837238731618, lng: 10.784626007080078 },
   },
   {
     id: 2,
     text: "Maridalsvannet danner Akerselven ved Oset.",
     image: "/",
+    geopoint: { lat: 59.967470291279476, lng: 10.780763626098633 },
   },
   {
     id: 3,
     text: "Oslo renvannsanlegg ved Maridalsoset, fra ca. 1860.",
     image: "/",
+    geopoint: { lat: 59.96661112935506, lng: 10.776128768920898 },
   },
   {
     id: 4,
     text: "Bergensbanen går forbi Oset.",
     image: "/",
+    geopoint: { lat: 59.96467793354456, lng: 10.774927139282227 },
   },
   {
     id: 5,
     text: "Akerselvens begynnelse ved Oset. Ved Oset stod asbjørnsen og fisket (Kværnsagn)",
     image: "/",
+    geopoint: { lat: 59.9632601849119, lng: 10.77235221862793 },
   },
   {
     id: 6,
     text: 'Badekulpen "Stilla" ved Kjelsås.',
     image: "/",
+    geopoint: { lat: 59.96106899949782, lng: 10.77183723449707 },
   },
   {
     id: 7,

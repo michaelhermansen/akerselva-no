@@ -10,6 +10,7 @@ import { fadeUp } from "../lib/animations";
 import scrollerItems from "../lib/data/scrollerItems";
 import { getPlaiceholder } from "plaiceholder";
 import { InferGetStaticPropsType } from "next";
+import { MapProvider } from "react-map-gl";
 
 export type ImagePlaceholdersType = InferGetStaticPropsType<
   typeof getStaticProps
@@ -72,8 +73,9 @@ export default function ExhibitionPage({
           >
             Opplev Akerselva slik Inger&nbsp;Munch så den
           </motion.h2>
-
-          <ExhibitionScroller imagePlaceholders={imagePlaceholders} />
+          <MapProvider>
+            <ExhibitionScroller imagePlaceholders={imagePlaceholders} />
+          </MapProvider>
         </Container>
       </section>
 

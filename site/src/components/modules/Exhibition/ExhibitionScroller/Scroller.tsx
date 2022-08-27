@@ -1,16 +1,17 @@
-import { AnimatePresence, motion } from "framer-motion";
+import classNames from "classnames";
+import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdCameraAlt, MdLocationPin } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
+import { useMap } from "react-map-gl";
+import NoSSR from "react-no-ssr";
 import useMeasure from "react-use-measure";
 import scrollerItems from "../../../../lib/data/scrollerItems";
+import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 import FrameContent from "./FrameContent";
 import ImageFocus from "./ImageFocus";
 import ScrollerText from "./ScrollerText";
-import NoSSR from "react-no-ssr";
-import classNames from "classnames";
-import { ImagePlaceholdersType } from "../../../../pages/inger-munch";
 
 interface ImageScrollerProps {
   imagePlaceholders: ImagePlaceholdersType;
@@ -23,11 +24,10 @@ export default function ImageScroller({
   const [itemInView, setItemInView] = useState(scrollerItems[0]);
   const [showMap, setShowMap] = useState(false);
   const router = useRouter();
+  const { mapMobile, mapDesktop } = useMap();
 
   const focusedItem = router.query.focus;
-
   const toggleMap = () => setShowMap((bool) => !bool);
-
   const windowHeight = typeof window === "undefined" ? 0 : window.innerHeight;
 
   const { ref, inView } = useInView({
@@ -37,6 +37,11 @@ export default function ImageScroller({
   const selectedItem = scrollerItems.find(
     (item) => item.id.toString() === router.query.focus
   );
+
+  useEffect(() => {
+    mapMobile?.resize();
+    mapDesktop?.resize();
+  }, [showMap, mapMobile, mapDesktop]);
 
   return (
     <>
@@ -71,6 +76,7 @@ export default function ImageScroller({
               imagePlaceholders={imagePlaceholders}
               showMap={showMap}
               itemInView={itemInView}
+              mapId="mapDesktop"
             />
           </div>
         </NoSSR>
@@ -95,6 +101,7 @@ export default function ImageScroller({
             imagePlaceholders={imagePlaceholders}
             showMap={showMap}
             itemInView={itemInView}
+            mapId="mapMobile"
           />
         </div>
 

@@ -11,12 +11,14 @@ interface FrameContentProps {
   showMap: boolean;
   itemInView: ScrollerItem;
   imagePlaceholders: ImagePlaceholdersType;
+  mapId: string;
 }
 
 export default function FrameContent({
   showMap,
   itemInView,
   imagePlaceholders,
+  mapId,
 }: FrameContentProps) {
   const router = useRouter();
   const buttonRef = useRef(null);
@@ -59,7 +61,7 @@ export default function FrameContent({
         aria-hidden={!showMap}
         hidden={!showMap}
       >
-        <Map />
+        <Map selectedItem={itemInView} mapId={mapId} />
       </div>
     </>
   );
