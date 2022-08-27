@@ -174,7 +174,7 @@ export default function ImageFocus({
               src={`/assets/exhibition-scroller/${idFocused}.jpg`}
               alt=""
               fill
-              sizes="80%"
+              sizes="80vw"
               priority
               className="rounded-lg object-cover"
               draggable={false}
