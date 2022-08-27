@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { MdCameraAlt, MdLocationPin } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
 import { useMap } from "react-map-gl";
-import RenderIfVisible from "react-render-if-visible";
 import scrollerItems from "../../../../lib/data/scrollerItems";
 import FrameContent from "./FrameContent";
 import ImageFocus from "./ImageFocus";
@@ -51,13 +50,11 @@ export default function ImageScroller() {
             <span>{showMap ? "Se bilde" : "Se kart"}</span>
           </button>
 
-          <RenderIfVisible visibleOffset={800} stayRendered>
-            <FrameContent
-              showMap={showMap}
-              itemInView={itemInView}
-              mapId="mapDesktop"
-            />
-          </RenderIfVisible>
+          <FrameContent
+            showMap={showMap}
+            itemInView={itemInView}
+            mapId="mapDesktop"
+          />
         </div>
 
         {/* Fixed frame on mobile */}
@@ -76,13 +73,11 @@ export default function ImageScroller() {
             {!showMap && <MdLocationPin size={24} />}
           </button>
 
-          <RenderIfVisible visibleOffset={800} stayRendered>
-            <FrameContent
-              showMap={showMap}
-              itemInView={itemInView}
-              mapId="mapMobile"
-            />
-          </RenderIfVisible>
+          <FrameContent
+            showMap={showMap}
+            itemInView={itemInView}
+            mapId="mapMobile"
+          />
         </div>
 
         {/* Text scroller */}

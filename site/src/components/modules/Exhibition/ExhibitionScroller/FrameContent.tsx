@@ -4,6 +4,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
 import { useRef } from "react";
+import RenderIfVisible from "react-render-if-visible";
 import scrollerItems from "../../../../lib/data/scrollerItems";
 import Map from "./Map";
 import { ScrollerItem } from "./ScrollerText";
@@ -61,7 +62,9 @@ export default function FrameContent({
         aria-hidden={!showMap}
         hidden={!showMap}
       >
-        <Map selectedItem={itemInView} mapId={mapId} />
+        <RenderIfVisible visibleOffset={800} stayRendered>
+          <Map selectedItem={itemInView} mapId={mapId} />
+        </RenderIfVisible>
       </div>
     </>
   );
