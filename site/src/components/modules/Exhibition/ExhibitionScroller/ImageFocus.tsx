@@ -112,9 +112,9 @@ export default function ImageFocus({
       exit={{ opacity: 0, transition: { duration: 0.3 } }}
       className="fixed inset-0 z-[99] flex items-center justify-center gap-10 bg-black px-6"
     >
-      <div className="absolute bottom-12 z-10 mt-8 -translate-x-12 md:relative md:translate-x-0">
+      <div className="absolute bottom-12 z-10 mt-8 -translate-x-14 md:relative md:translate-x-0">
         <button
-          className="rounded-full bg-white bg-opacity-20 p-4 text-white shadow-lg backdrop-blur-lg"
+          className="rounded-full bg-gray-medium p-6 text-white transition-colors hover:bg-opacity-75"
           ref={prevImageButtonRef}
           onClick={prevImage}
         >
@@ -149,9 +149,9 @@ export default function ImageFocus({
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute bottom-12 z-10 mt-8 translate-x-12 md:relative md:translate-x-0">
+      <div className="absolute bottom-12 z-10 mt-8 translate-x-14 md:relative md:translate-x-0">
         <button
-          className="rounded-full bg-white bg-opacity-20 p-4 text-white shadow-lg backdrop-blur-lg"
+          className="rounded-full bg-gray-medium p-6 text-white transition-colors hover:bg-opacity-75"
           ref={nextImageButtonRef}
           onClick={nextImage}
         >

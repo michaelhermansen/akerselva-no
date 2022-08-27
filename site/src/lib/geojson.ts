@@ -3,14 +3,14 @@ export interface LngLatObj {
   lat: number;
 }
 
-type Point = GeoJSON.FeatureCollection<
+type FeatureCollection = GeoJSON.FeatureCollection<
   GeoJSON.Geometry,
   GeoJSON.GeoJsonProperties
 >;
 
 export function generatePoint(
   geopoint: LngLatObj | undefined
-): Point | undefined {
+): FeatureCollection | undefined {
   if (!geopoint) return;
 
   return {
@@ -22,6 +22,26 @@ export function generatePoint(
         geometry: {
           type: "Point",
           coordinates: [geopoint.lng, geopoint.lat],
+        },
+      },
+    ],
+  };
+}
+
+export function generateLine(
+  pointArray: LngLatObj[] | undefined
+): FeatureCollection | undefined {
+  if (!pointArray) return;
+
+  return {
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        properties: {},
+        geometry: {
+          type: "LineString",
+          coordinates: pointArray.map((point) => [point.lng, point.lat]),
         },
       },
     ],

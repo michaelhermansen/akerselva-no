@@ -39,21 +39,25 @@ const scrollerItems = [
     id: 7,
     text: "Ved Kjelsås. Skolebarn på tur. En sti opover bakken fører fre til Maridalsvannet.",
     image: "/",
+    geopoint: { lat: 59.96008077042398, lng: 10.76960563659668 },
   },
   {
     id: 8,
     text: "Mustads spikerverk, anlagt i 1884.",
     image: "/",
+    geopoint: { lat: 59.95874876286054, lng: 10.76685905456543 },
   },
   {
     id: 9,
     text: "Mustad spikerverk, menn 4, arbeidere",
     image: "/",
+    geopoint: { lat: 59.95694402203049, lng: 10.765829086303711 },
   },
   {
     id: 10,
     text: "Mellem Kjelsås og Brekke.",
     image: "/",
+    geopoint: { lat: 59.95505323573176, lng: 10.765056610107422 },
   },
   {
     id: 11,
