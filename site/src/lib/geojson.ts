@@ -1,5 +1,3 @@
-import smooth from "to-smooth";
-
 export interface LngLatObj {
   lng: number;
   lat: number;
