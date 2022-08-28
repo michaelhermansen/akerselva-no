@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { indexOf } from "lodash";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useRef } from "react";
@@ -41,14 +42,20 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
   }, [router, selectedItem.id]);
 
   const nextImage = useCallback(() => {
-    if (selectedItem.id >= scrollerItems.length) focusImage(1);
-    else focusImage(selectedItem.id + 1);
-  }, [focusImage, selectedItem.id]);
+    const currentItemIndex = indexOf(scrollerItems, selectedItem);
+    if (currentItemIndex >= scrollerItems.length - 1) return;
+
+    const nextItem = scrollerItems[currentItemIndex + 1];
+    focusImage(nextItem.id);
+  }, [focusImage, selectedItem]);
 
   const prevImage = useCallback(() => {
-    if (selectedItem.id <= 1) focusImage(scrollerItems.length);
-    else focusImage(selectedItem.id - 1);
-  }, [focusImage, selectedItem.id]);
+    const currentItemIndex = indexOf(scrollerItems, selectedItem);
+    if (currentItemIndex <= 0) return;
+
+    const prevItem = scrollerItems[currentItemIndex - 1];
+    focusImage(prevItem.id);
+  }, [focusImage, selectedItem]);
 
   // Handle keyboard/swipe events
   useEffect(() => {
@@ -150,10 +157,10 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
       transition={{ duration: 0.2 }}
       className="fixed inset-0 z-[99] flex items-center justify-center gap-10 bg-black px-6"
     >
-      <div className="absolute bottom-12 z-10 mt-8 -translate-x-14 disabled:cursor-not-allowed disabled:opacity-40 md:relative md:translate-x-0">
+      <div className="absolute bottom-12 z-10 mt-8 -translate-x-14 md:relative md:translate-x-0">
         <button
           disabled={selectedItem.id === scrollerItems[0].id}
-          className="rounded-full bg-gray-medium p-6 text-white transition-colors active:bg-opacity-75"
+          className="rounded-full bg-gray-medium p-6 text-white transition-colors active:bg-opacity-75 disabled:cursor-not-allowed disabled:opacity-40"
           ref={prevImageButtonRef}
           onClick={prevImage}
         >

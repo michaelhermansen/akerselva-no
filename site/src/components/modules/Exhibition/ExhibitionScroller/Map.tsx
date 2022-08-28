@@ -24,27 +24,24 @@ interface MapProps {
   mapId: string;
 }
 
-const tempItemsWithGeopoints: LngLatObj[] = [];
+const geopoints: LngLatObj[] = [];
+
 scrollerItems.forEach((item) => {
-  if (item.geopoint) tempItemsWithGeopoints.push(item.geopoint);
+  if (item.geopoint) geopoints.push(item.geopoint);
 });
 
 export default function Map({ selectedItem, mapId }: MapProps) {
   const maps = useMap();
   const currentMap = maps[mapId];
-  const selectedItemIndex = indexOf(
-    scrollerItems,
-    scrollerItems.find((item) => item.id === selectedItem?.id)
-  );
+
+  const selectedItemIndex = indexOf(scrollerItems, selectedItem);
 
   const selectedItemGJ = generatePoint(selectedItem?.geopoint);
-  const entirePathGJ = generateLine(tempItemsWithGeopoints);
-  const visiblePathGJ = generateLine(
-    tempItemsWithGeopoints.slice(0, selectedItemIndex + 1)
-  );
+  const entirePathGJ = generateLine(geopoints);
+  const visiblePathGJ = generateLine(geopoints.slice(0, selectedItemIndex + 1));
 
   useEffect(() => {
-    currentMap?.easeTo({ center: selectedItem?.geopoint, duration: 500 });
+    currentMap?.easeTo({ center: selectedItem?.geopoint, duration: 200 });
   }, [currentMap, selectedItem]);
 
   return (
@@ -64,17 +61,19 @@ export default function Map({ selectedItem, mapId }: MapProps) {
       style={{ position: "absolute", width: "100%", height: "100%" }}
       logoPosition="top-left"
     >
-      <Source id="entire-path" type="geojson" data={entirePathGJ}>
+      {/* <Source id="entire-path" type="geojson" data={entirePathGJ}>
         <Layer {...entirePathStyle} />
-      </Source>
-      <Source id="visible-path" type="geojson" data={visiblePathGJ}>
-        <Layer {...visiblePathStyle} />
-      </Source>
-      {selectedItemGJ && (
-        <Source id="selected-item" type="geojson" data={selectedItemGJ}>
-          <Layer {...selectedItemBgStyle} />
-          <Layer {...selectedItemStyle} />
-        </Source>
+      </Source> */}
+      {selectedItem?.geopoint && (
+        <>
+          <Source id="visible-path" type="geojson" data={visiblePathGJ}>
+            <Layer {...visiblePathStyle} />
+          </Source>
+          <Source id="selected-item" type="geojson" data={selectedItemGJ}>
+            <Layer {...selectedItemBgStyle} />
+            <Layer {...selectedItemStyle} />
+          </Source>
+        </>
       )}
     </ReactMap>
   );

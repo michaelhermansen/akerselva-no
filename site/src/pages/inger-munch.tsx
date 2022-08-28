@@ -12,7 +12,10 @@ import { fadeUp } from "../lib/animations";
 export default function ExhibitionPage() {
   return (
     <>
-      <Metadata title="Inger Munch og Akerselva" description="..." />
+      <Metadata
+        title="Inger Munch og Akerselva – Akerselva Friluftsmuseum"
+        description="..."
+      />
 
       <ExhHeader />
 

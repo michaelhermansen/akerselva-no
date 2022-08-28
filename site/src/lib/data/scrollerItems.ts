@@ -1,4 +1,6 @@
-[
+
+import type { ScrollerItem } from "../../components/modules/Exhibition/ExhibitionScroller/ScrollerText";
+const scrollerItems: ScrollerItem[] = [
   {
     "id": 3,
     "text": "Maridalsvannet danner Akerselven ved Oset.",
@@ -1016,3 +1018,4 @@
     }
   }
 ]
+export default scrollerItems;

@@ -5,7 +5,6 @@ import { useInView } from "react-intersection-observer";
 export interface ScrollerItem {
   id: number;
   text: string;
-  image: string;
   geopoint?: {
     lng: number;
     lat: number;

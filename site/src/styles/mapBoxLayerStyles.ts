@@ -25,11 +25,12 @@ export const entirePathStyle: LayerProps = {
   type: "line",
   paint: {
     "line-color": "#aaaaaa",
-    "line-width": 3,
+    "line-width": 2,
   },
   layout: {
     "line-cap": "round",
     "line-join": "round",
+    "line-round-limit": 0,
   },
 };
 
@@ -38,7 +39,7 @@ export const visiblePathStyle: LayerProps = {
   type: "line",
   paint: {
     "line-color": "#000000",
-    "line-width": 4,
+    "line-width": 3,
   },
   layout: {
     "line-cap": "round",
