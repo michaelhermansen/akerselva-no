@@ -21,7 +21,7 @@ export default function ExhibitionPage() {
 
       <section id="content">
         <Container>
-          <p className="mx-auto max-w-[40ch] px-4 pt-32 pb-32 text-center text-xl leading-normal text-white md:pt-52 md:text-2xl lg:text-3xl">
+          <p className="mx-auto max-w-[40ch] px-4 pt-32 pb-32 text-center text-xl text-white md:pt-52 md:text-2xl lg:text-3xl">
             I 1927 fikk Inger et kamera av sin bror Edvard Munch og med tiden
             ble hun en flink fotograf som på oppfordring av sin bror
             fotograferte akerselven fra Maridalen i nord til kysten i sør.
@@ -59,7 +59,7 @@ export default function ExhibitionPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="px-4 pt-48 pb-20 text-center text-2xl leading-normal text-white sm:pb-24 sm:text-3xl"
+            className="px-4 pt-48 pb-4 text-center text-2xl text-white sm:text-3xl md:pb-24"
           >
             Opplev Akerselva slik Inger&nbsp;Munch så den
           </motion.h2>
