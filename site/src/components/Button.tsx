@@ -53,7 +53,7 @@ function ArrowIcon({ visible }: { visible: boolean }) {
       }}
       transition={{ type: "tween", duration: 0.2, ease: "easeInOut" }}
     >
-      <MdArrowForward className="mr-2" />
+      <MdArrowForward className="mr-2 hidden sm:block" />
     </motion.span>
   );
 }
