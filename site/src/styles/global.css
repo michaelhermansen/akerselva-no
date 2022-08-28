@@ -4,26 +4,32 @@
 
 @layer components {
   .btn {
-    @apply flex max-w-max items-center rounded-xs border border-black border-opacity-5 bg-white py-3 px-5 transition-all hover:rounded-full hover:bg-gray-medium hover:text-white;
+    @apply flex max-w-max items-center rounded-xs border border-black border-opacity-10 bg-white py-3 px-5 transition-all hover:rounded-full hover:bg-gray-medium hover:text-white;
   }
 }
 
-::-webkit-media-controls-start-playback-button {
-  display: none !important;
-  -webkit-appearance: none;
-}
+@layer base {
+  ::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+  }
 
-::selection {
-  @apply bg-yellow bg-opacity-75;
-}
+  ::selection {
+    @apply bg-yellow bg-opacity-75;
+  }
 
-html,
-body {
-  @apply scroll-pt-10 bg-gray-light;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
-}
+  * {
+    @apply outline-yellow;
+  }
 
-img {
-  -webkit-touch-callout: none;
+  html,
+  body {
+    @apply scroll-pt-10 bg-gray-light;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    -webkit-touch-callout: none;
+  }
 }

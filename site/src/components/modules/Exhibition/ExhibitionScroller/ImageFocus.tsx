@@ -26,8 +26,19 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
   );
 
   const closeFocus = useCallback(() => {
-    router.replace({ query: {} }, undefined, { shallow: true });
-  }, [router]);
+    function getListItemScrollPos() {
+      const listItem: HTMLLIElement | null = document.querySelector(
+        `#image-${selectedItem.id}`
+      );
+      return (listItem?.offsetTop || 0) - window.innerHeight * 0.4 + 4;
+    }
+
+    window.scroll({ top: getListItemScrollPos() });
+
+    router.replace({ query: {} }, undefined, {
+      shallow: true,
+    });
+  }, [router, selectedItem.id]);
 
   const nextImage = useCallback(() => {
     if (selectedItem.id >= scrollerItems.length) focusImage(1);
@@ -139,8 +150,9 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
       transition={{ duration: 0.2 }}
       className="fixed inset-0 z-[99] flex items-center justify-center gap-10 bg-black px-6"
     >
-      <div className="absolute bottom-12 z-10 mt-8 -translate-x-14 md:relative md:translate-x-0">
+      <div className="absolute bottom-12 z-10 mt-8 -translate-x-14 disabled:cursor-not-allowed disabled:opacity-40 md:relative md:translate-x-0">
         <button
+          disabled={selectedItem.id === scrollerItems[0].id}
           className="rounded-full bg-gray-medium p-6 text-white transition-colors active:bg-opacity-75"
           ref={prevImageButtonRef}
           onClick={prevImage}
@@ -156,7 +168,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="h-auto w-full max-w-5xl origin-top"
+          className="mb-10 h-auto w-full max-w-5xl origin-top"
         >
           <div className="relative grid aspect-video max-h-[80vh] w-full max-w-5xl place-items-center">
             <Image
@@ -168,7 +180,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
               draggable={false}
             />
           </div>
-          <p className="max-w-3xl px-2 pt-4 pb-10 text-white text-opacity-75">
+          <p className="max-w-3xl px-2 pt-4 text-white text-opacity-75">
             {selectedItem.text}
           </p>
         </motion.div>
@@ -176,7 +188,10 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
 
       <div className="absolute bottom-12 z-10 mt-8 translate-x-14 md:relative md:translate-x-0">
         <button
-          className="rounded-full bg-gray-medium p-6 text-white transition-colors active:bg-opacity-75"
+          disabled={
+            selectedItem.id === scrollerItems[scrollerItems.length - 1].id
+          }
+          className="rounded-full bg-gray-medium p-6 text-white transition-colors active:opacity-75 disabled:cursor-not-allowed disabled:opacity-40"
           ref={nextImageButtonRef}
           onClick={nextImage}
         >

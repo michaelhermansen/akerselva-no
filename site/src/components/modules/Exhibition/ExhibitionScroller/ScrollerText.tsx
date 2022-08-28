@@ -30,6 +30,7 @@ export default function ScrollerText({
 
   return (
     <li
+      id={`image-${item.id}`}
       ref={ref}
       className={classNames(
         "py-3 text-xl text-white text-opacity-50 sm:text-2xl",
