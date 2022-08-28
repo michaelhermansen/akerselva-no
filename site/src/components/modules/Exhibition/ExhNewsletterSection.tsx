@@ -27,7 +27,7 @@ export default function ExhNewsletterSection() {
               viewport={{ once: true }}
               className="gap-4 text-white"
             >
-              <AnimatePresence initial={false} mode="wait">
+              <AnimatePresence initial={false} mode="popLayout">
                 <motion.h2
                   key={`h2-${submitted}`}
                   initial={{ opacity: 0, y: 40 }}
@@ -46,15 +46,16 @@ export default function ExhNewsletterSection() {
                   {submitted &&
                     "Takk for at du ønsker å følge med på Akerselva Friluftsmuseum"}
                 </motion.h2>
+              </AnimatePresence>
+              <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
                   key={`input-${submitted}`}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -40 }}
                   transition={{
-                    type: "tween",
-                    ease: "easeOut",
-                    duration: 0.4,
+                    type: "spring",
+                    duration: 0.8,
                     delay: 0.3,
                   }}
                   className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row md:max-w-lg"
@@ -74,7 +75,7 @@ export default function ExhNewsletterSection() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                       />
-                      <button className="mx-auto min-w-max max-w-max rounded-xs bg-yellow py-3 px-5 text-black transition-colors hover:bg-opacity-80">
+                      <button className="mx-auto min-w-max max-w-max rounded-xs bg-yellow py-3 px-5 text-black transition-all hover:brightness-110">
                         Meld meg på
                       </button>
                     </>

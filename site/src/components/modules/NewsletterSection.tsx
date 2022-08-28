@@ -32,7 +32,7 @@ export default function NewsletterSection() {
               viewport={{ once: true }}
               className="grid place-items-center gap-4"
             >
-              <AnimatePresence initial={false} mode="wait">
+              <AnimatePresence initial={false} mode="popLayout">
                 <motion.h2
                   key={`h2-${submitted}`}
                   initial={{ opacity: 0, y: 40 }}
@@ -51,14 +51,16 @@ export default function NewsletterSection() {
                   {submitted &&
                     "Takk for at du ønsker å følge med på Akerselva Friluftsmuseum"}
                 </motion.h2>
+              </AnimatePresence>
+
+              <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -40 }}
                   transition={{
-                    type: "tween",
-                    ease: "easeOut",
-                    duration: 0.5,
+                    type: "spring",
+                    duration: 0.8,
                     delay: 0.3,
                   }}
                   key={`input-${submitted}`}
@@ -75,7 +77,7 @@ export default function NewsletterSection() {
                         id="email"
                         required
                         placeholder="E-post"
-                        className="mb-3 w-full rounded-xs border border-black border-opacity-5 py-3 px-5"
+                        className="mb-3 w-full rounded-xs border border-black border-opacity-10 py-3 px-5"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                       />
