@@ -64,7 +64,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
                 autoPlay
                 playsInline
                 loop
-                className="h-full w-auto object-cover"
+                className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-black bg-opacity-20" />
             </div>

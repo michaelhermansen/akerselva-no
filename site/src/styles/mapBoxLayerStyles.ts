@@ -38,7 +38,7 @@ export const visiblePathStyle: LayerProps = {
   type: "line",
   paint: {
     "line-color": "#000000",
-    "line-width": 3,
+    "line-width": 4,
   },
   layout: {
     "line-cap": "round",

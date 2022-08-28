@@ -59,6 +59,7 @@ export default function Map({ selectedItem, mapId }: MapProps) {
         bearing: -25,
         pitch: 0,
       }}
+      keyboard={false}
       padding={{ bottom: 30, left: 30, top: 0, right: 0 }}
       style={{ position: "absolute", width: "100%", height: "100%" }}
       logoPosition="top-left"
