@@ -3,7 +3,7 @@ const fs = require("fs");
 const SORT_OUTPUT = true;
 const UPDATE_SCROLLER_ITEMS = true;
 
-const input = fs.readFileSync(`${__dirname}/input/scroller-data.tsv`, {
+const input = fs.readFileSync(`${__dirname}/input/scroller-data-1sep.tsv`, {
   encoding: "utf-8",
 });
 

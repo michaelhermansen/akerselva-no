@@ -41,7 +41,7 @@
   },
   {
     "id": 16,
-    "text": "Brekke gård - en av Akers eldste gårder. Den eldst kjente eier var Arnfinn Tordsson som kjøpte den i 1936.",
+    "text": "Brekke gård - en av Akers eldste gårder.",
     "geopoint": {
       "lng": 10.76831873153513,
       "lat": 59.968271519938774
@@ -257,7 +257,7 @@
   },
   {
     "id": 28,
-    "text": "Da Hans Nielsen Hauge kom ut av fengslet i 1811, anla han Bakke Mølle. I dette lille huset like ved møllen skal han ha bodd i en tid.",
+    "text": "Da Hans Nielsen Hauge kom ut av fengslet i 1811, anla han Bakke Mølle.",
     "geopoint": {
       "lng": 10.764255083052158,
       "lat": 59.94809991831949
@@ -353,7 +353,7 @@
   },
   {
     "id": 52,
-    "text": "Treschows bro. Har sitt navn efter admiralitetsråd Gerhard Treschow som i 1712 anla en oljemølle og et sepesyderi ved Bjølsen.",
+    "text": "Treschows bro. Oppkalt efter admiralitetsråd Gerhard Treschow som i 1712 anla en oljemølle og et sepesyderi ved Bjølsen.",
     "geopoint": {
       "lng": 10.767383200962096,
       "lat": 59.941143668275195
@@ -425,7 +425,7 @@
   },
   {
     "id": 58,
-    "text": "Her var et gammelt møllested. Myrens mekaniske verksted er anlagt 1854.  I bakgrunnen Bentse bro.",
+    "text": "Myrens mekaniske verksted er anlagt 1854.  I bakgrunnen Bentse bro.",
     "geopoint": {
       "lng": 10.758204387491388,
       "lat": 59.935858910464056
@@ -545,7 +545,7 @@
   },
   {
     "id": 70,
-    "text": "Våghalsen Barkestampe - opført omkring 1800. I bakgrunnen Vøien. Knud Graahs tidligere bomullsspinneri anlagt i 1846.",
+    "text": "Våghalsen Barkestampe - opført omkring 1800. I bakgrunnen Vøien.",
     "geopoint": {
       "lng": 10.75708905286501,
       "lat": 59.92993632670774
@@ -633,7 +633,7 @@
   },
   {
     "id": 81,
-    "text": "Gamle Aker kirke og Telthusgaten. Telthusgaten har sitt navn efter en militær magasinbygning, et såkalt telthus som blev opført i 1700-årene.",
+    "text": "Gamle Aker kirke og Telthusgaten. Telthusgaten har sitt navn efter en militær magasinbygning, opført i 1700-årene.",
     "geopoint": {
       "lng": 10.754223373001514,
       "lat": 59.92388125681276
@@ -641,7 +641,7 @@
   },
   {
     "id": 95,
-    "text": "Nedre Foss eller \"Kongens Mølle\". \"Kongens Mølle\" solgtes av Christian V i 1672 til myntmester Fredrik Grüner. I 1758 ble den solgt til vicelagmann Nielsen, men kom i 1802 atter tilbake til familien Grüner som eide møllen til ut i 1880-årene.",
+    "text": "Nedre Foss eller \"Kongens Mølle\".",
     "geopoint": {
       "lng": 10.754112669920636,
       "lat": 59.92375548062415
@@ -729,7 +729,7 @@
   },
   {
     "id": 92,
-    "text": "Grünerbroen. Grünerbroen het i sagatiden Frysja bro, så Akersbroen, senere Grüners bro. Den er den eldste broforbindelsen over Akerselven.",
+    "text": "Grünerbroen. Den er den eldste broforbindelsen over Akerselven.",
     "geopoint": {
       "lng": 10.754138202814287,
       "lat": 59.92079310652697
@@ -857,7 +857,7 @@
   },
   {
     "id": 113,
-    "text": "Fiskehallen ved Vaterlands bro blev anlagt i 1855, men fiskehandelen her har foregått fra gamle dager. Den skjedde tidligere fra båtene.",
+    "text": "Fiskehallen ved Vaterlands bro blev anlagt i 1855, men fiskehandelen her har foregått fra gamle dager.",
     "geopoint": {
       "lng": 10.758180507113762,
       "lat": 59.913117405367494
@@ -881,7 +881,7 @@
   },
   {
     "id": 111,
-    "text": "Smalgangen - er den gamle forstadsgate som lengst har beholdt sitt preg fra 16 - 1700-årene. Takkammeret til venstre var for en tid Olafia Johansdottirs redningshjem.",
+    "text": "Smalgangen - den gamle forstadsgate som lengst har beholdt sitt preg fra 16 - 1700-årene.",
     "geopoint": {
       "lng": 10.758578501052192,
       "lat": 59.91257584827019
