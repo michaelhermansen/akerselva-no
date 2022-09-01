@@ -9,7 +9,7 @@ const api = {
           Subtitle: "Aktivitet – Vår / Sommer",
           ImageTitle: "Opplev Akerselvas nye rutebåt, gjennom kulverten.",
           Image: {
-            url: "/assets/boat-thumb.png",
+            url: "/assets/rutebat-thumb.png",
           },
           Description:
             "Under togsporene på Oslo S, mellom Vaterland og Bjørvika ligger Akerselva i kulvert. Vi jobber for å tilgjengeliggjøre den siste delen av Akerselva gjennom kunst- og kulturopplevelser!",
