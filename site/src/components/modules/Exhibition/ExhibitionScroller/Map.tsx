@@ -9,7 +9,6 @@ import {
   LngLatObj,
 } from "../../../../lib/geojson";
 import {
-  entirePathStyle,
   selectedItemBgStyle,
   selectedItemStyle,
   visiblePathStyle,
@@ -37,11 +36,10 @@ export default function Map({ selectedItem, mapId }: MapProps) {
   const selectedItemIndex = indexOf(scrollerItems, selectedItem);
 
   const selectedItemGJ = generatePoint(selectedItem?.geopoint);
-  const entirePathGJ = generateLine(geopoints);
   const visiblePathGJ = generateLine(geopoints.slice(0, selectedItemIndex + 1));
 
   useEffect(() => {
-    currentMap?.easeTo({ center: selectedItem?.geopoint, duration: 200 });
+    currentMap?.easeTo({ center: selectedItem?.geopoint, duration: 300 });
   }, [currentMap, selectedItem]);
 
   return (
@@ -52,7 +50,7 @@ export default function Map({ selectedItem, mapId }: MapProps) {
       initialViewState={{
         latitude: scrollerItems[0].geopoint?.lat,
         longitude: scrollerItems[0].geopoint?.lng,
-        zoom: 11,
+        zoom: 12,
         bearing: -25,
         pitch: 0,
       }}
@@ -61,9 +59,6 @@ export default function Map({ selectedItem, mapId }: MapProps) {
       style={{ position: "absolute", width: "100%", height: "100%" }}
       logoPosition="top-left"
     >
-      {/* <Source id="entire-path" type="geojson" data={entirePathGJ}>
-        <Layer {...entirePathStyle} />
-      </Source> */}
       {selectedItem?.geopoint && (
         <>
           <Source id="visible-path" type="geojson" data={visiblePathGJ}>

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { MdCameraAlt, MdLocationPin } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
 import { useMap } from "react-map-gl";
+import useMeasure from "react-use-measure";
 import scrollerItems from "../../../../lib/data/scrollerItems";
 import FrameContent from "./FrameContent";
 import ImageFocus from "./ImageFocus";
@@ -18,6 +19,8 @@ export default function ImageScroller() {
 
   const focusedItem = router.query.focus;
   const toggleMap = () => setShowMap((bool) => !bool);
+
+  const [frameRef, frameBounds] = useMeasure();
 
   const { ref, inView } = useInView({
     rootMargin: "-40% 0px -60% 0px",
@@ -41,10 +44,13 @@ export default function ImageScroller() {
 
       <div ref={ref} className="block gap-8 text-white md:flex">
         {/* Sticky frame on desktop */}
-        <div className="sticky top-[calc(40vh-200px)] hidden h-[400px] flex-1 overflow-hidden rounded-sm bg-gray-medium md:block">
+        <div
+          ref={frameRef}
+          className="sticky top-[calc(40vh-30vh)] hidden h-[60vh] flex-1 overflow-hidden rounded-sm border border-black hover:border-gray-dark md:block"
+        >
           <button
             onClick={toggleMap}
-            className="absolute bottom-4 left-4 z-50 flex items-center gap-2 rounded-full bg-black bg-opacity-70 py-2 pl-4 pr-6 text-white text-opacity-75 shadow-lg backdrop-blur-lg transition-colors hover:text-opacity-100"
+            className="absolute bottom-4 left-4 z-50 flex items-center gap-2 rounded-full bg-gray-medium bg-opacity-60 py-2 pl-4 pr-6 text-white text-opacity-75 backdrop-blur-lg transition-colors hover:text-opacity-100"
           >
             {showMap ? <MdCameraAlt /> : <MdLocationPin />}
             <span>{showMap ? "Se bilde" : "Se kart"}</span>
@@ -60,13 +66,13 @@ export default function ImageScroller() {
         {/* Fixed frame on mobile */}
         <div
           className={classNames(
-            "fixed bottom-6 right-6 z-50 h-[180px] w-2/3 flex-1 overflow-hidden rounded-sm bg-gray-medium shadow-2xl transition-opacity duration-300 sm:h-[250px] sm:w-2/3 md:hidden",
+            "fixed bottom-6 right-6 z-50 h-[50vw] w-[60vw] overflow-hidden rounded-sm border border-gray-dark transition-opacity duration-300 md:hidden",
             { "pointer-events-none opacity-0": !inView }
           )}
         >
           <button
             onClick={toggleMap}
-            className="absolute top-4 right-4 z-50 grid h-12 w-12 place-items-center rounded-full bg-black bg-opacity-70 text-white text-opacity-75 shadow-lg backdrop-blur-lg transition-colors hover:text-opacity-100"
+            className="absolute top-4 right-4 z-50 grid h-12 w-12 place-items-center rounded-full bg-gray-medium bg-opacity-60 text-white text-opacity-75 backdrop-blur-lg transition-colors hover:text-opacity-100"
             title={showMap ? "Se bilde" : "Se kart"}
           >
             {showMap && <MdCameraAlt size={24} />}
@@ -84,8 +90,8 @@ export default function ImageScroller() {
         <div
           className="flex-1"
           style={{
-            paddingTop: 400 / 3,
-            paddingBottom: 400 * 0.5,
+            paddingTop: frameBounds.height / 3,
+            paddingBottom: frameBounds.height * 0.5,
           }}
         >
           <ul>

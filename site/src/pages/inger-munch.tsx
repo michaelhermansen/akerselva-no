@@ -59,7 +59,7 @@ export default function ExhibitionPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="px-4 pt-48 pb-4 text-center text-2xl text-white sm:text-3xl md:pb-24"
+            className="px-4 pt-48 pb-20 text-center text-2xl text-white sm:text-3xl md:pb-24"
           >
             Opplev Akerselva slik Inger&nbsp;Munch så den
           </motion.h2>
