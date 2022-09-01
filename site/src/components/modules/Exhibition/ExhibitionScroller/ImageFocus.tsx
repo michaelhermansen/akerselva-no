@@ -3,7 +3,7 @@ import { indexOf } from "lodash";
 import Image from "next/future/image";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useRef } from "react";
-import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { MdArrowBack, MdArrowForward, MdClose } from "react-icons/md";
 import { lock, unlock } from "tua-body-scroll-lock";
 import { fadeUp } from "../../../../lib/animations";
 import scrollerItems from "../../../../lib/data/scrollerItems";
@@ -31,7 +31,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
       const listItem: HTMLLIElement | null = document.querySelector(
         `#image-${selectedItem.id}`
       );
-      return (listItem?.offsetTop || 0) - window.innerHeight * 0.4 + 4;
+      return (listItem?.offsetTop || 0) - window.innerHeight * 0.4 + 8;
     }
 
     window.scroll({ top: getListItemScrollPos() });
@@ -67,11 +67,15 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
     let touchStartX: number | undefined;
 
     function handleTouchStart(e: TouchEvent) {
+      if (e.touches.length > 1) return;
+
       touchStartY = e.touches[0].clientY;
       touchStartX = e.touches[0].clientX;
     }
 
     function handleTouchMove(e: TouchEvent) {
+      if (e.touches.length > 1) return;
+
       if (!touchStartY || !touchStartX) return;
       if (e.target === nextButtonEl || e.target === prevButtonEl) return;
 
@@ -89,8 +93,6 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
         right: deltaX > threshold,
       };
 
-      if (swipe.up) return;
-      if (swipe.down) return closeFocus();
       if (swipe.left) return nextImage();
       if (swipe.right) return prevImage();
     }
@@ -155,9 +157,9 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 z-[99] flex items-center justify-center gap-10 bg-black px-6"
+      className="fixed inset-0 z-[99] flex items-center justify-center gap-10 overflow-y-scroll overscroll-y-contain bg-black px-8 pt-8 pb-56 md:pb-8"
     >
-      <div className="absolute bottom-12 z-10 mt-8 -translate-x-14 md:relative md:translate-x-0">
+      <div className="fixed bottom-12 z-10 -translate-x-14 md:relative md:translate-x-0">
         <button
           disabled={selectedItem.id === scrollerItems[0].id}
           className="rounded-full bg-gray-medium p-6 text-white transition-colors active:bg-opacity-75 disabled:cursor-not-allowed disabled:opacity-40"
@@ -175,25 +177,24 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          className="mb-10 h-auto w-full max-w-5xl origin-top"
+          className="w-full max-w-6xl"
         >
-          <div className="relative grid aspect-video max-h-[80vh] w-full max-w-5xl place-items-center">
+          <div className="relative grid aspect-square max-h-[70vh] w-full place-items-center rounded-md border border-gray-medium bg-black">
             <Image
               src={`/assets/exhibition-scroller/${selectedItem.id}.jpg`}
               alt={selectedItem.text}
               fill
               sizes="80vw"
-              className="rounded-lg object-cover"
-              draggable={false}
+              className="object-contain"
             />
           </div>
-          <p className="max-w-3xl px-2 pt-4 text-white text-opacity-75">
+          <p className="mx-auto max-w-3xl px-2 pt-6 text-center text-white text-opacity-75">
             {selectedItem.text}
           </p>
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute bottom-12 z-10 mt-8 translate-x-14 md:relative md:translate-x-0">
+      <div className="fixed bottom-12 z-10 translate-x-14 md:relative md:translate-x-0">
         <button
           disabled={
             selectedItem.id === scrollerItems[scrollerItems.length - 1].id

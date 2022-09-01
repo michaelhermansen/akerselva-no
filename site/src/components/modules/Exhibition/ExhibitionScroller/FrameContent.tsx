@@ -40,7 +40,7 @@ export default function FrameContent({
       <div
         ref={buttonRef}
         {...buttonProps}
-        className="group absolute inset-0 z-20 bg-black"
+        className="group absolute inset-0 z-20 bg-black focus:outline-none"
         aria-hidden={showMap}
         hidden={showMap}
       >
