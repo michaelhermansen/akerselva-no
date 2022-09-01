@@ -10,6 +10,11 @@ import scrollerItems from "../../../../lib/data/scrollerItems";
 import Map from "./Map";
 import { ScrollerItem } from "./ScrollerText";
 
+const verticalImages = [
+  25, 26, 29, 30, 31, 44, 47, 53, 54, 60, 61, 71, 72, 81, 90, 91, 92, 95, 96,
+  105, 116, 119,
+];
+
 interface FrameContentProps {
   showMap: boolean;
   itemInView: ScrollerItem;
@@ -55,7 +60,7 @@ export default function FrameContent({
             fill
             sizes="80vw"
             className={classNames(
-              "scale-105 object-cover transition-opacity duration-75",
+              "object-cover transition-opacity duration-75",
               {
                 "opacity-0": item.id !== itemInView.id,
               }
