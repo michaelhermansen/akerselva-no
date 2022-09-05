@@ -8,7 +8,7 @@ import IngerMunchLogo from "../../IngerMunchLogo";
 
 export default function ExhHeader() {
   return (
-    <header className="relative h-[740px] max-h-screen overflow-hidden overflow-y-hidden sm:h-[740px] md:h-[800px] lg:h-screen">
+    <header className="relative h-[740px] min-h-[90vh] overflow-hidden overflow-y-hidden lg:min-h-screen">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -42,7 +42,7 @@ export default function ExhHeader() {
         </div>
 
         <motion.div
-          className="relative z-50 grid w-[240px] place-items-center py-12 sm:w-[340px] md:w-[440px]"
+          className="relative z-50 grid w-[240px] place-items-center py-12 sm:w-[340px] md:w-[400px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{

@@ -53,7 +53,7 @@ export default function LandingPageSection({
             </h2>
           </div>
 
-          <p className="max-w-[70ch] leading-relaxed text-gray-medium md:text-xl">
+          <p className="max-w-[70ch] leading-relaxed text-gray-medium md:text-xl md:leading-relaxed">
             {section.attributes.Description}
           </p>
 

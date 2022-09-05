@@ -14,18 +14,20 @@ export default function AboutSection() {
           </h2>
         </div>
         <div className="col-span-3 space-y-6">
-          <p className="max-w-[70ch] leading-relaxed text-black md:text-xl">
-            Akerselva er en av Oslos viktigste attraksjoner og historiske
-            holdepunkter. Akerselva Friluftsmuseum jobber for å
-            tilgjengeliggjøre elva i dag og synliggjøre den historiske
-            viktigheten. Tjo og hei! Vi har jobbet med utviklingen er en av
-            Oslos viktigste attraksjoner og historiske holdepunkter. Akerselva
-            Friluftsmuseum jobber for å tilgjengeliggjøre elva i dag og
-            synliggjøre den historiske viktigheten. Tjo og hei!
-          </p>
-          <ButtonLink href="mailto:hei@akerselva.no">
-            Kontakt på e-post
-          </ButtonLink>
+          <div className="max-w-[70ch] leading-relaxed text-black md:text-xl md:leading-relaxed">
+            <p className="mb-4">
+              Akerselva Friluftsmuseum lager utstillinger og aktiviteter som
+              forsterker opplevelsen av Oslos viktigste byrom. Vi trekker linjer
+              mellom fortid, nåtid og fremtid og får frem nye perspektiver på
+              Akerselva i samarbeid med institusjoner og aktører langs elva.
+            </p>
+            <p>
+              Akerselva Friluftsmuseum er skybasert, men regner ned i byrommet i
+              form av stedsspesifikke prosjekter. Med Maridalsvannet i ryggen
+              har vi en beskjeden ambisjon om å seile frem som et av verdens
+              beste friluftsmuseum.
+            </p>
+          </div>
         </div>
       </section>
     </Container>

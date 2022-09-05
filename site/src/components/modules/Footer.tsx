@@ -20,15 +20,21 @@ export default function Footer() {
       </button>
 
       <Container className="grid gap-4 py-20 lg:grid-cols-2 lg:pb-48 lg:pt-32">
-        <div className="justify-center py-1 text-2xl lg:flex lg:text-base">
-          <p>Akerselva Friluftsmuseum</p>
+        <div className="justify-center py-1 lg:flex">
+          <p className="mb-8 max-w-max text-xl leading-tight">
+            Akerselva
+            <br />
+            Friluftsmuseum
+          </p>
         </div>
 
         <div className="justify-center lg:flex">
           <ul>
             <ListLink href="tel:+47 98 69 20 42">+47 98 69 20 42</ListLink>
             <ListLink href="mailto:hei@akerselva.no">hei@akerselva.no</ListLink>
-            <ListLink href="/">@akerselva_friluftsmuseum</ListLink>
+            <ListLink href="https://www.instagram.com/akerselva_friluftsmuseum/">
+              @akerselva_friluftsmuseum
+            </ListLink>
           </ul>
         </div>
       </Container>

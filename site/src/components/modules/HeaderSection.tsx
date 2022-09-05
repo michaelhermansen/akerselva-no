@@ -69,8 +69,8 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
               <div className="absolute inset-0 bg-black bg-opacity-20" />
             </div>
 
-            <p className="absolute top-0 max-w-[25ch] py-12 px-8 text-3xl leading-tight text-white lg:px-14 lg:text-5xl">
-              Kunst- og kulturopplevelser langs Akerselva
+            <p className="absolute top-0 max-w-[28ch] py-12 px-8 text-3xl leading-tight text-white lg:px-14 lg:text-5xl">
+              Aktiviteter og kulturopplevelser langs Akerselva
               <MdArrowDownward
                 className="mx-2 hidden transition-transform group-hover:translate-y-1 lg:inline"
                 size={44}
