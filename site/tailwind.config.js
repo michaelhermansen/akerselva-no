@@ -2,6 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      sans: ["Everett", "Helvetica", "Arial", "sans-serif"],
+    },
+    fontWeight: {
+      normal: 400,
+      medium: 500,
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",

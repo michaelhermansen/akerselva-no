@@ -20,20 +20,6 @@ export const selectedItemBgStyle: LayerProps = {
   },
 };
 
-export const entirePathStyle: LayerProps = {
-  id: "entire-path",
-  type: "line",
-  paint: {
-    "line-color": "#aaaaaa",
-    "line-width": 2,
-  },
-  layout: {
-    "line-cap": "round",
-    "line-join": "round",
-    "line-round-limit": 0,
-  },
-};
-
 export const visiblePathStyle: LayerProps = {
   id: "visible-path",
   type: "line",
