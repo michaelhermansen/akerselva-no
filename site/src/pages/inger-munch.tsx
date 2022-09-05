@@ -21,31 +21,27 @@ export default function ExhibitionPage() {
 
       <section id="content">
         <Container>
-          <p className="mx-auto max-w-[40ch] px-4 pt-32 pb-32 text-center text-xl text-white md:pt-52 md:text-2xl lg:text-3xl">
-            I 1927 fikk Inger et kamera av sin bror Edvard Munch og med tiden
-            ble hun en flink fotograf som på oppfordring av sin bror
-            fotograferte akerselven fra Maridalen i nord til kysten i sør.
-          </p>
+          <div className="mx-auto max-w-[55ch] px-4 pt-32 pb-32 text-center text-xl text-white md:pt-52 md:text-2xl lg:text-2xl">
+            <p className="mb-4">
+              «Sommeren 1929 foreslo min bror, Edvard Munch, mig at jeg skulde
+              fotografere våre gamle boliger på Grünerløkken. Jeg gjorde så og
+              drog også op til Brekke og Kjelsås Gård hvor vi bodde somrene 1875
+              og 76.
+            </p>
+            <p>
+              Så fikk jeg den idé å ta billeder langs hele Akerselven, fra dens
+              begynnelse ved Oset i Maridalen og til dens utløp i Bjørviken»
+            </p>
+          </div>
 
-          <ExhImageQuote
-            quote="Ja Akerselven blir mer aktuel jo ældre den blir"
-            cite="Edvard Munch"
-            imageOrientation="landscape"
-          />
           <ExhImageQuote
             quote="Nu er det svært morsomt med Akerselven. En arbeiderkone sa til mig; det var da hygeligt av Dem å trekke Akerselven frem den som gir så mange brød."
             cite="Inger Munch"
-            imageOrientation="portrait"
-            reverse
+            imageOrientation="landscape"
           />
           <ExhImageQuote
             quote="Du er bleven en udmærket amatørfotograf og kan udvikle Dig mer som sådan. Alle sy jeg har vist Dine fotografier syns at de er så vakkert tat."
             cite="Edvard Munch"
-            imageOrientation="portrait"
-          />
-          <ExhImageQuote
-            quote="… Flere fabrikkherrer har takket mig fordi jeg har fått bevart så meget av det gamle."
-            cite="Inger Munch"
             imageOrientation="portrait"
             reverse
           />

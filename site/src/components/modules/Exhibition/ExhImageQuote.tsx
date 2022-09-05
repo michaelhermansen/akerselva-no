@@ -22,13 +22,13 @@ export default function ExhImageQuote({
       whileInView="visible"
       viewport={{ once: true }}
       className={classNames(
-        "mx-auto block items-center gap-20 py-8 text-white sm:px-6 md:flex md:max-w-4xl",
+        "mx-auto block items-center gap-20 py-8 text-white sm:px-6 md:flex md:max-w-5xl",
         { "md:flex-row-reverse": reverse }
       )}
     >
       <div
         className={classNames(
-          "mb-6 flex-[2] rounded-sm bg-gray-medium sm:min-w-[320px] md:mb-0",
+          "mb-6 flex-[1] rounded-sm bg-gray-medium sm:min-w-[320px] md:mb-0",
           {
             "h-[300px]": imageOrientation === "landscape",
             "h-[500px]": imageOrientation === "portrait",
@@ -43,7 +43,7 @@ export default function ExhImageQuote({
         })}
       >
         <blockquote>
-          <p className="pb-2 text-lg md:text-2xl">&ldquo;{quote}&rdquo;</p>
+          <p className="max-w-[40ch] pb-2 text-lg md:text-2xl">«{quote}»</p>
         </blockquote>
         <figcaption>
           <cite className="not-italic text-white text-opacity-50">{cite}</cite>
