@@ -25,18 +25,26 @@ export default function ExhibitionPage({
 
       <section id="content">
         <Container>
-          <div className="mx-auto max-w-[55ch] px-2 pt-32 pb-36 text-center text-xl !leading-normal text-white md:pt-52 md:text-2xl lg:text-2xl">
-            <p className="mb-4">
-              «Sommeren 1929 foreslo min bror, Edvard Munch, mig at jeg skulde
-              fotografere våre gamle boliger på Grünerløkken. Jeg gjorde så og
-              drog også op til Brekke og Kjelsås Gård hvor vi bodde somrene 1875
-              og 76.
-            </p>
-            <p>
-              Så fikk jeg den idé å ta billeder langs hele Akerselven, fra dens
-              begynnelse ved Oset i Maridalen og til dens utløp i Bjørviken»
-            </p>
-          </div>
+          <figure className="mx-auto max-w-[50ch] px-2 pt-32 pb-40 text-center text-xl !leading-normal text-white md:pt-52 md:text-2xl lg:text-2xl">
+            <blockquote>
+              <p className="mb-4">
+                «Sommeren 1929 foreslo min bror, Edvard Munch, mig at jeg skulde
+                fotografere våre gamle boliger på Grünerløkken. Jeg gjorde så og
+                drog også op til Brekke og Kjelsås Gård hvor vi bodde somrene
+                1875 og 76.
+              </p>
+              <p>
+                Så fikk jeg den idé å ta billeder langs hele Akerselven, fra
+                dens begynnelse ved Oset i Maridalen og til dens utløp i
+                Bjørviken»
+              </p>
+            </blockquote>
+            <figcaption className="pt-4">
+              <cite className="text-lg not-italic text-white text-opacity-75 md:text-xl">
+                Inger Munch
+              </cite>
+            </figcaption>
+          </figure>
 
           <ExhImageQuote
             quote="Nu er det svært morsomt med Akerselven. En arbeiderkone sa til mig; det var da hygeligt av Dem å trekke Akerselven frem den som gir så mange brød."

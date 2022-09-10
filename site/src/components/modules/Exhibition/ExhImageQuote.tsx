@@ -38,7 +38,7 @@ export default function ExhImageQuote({
           }
         )}
       >
-        <Image src={imageSrc} alt="" fill />
+        <Image src={imageSrc} alt="" fill className="object-cover" />
       </div>
 
       <figure
@@ -51,7 +51,7 @@ export default function ExhImageQuote({
           <p className="max-w-[40ch] pb-2 text-lg md:text-2xl">«{quote}»</p>
         </blockquote>
         <figcaption>
-          <cite className="not-italic text-white text-opacity-50">{cite}</cite>
+          <cite className="not-italic text-white text-opacity-75">{cite}</cite>
         </figcaption>
       </figure>
     </motion.div>

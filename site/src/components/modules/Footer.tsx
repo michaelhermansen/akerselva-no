@@ -15,7 +15,7 @@ export default function Footer() {
     <footer className="border-t border-white border-opacity-10 bg-black pt-12 text-white">
       <button
         onClick={handleScrollToTop}
-        className="mx-auto hidden max-w-max p-4 text-xl opacity-50 transition-opacity hover:opacity-100 lg:block"
+        className="mx-auto hidden max-w-max p-4 text-xl opacity-75 transition-opacity hover:opacity-100 lg:block"
       >
         Til toppen
       </button>
@@ -47,7 +47,7 @@ function ListLink({ children, href }: { children: ReactNode; href: string }) {
   return (
     <li>
       <a
-        className="block max-w-max py-1 opacity-50 transition-opacity hover:opacity-100"
+        className="block max-w-max py-1 opacity-75 transition-opacity hover:opacity-100"
         href={href}
       >
         {children}
