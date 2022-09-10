@@ -1,11 +1,13 @@
 import classNames from "classnames";
 import { motion } from "framer-motion";
+import Image from "next/future/image";
 import { fadeUp } from "../../../lib/animations";
 
 interface ExhImageQuoteProps {
   quote: string;
   cite: string;
   imageOrientation: "landscape" | "portrait";
+  imageSrc: string;
   reverse?: true;
 }
 
@@ -13,6 +15,7 @@ export default function ExhImageQuote({
   quote,
   cite,
   imageOrientation,
+  imageSrc,
   reverse,
 }: ExhImageQuoteProps) {
   return (
@@ -28,13 +31,15 @@ export default function ExhImageQuote({
     >
       <div
         className={classNames(
-          "mb-6 flex-[1] rounded-sm bg-gray-medium sm:min-w-[320px] md:mb-0",
+          "relative mb-6 flex-[1] overflow-hidden rounded-sm bg-gray-medium sm:min-w-[320px] md:mb-0",
           {
             "h-[300px]": imageOrientation === "landscape",
             "h-[500px]": imageOrientation === "portrait",
           }
         )}
-      />
+      >
+        <Image src={imageSrc} alt="" fill />
+      </div>
 
       <figure
         className={classNames("col-span-2 max-w-md md:max-w-full", {

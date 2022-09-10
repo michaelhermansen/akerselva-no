@@ -18,10 +18,10 @@ export default function NewsletterSection() {
 
   return (
     <Container>
-      <section className="py-32 md:py-44 lg:py-56">
+      <section className="py-32 md:py-44">
         <form
           ref={formRef}
-          className="grid min-h-[300px] place-items-center"
+          className="grid min-h-[300px] place-items-center pb-16"
           onSubmit={handleNewsletterSignUp}
         >
           <motion.div

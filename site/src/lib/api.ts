@@ -1,4 +1,5 @@
 import {
+  ApiLandingPageSection,
   apiLandingPageSections,
   ApiLandingPageSections,
 } from "./validation/landingPageSection";
@@ -13,6 +14,20 @@ export async function getEntries(
     const response = api[contentType];
     const data = apiLandingPageSections.parse(response);
     return data;
+  } catch (error) {
+    console.error({ error });
+    return null;
+  }
+}
+
+export async function getEntry(
+  contentType: ValidEntry,
+  id: number
+): Promise<ApiLandingPageSection | null> {
+  try {
+    const response = api[contentType];
+    const { data } = apiLandingPageSections.parse(response);
+    return data.find((item) => item.id === id) || null;
   } catch (error) {
     console.error({ error });
     return null;

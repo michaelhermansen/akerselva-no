@@ -1,22 +1,24 @@
 import { kebabCase } from "lodash";
 import Image from "next/future/image";
 import Link from "next/link";
-import { ApiLandingPageSections } from "../../lib/validation/landingPageSection";
+import { ApiLandingPageSection } from "../../lib/validation/landingPageSection";
 import { ButtonLink } from "../Button";
 import Container from "../Container";
 
 interface LandingPageSectionProps {
-  section: ApiLandingPageSections["data"][0];
+  section: ApiLandingPageSection | null;
 }
 
 export default function LandingPageSection({
   section,
 }: LandingPageSectionProps) {
+  if (!section) return;
+
   const sectionId = kebabCase(section.attributes.NavigationTitle);
 
   return (
     <Container>
-      <section id={sectionId} className="grid gap-12 lg:grid-cols-4">
+      <section id={sectionId} className="grid gap-12 py-6 lg:grid-cols-4">
         <div className="col-span-1 hidden lg:block">
           <h2 className="pb-3 text-xl leading-tight">
             {section.attributes.Title}
