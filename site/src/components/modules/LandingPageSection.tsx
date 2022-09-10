@@ -12,7 +12,7 @@ interface LandingPageSectionProps {
 export default function LandingPageSection({
   section,
 }: LandingPageSectionProps) {
-  if (!section) return;
+  if (!section) return null;
 
   const sectionId = kebabCase(section.attributes.NavigationTitle);
 
