@@ -14,7 +14,7 @@ export default function TimeTables() {
 
       <div id="content">
         <Container>
-          <p className="mx-auto max-w-4xl py-44 text-center text-3xl">
+          <p className="mx-auto max-w-4xl px-4 py-24 text-center text-xl !leading-snug sm:text-2xl md:py-44 md:text-3xl">
             Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene
             danner et av Oslos mest omtalte sosiale skiller, med Bjørvika på den
             ene siden og Grønland på den andre.
@@ -28,8 +28,8 @@ export default function TimeTables() {
           />
 
           <ImageTextRow
-            text="«Ferjen går fullastet. Til høireprammer som fører Oslos søppel til Langøene. To øer forenes, og det er en frodig vekst der ute.»"
-            caption="Foto av Inger Munch"
+            text="Inspirert av den britiske Punten og den norske Lørja har Akerselva trebåtforening  bygget en båt som går mellom Vaterland og Bjørvika, med støtte fra Eckbos legat og Kulturrådet."
+            caption="Her på sjøen ved Bjørvika"
             imageOrientation="portrait"
             reverse
             imageSrc="/"
@@ -127,7 +127,8 @@ export default function TimeTables() {
                 </tr>
               </table>
             </div>
-            <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-4 py-5">
+
+            <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-5">
               <div className="flex items-center gap-3">
                 <div className="h-5 w-5 shrink-0 rounded-full bg-black/5" />
                 <span className="whitespace-nowrap">

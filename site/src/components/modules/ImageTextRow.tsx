@@ -51,9 +51,7 @@ export default function ImageTextRow({
           <p className="max-w-[40ch] pb-2 text-lg md:text-2xl">{text}</p>
         </blockquote>
         <figcaption>
-          <cite className="not-italic text-black text-opacity-75">
-            {caption}
-          </cite>
+          <cite className="not-italic text-black/50">{caption}</cite>
         </figcaption>
       </figure>
     </motion.div>

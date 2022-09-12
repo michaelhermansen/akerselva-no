@@ -39,9 +39,11 @@ export default function PageHeader() {
           </Link>
         </div>
 
-        <div className="w-full max-w-5xl pb-8">
+        <div className="w-full max-w-5xl">
           <div className="max-w-xl">
-            <h1 className="text-7xl">Lørja: Akerselvas nye&nbsp;rutebåt</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl">
+              Lørja: Akerselvas nye&nbsp;rutebåt
+            </h1>
             <p className="py-6 text-xl">
               I samarbeid med Akerselva trebåtforening kan vi presentere, Lørja:
               Akerselvas nye rutebåt. Lørja går i rute mellom Vaterland og Inger
