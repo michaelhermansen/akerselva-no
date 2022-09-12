@@ -2,12 +2,11 @@ import { motion } from "framer-motion";
 import Image from "next/future/image";
 import Link from "next/link";
 import { MdArrowBack, MdArrowDownward } from "react-icons/md";
-import Container from "../../Container";
-import IngerMunchLogo from "../../IngerMunchLogo";
+import Container from "./Container";
 
-export default function ExhHeader() {
+export default function PageHeader() {
   return (
-    <header className="relative h-[740px] min-h-[90vh] overflow-hidden overflow-y-hidden lg:min-h-screen">
+    <header className="relative h-[740px] min-h-[90vh] overflow-hidden overflow-y-hidden bg-black lg:min-h-screen">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -15,11 +14,11 @@ export default function ExhHeader() {
         className="absolute inset-0"
       >
         <Image
-          className="block object-cover brightness-90"
+          className="block object-cover brightness-75"
           fill
           sizes="100vw"
           alt=""
-          src="/assets/exhibition-header.jpeg"
+          src="/assets/timetables-header.jpg"
           priority
         />
       </motion.div>
@@ -40,17 +39,22 @@ export default function ExhHeader() {
           </Link>
         </div>
 
-        <motion.h1
-          className="relative z-50 grid w-[240px] place-items-center py-12 sm:w-[340px] md:w-[400px]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: "easeOut",
-          }}
-        >
-          <IngerMunchLogo />
-        </motion.h1>
+        <div className="w-full max-w-5xl pb-8">
+          <div className="max-w-xl">
+            <h1 className="text-7xl">Lørja: Akerselvas nye&nbsp;rutebåt</h1>
+            <p className="py-6 text-xl">
+              I samarbeid med Akerselva trebåtforening kan vi presentere, Lørja:
+              Akerselvas nye rutebåt. Lørja går i rute mellom Vaterland og Inger
+              Munchs brygge utenfor det nye Munchmuseet i Bjørvika.
+            </p>
+            <Link
+              className="block max-w-max rounded-sm bg-white py-3 px-8 text-black transition-colors hover:bg-opacity-75"
+              href="#rutetider"
+            >
+              Se rutetider
+            </Link>
+          </div>
+        </div>
 
         <Link
           href={{ hash: "content" }}
