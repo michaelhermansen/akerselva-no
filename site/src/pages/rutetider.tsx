@@ -24,7 +24,7 @@ export default function TimeTables() {
             text="«Ferjen går fullastet. Til høireprammer som fører Oslos søppel til Langøene. To øer forenes, og det er en frodig vekst der ute.»"
             caption="Foto av Inger Munch"
             imageOrientation="landscape"
-            imageSrc="/"
+            imageSrc="/assets/exhibition-scroller/2.jpg"
           />
 
           <ImageTextRow
@@ -32,14 +32,14 @@ export default function TimeTables() {
             caption="Her på sjøen ved Bjørvika"
             imageOrientation="portrait"
             reverse
-            imageSrc="/"
+            imageSrc="/assets/exhibition-scroller/2.jpg"
           />
 
           <ImageTextRow
             text="«Ferjen går fullastet. Til høireprammer som fører Oslos søppel til Langøene. To øer forenes, og det er en frodig vekst der ute.»"
             caption="Foto av Inger Munch"
             imageOrientation="landscape"
-            imageSrc="/"
+            imageSrc="/assets/exhibition-scroller/2.jpg"
           />
         </Container>
       </div>
@@ -51,80 +51,83 @@ export default function TimeTables() {
             <p className="py-2 text-center text-lg">
               Å reise med rutebåten er gratis for alle!
             </p>
+
             <div className="mx-auto mt-12 max-w-6xl overflow-x-auto rounded-md border border-black/5 bg-white px-4 py-8">
               <table className="w-full min-w-[800px] table-fixed">
-                <tr>
-                  <TableHeader>Mandag</TableHeader>
-                  <TableHeader>Tirsdag</TableHeader>
-                  <TableHeader>Onsdag</TableHeader>
-                  <TableHeader>Torsdag</TableHeader>
-                  <TableHeader>Fredag</TableHeader>
-                  <TableHeader>Lørdag</TableHeader>
-                  <TableHeader>Søndag</TableHeader>
-                </tr>
-                <tr>
-                  <TableData noData>Ingen avgang</TableData>
-                  <TableData noData>Ingen avgang</TableData>
-                  <TableData>11:00</TableData>
-                  <TableData>11:00</TableData>
-                  <TableData>11:00</TableData>
-                  <TableData>11:00</TableData>
-                  <TableData>11:00</TableData>
-                </tr>
-                <tr>
-                  <TableData noData />
-                  <TableData noData />
-                  <TableData>12:00</TableData>
-                  <TableData>12:00</TableData>
-                  <TableData>12:00</TableData>
-                  <TableData>12:00</TableData>
-                  <TableData>12:00</TableData>
-                </tr>
-                <tr>
-                  <TableData noData />
-                  <TableData noData />
-                  <TableData>13:00</TableData>
-                  <TableData>13:00</TableData>
-                  <TableData>13:00</TableData>
-                  <TableData>13:00</TableData>
-                  <TableData>13:00</TableData>
-                </tr>
-                <tr>
-                  <TableData noData />
-                  <TableData noData />
-                  <TableData>14:00</TableData>
-                  <TableData>14:00</TableData>
-                  <TableData>14:00</TableData>
-                  <TableData>14:00</TableData>
-                  <TableData>14:00</TableData>
-                </tr>
-                <tr>
-                  <TableData noData />
-                  <TableData noData />
-                  <TableData>15:00</TableData>
-                  <TableData>15:00</TableData>
-                  <TableData>15:00</TableData>
-                  <TableData>15:00</TableData>
-                  <TableData>15:00</TableData>
-                </tr>
-                <tr>
-                  <TableData noData />
-                  <TableData noData />
-                  <TableData>16:00</TableData>
-                  <TableData>16:00</TableData>
-                  <TableData>16:00</TableData>
-                  <TableData>16:00</TableData>
-                  <TableData>16:00</TableData>
-                </tr>
-                <tr>
-                  <TableData noData />
-                  <TableData noData />
-                  <TableData>17:00</TableData>
-                  <TableData>17:00</TableData>
-                  <TableData>17:00</TableData>
-                  <TableData>17:00</TableData>
-                  <TableData>17:00</TableData>
-                </tr>
+                <tbody>
+                  <tr>
+                    <TableHeader>Mandag</TableHeader>
+                    <TableHeader>Tirsdag</TableHeader>
+                    <TableHeader>Onsdag</TableHeader>
+                    <TableHeader>Torsdag</TableHeader>
+                    <TableHeader>Fredag</TableHeader>
+                    <TableHeader>Lørdag</TableHeader>
+                    <TableHeader>Søndag</TableHeader>
+                  </tr>
+                  <tr>
+                    <TableData noData>Ingen avgang</TableData>
+                    <TableData noData>Ingen avgang</TableData>
+                    <TableData>11:00</TableData>
+                    <TableData>11:00</TableData>
+                    <TableData>11:00</TableData>
+                    <TableData>11:00</TableData>
+                    <TableData>11:00</TableData>
+                  </tr>
+                  <tr>
+                    <TableData noData />
+                    <TableData noData />
+                    <TableData>12:00</TableData>
+                    <TableData>12:00</TableData>
+                    <TableData>12:00</TableData>
+                    <TableData>12:00</TableData>
+                    <TableData>12:00</TableData>
+                  </tr>
+                  <tr>
+                    <TableData noData />
+                    <TableData noData />
+                    <TableData>13:00</TableData>
+                    <TableData>13:00</TableData>
+                    <TableData>13:00</TableData>
+                    <TableData>13:00</TableData>
+                    <TableData>13:00</TableData>
+                  </tr>
+                  <tr>
+                    <TableData noData />
+                    <TableData noData />
+                    <TableData>14:00</TableData>
+                    <TableData>14:00</TableData>
+                    <TableData>14:00</TableData>
+                    <TableData>14:00</TableData>
+                    <TableData>14:00</TableData>
+                  </tr>
+                  <tr>
+                    <TableData noData />
+                    <TableData noData />
+                    <TableData>15:00</TableData>
+                    <TableData>15:00</TableData>
+                    <TableData>15:00</TableData>
+                    <TableData>15:00</TableData>
+                    <TableData>15:00</TableData>
+                  </tr>
+                  <tr>
+                    <TableData noData />
+                    <TableData noData />
+                    <TableData>16:00</TableData>
+                    <TableData>16:00</TableData>
+                    <TableData>16:00</TableData>
+                    <TableData>16:00</TableData>
+                    <TableData>16:00</TableData>
+                  </tr>
+                  <tr>
+                    <TableData noData />
+                    <TableData noData />
+                    <TableData>17:00</TableData>
+                    <TableData>17:00</TableData>
+                    <TableData>17:00</TableData>
+                    <TableData>17:00</TableData>
+                    <TableData>17:00</TableData>
+                  </tr>
+                </tbody>
               </table>
             </div>
 
