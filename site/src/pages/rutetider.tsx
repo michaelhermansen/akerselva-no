@@ -14,7 +14,7 @@ export default function TimeTables() {
 
       <div id="content">
         <Container>
-          <p className="mx-auto max-w-4xl px-4 py-24 text-center text-xl !leading-snug sm:text-2xl md:py-44 md:text-3xl">
+          <p className="mx-auto max-w-4xl px-4 py-24 text-center text-xl !leading-normal sm:text-2xl md:py-44 md:text-3xl">
             Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene
             danner et av Oslos mest omtalte sosiale skiller, med Bjørvika på den
             ene siden og Grønland på den andre.

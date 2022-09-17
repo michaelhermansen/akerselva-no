@@ -9,6 +9,9 @@ module.exports = {
       normal: 400,
       medium: 500,
     },
+    lineHeight: {
+      normal: "1.4",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",

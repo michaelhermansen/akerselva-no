@@ -20,7 +20,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
       <header className="grid gap-12 py-12 lg:grid-cols-4">
         <div className="col-span-2 md:col-span-1">
           <Link href="/">
-            <h1 className="mb-8 max-w-max text-xl leading-tight">
+            <h1 className="mb-8 max-w-max text-xl leading-normal">
               Akerselva
               <br />
               Friluftsmuseum
@@ -69,7 +69,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
               <div className="absolute inset-0 bg-black bg-opacity-20" />
             </div>
 
-            <p className="absolute top-0 max-w-[28ch] py-12 px-8 text-3xl leading-tight text-white lg:px-14 lg:text-5xl">
+            <p className="absolute top-0 max-w-[28ch] py-12 px-8 text-3xl leading-normal text-white lg:px-14 lg:text-5xl">
               Aktiviteter og kulturopplevelser langs Akerselva
               <MdArrowDownward
                 className="mx-2 hidden transition-transform group-hover:translate-y-1 lg:inline"

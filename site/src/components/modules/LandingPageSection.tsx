@@ -20,7 +20,7 @@ export default function LandingPageSection({
     <Container>
       <section id={sectionId} className="grid gap-12 py-6 lg:grid-cols-4">
         <div className="col-span-1 hidden lg:block">
-          <h2 className="pb-3 text-xl leading-tight">
+          <h2 className="pb-3 text-xl leading-normal">
             {section.attributes.Title}
           </h2>
           <p className="text-black text-opacity-50">
@@ -41,7 +41,7 @@ export default function LandingPageSection({
               height={600}
             />
 
-            <p className="absolute top-0 my-10 w-full max-w-[30ch] px-8 text-4xl leading-tight text-white lg:px-14 lg:text-5xl">
+            <p className="absolute top-0 my-10 w-full max-w-[30ch] px-8 text-4xl leading-normal text-white lg:px-14 lg:text-5xl">
               {section.attributes.ImageTitle}
             </p>
           </Link>
@@ -50,12 +50,12 @@ export default function LandingPageSection({
             <p className="pt-4 pb-1 text-black text-opacity-50">
               {section.attributes.Subtitle}
             </p>
-            <h2 className="text-2xl font-medium leading-tight">
+            <h2 className="text-2xl font-medium leading-normal">
               {section.attributes.Title}
             </h2>
           </div>
 
-          <p className="max-w-[70ch] leading-relaxed text-gray-medium md:text-xl md:leading-relaxed">
+          <p className="max-w-[70ch] leading-normal text-gray-medium md:text-xl md:leading-normal">
             {section.attributes.Description}
           </p>
 

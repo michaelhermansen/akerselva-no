@@ -20,11 +20,11 @@ export default function ExhCompactCTA({
       />
 
       <div className="relative z-20 px-8 py-20 md:px-16">
-        <p className="max-w-2xl text-4xl leading-tight text-white lg:text-5xl">
+        <p className="max-w-2xl text-4xl leading-normal text-white lg:text-5xl">
           {cta.attributes.ImageTitle}
         </p>
 
-        <p className="max-w-[70ch] py-8 leading-relaxed text-white md:text-xl">
+        <p className="max-w-[70ch] py-8 leading-normal text-white md:text-xl">
           {cta.attributes.Description}
         </p>
         <Link

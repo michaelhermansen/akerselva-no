@@ -18,7 +18,7 @@
 
 @layer components {
   .btn {
-    @apply flex max-w-max items-center rounded-xs border border-black/10 bg-white py-3 px-5 transition-all hover:rounded-full hover:bg-gray-medium hover:text-white;
+    @apply flex max-w-max items-center rounded-xs bg-white py-3 px-5 transition-all hover:rounded-full hover:bg-gray-medium hover:text-white;
   }
 }
 
@@ -38,7 +38,7 @@
 
   html,
   body {
-    @apply scroll-pt-10 bg-gray-light;
+    @apply scroll-pt-10 bg-gray-light leading-normal;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
   }

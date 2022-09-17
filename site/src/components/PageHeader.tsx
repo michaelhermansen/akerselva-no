@@ -26,7 +26,7 @@ export default function PageHeader() {
       <Container className="relative z-20 flex h-full flex-col items-center justify-between py-12 text-white">
         <div className="flex w-full items-baseline justify-between gap-4">
           <Link href="/">
-            <p className="max-w-max text-xl leading-tight">
+            <p className="max-w-max text-xl !leading-normal">
               Akerselva
               <br />
               Friluftsmuseum

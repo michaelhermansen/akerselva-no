@@ -22,7 +22,10 @@ export default function Footer() {
 
       <Container className="grid gap-4 py-20 lg:grid-cols-2 lg:pb-48 lg:pt-32">
         <div className="justify-center py-1 lg:flex">
-          <Link href="/" className="mb-8 block max-w-max text-xl leading-tight">
+          <Link
+            href="/"
+            className="mb-8 block max-w-max text-xl leading-normal"
+          >
             Akerselva
             <br />
             Friluftsmuseum

@@ -40,7 +40,7 @@ export default function FrameContent({
       <div
         ref={buttonRef}
         {...buttonProps}
-        className="group absolute inset-0 z-20 bg-black focus:outline-none"
+        className="group absolute inset-0 z-20 bg-white/30 focus:outline-none"
         aria-hidden={showMap}
         hidden={showMap}
       >
@@ -55,7 +55,7 @@ export default function FrameContent({
             fill
             sizes="80vw"
             className={classNames(
-              "object-contain transition-opacity duration-75",
+              "object-cover transition-opacity duration-75",
               {
                 "opacity-0": item.id !== itemInView.id,
               }
