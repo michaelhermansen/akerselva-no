@@ -1,6 +1,8 @@
+import Image from "next/future/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
+import { MdArrowUpward } from "react-icons/md";
 import Container from "../Container";
 
 export default function Footer() {
@@ -13,23 +15,19 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white border-opacity-10 bg-black pt-12 text-white">
-      <button
-        onClick={handleScrollToTop}
-        className="mx-auto hidden max-w-max p-4 text-xl opacity-75 transition-opacity hover:opacity-100 lg:block"
-      >
-        Til toppen
-      </button>
-
-      <Container className="grid gap-4 py-20 lg:grid-cols-2 lg:pb-48 lg:pt-32">
-        <div className="justify-center py-1 lg:flex">
-          <Link
-            href="/"
-            className="mb-8 block max-w-max text-xl leading-normal"
-          >
-            Akerselva
-            <br />
-            Friluftsmuseum
+      <Container className="grid gap-16 pt-20 lg:grid-cols-2 lg:pt-28">
+        <div className="">
+          <Link href="/" className="block max-w-max text-xl leading-normal">
+            Akerselva Friluftsmuseum
           </Link>
+
+          <button
+            onClick={handleScrollToTop}
+            className="flex items-center gap-1 py-2 text-xl opacity-50 transition-opacity hover:opacity-100"
+          >
+            <MdArrowUpward />
+            <span>Til toppen</span>
+          </button>
         </div>
 
         <div className="justify-center lg:flex">
@@ -42,6 +40,63 @@ export default function Footer() {
           </ul>
         </div>
       </Container>
+
+      <Container className="flex flex-col gap-20 pt-36 pb-16 lg:flex-row lg:items-center">
+        <p className="text-white/50">
+          Designet og utviklet av
+          <br />
+          <a
+            className="transition-colors hover:text-white"
+            href="https://www.travers.as/"
+          >
+            Travers
+          </a>
+          {" & "}
+          <a
+            className="transition-colors hover:text-white"
+            href="https://github.com/michaelhermansen"
+          >
+            Michael
+          </a>
+        </p>
+
+        <div className="flex items-center gap-8">
+          <a
+            href="https://akerselvatrebaatforening.org/"
+            className="opacity-50 transition-opacity hover:opacity-100"
+          >
+            <Image
+              src="/assets/footer-logos/logo-atf.png"
+              alt="Logo for Akerselva Trebåtforening"
+              width={56}
+              height={56}
+            />
+          </a>
+          <a
+            href="https://www.oslomuseum.no/arbeidermuseet/"
+            className="opacity-50 transition-opacity hover:opacity-100"
+          >
+            <Image
+              src="/assets/footer-logos/logo-omam.svg"
+              alt="Logo for Arbeidermuseet"
+              width={224}
+              height={56}
+            />
+          </a>
+          <a
+            href="https://frittord.no/"
+            className="opacity-50 transition-opacity hover:opacity-100"
+          >
+            <Image
+              className="-translate-y-3"
+              src="/assets/footer-logos/logo-fo.svg"
+              alt="Logo for Fritt ord"
+              width={144}
+              height={56}
+            />
+          </a>
+        </div>
+      </Container>
     </footer>
   );
 }
@@ -50,7 +105,7 @@ function ListLink({ children, href }: { children: ReactNode; href: string }) {
   return (
     <li>
       <a
-        className="block max-w-max py-1 opacity-75 transition-opacity hover:opacity-100"
+        className="block max-w-max py-1 opacity-50 transition-opacity hover:opacity-100"
         href={href}
       >
         {children}

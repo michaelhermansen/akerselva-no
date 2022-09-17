@@ -66,7 +66,7 @@ export default function ImageScroller() {
         {/* Fixed frame on mobile */}
         <div
           className={classNames(
-            "fixed bottom-6 right-6 z-50 h-[50vw] w-[60vw] overflow-hidden rounded-sm border border-gray-medium transition-opacity duration-300 md:hidden",
+            "fixed bottom-6 right-6 z-50 h-[60vw] w-[80vw] overflow-hidden rounded-sm border border-gray-medium transition-opacity duration-300 md:hidden",
             { "pointer-events-none opacity-0": !inView }
           )}
         >
