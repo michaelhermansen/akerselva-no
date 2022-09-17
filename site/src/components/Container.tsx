@@ -8,7 +8,9 @@ interface PageLayoutProps {
 
 export default function Container({ children, className }: PageLayoutProps) {
   return (
-    <div className={classNames("mx-auto max-w-[1400px] px-6", className)}>
+    <div
+      className={classNames("mx-auto max-w-[1500px] px-6 lg:px-12", className)}
+    >
       {children}
     </div>
   );
