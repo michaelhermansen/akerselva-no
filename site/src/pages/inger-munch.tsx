@@ -3,7 +3,7 @@ import { InferGetStaticPropsType } from "next";
 import { MapProvider } from "react-map-gl";
 import Container from "../components/Container";
 import Metadata from "../components/Metadata";
-import ExhCompactCTA from "../components/modules/Exhibition/ExhCompactCTA";
+import CompactCTA from "../components/modules/CompactCTA";
 import ExhHeader from "../components/modules/Exhibition/ExhHeader";
 import ExhibitionScroller from "../components/modules/Exhibition/ExhibitionScroller";
 import ExhImageQuote from "../components/modules/Exhibition/ExhImageQuote";
@@ -80,17 +80,16 @@ export default function ExhibitionPage({
         </Container>
       </section>
 
-      <section>
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <Container>
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="px-4 pt-48 text-center text-5xl text-white"
-          >
+          <h2 className="px-4 pt-48 text-center text-5xl text-white">
             2022 vs 1932
-          </motion.h2>
+          </h2>
 
           <div className="mx-auto max-w-[40ch] px-2 pt-10 pb-36 text-center text-xl !leading-normal text-white md:text-2xl lg:text-2xl">
             <p className="mb-4">
@@ -104,11 +103,11 @@ export default function ExhibitionPage({
 
           <div className="mx-auto max-w-5xl"></div>
         </Container>
-      </section>
+      </motion.section>
 
       <section className="pb-56 pt-32">
         <Container>
-          <ExhCompactCTA cta={featuredLandingPageSection} />
+          <CompactCTA cta={featuredLandingPageSection} />
         </Container>
       </section>
 

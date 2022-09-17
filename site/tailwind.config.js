@@ -10,6 +10,7 @@ module.exports = {
       medium: 500,
     },
     lineHeight: {
+      small: "1.3",
       normal: "1.4",
     },
     colors: {

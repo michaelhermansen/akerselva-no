@@ -27,12 +27,13 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
             </h1>
           </Link>
 
+          <p className="pb-1 text-black/50">Opplevelser</p>
           <ul className="text-lg">
             {navigationLinks.map((link) => (
               <li key={link.hash}>
                 <Link
                   onTouchStart={() => videoRef.current?.play()}
-                  className="inline-block py-1 text-black text-opacity-50 transition-colors hover:text-opacity-100"
+                  className="inline-block py-1 text-black/50 transition-colors hover:text-black"
                   href={{ hash: link.hash }}
                 >
                   {link.linkText}
