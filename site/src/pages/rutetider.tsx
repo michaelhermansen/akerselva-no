@@ -53,20 +53,29 @@ export default function TimeTables() {
             </p>
 
             <div className="mx-auto mt-12 max-w-6xl overflow-x-auto rounded-md border border-black/5 bg-white px-4 py-8">
-              <table className="w-full min-w-[800px] table-fixed">
+              <table className="w-full min-w-[700px] table-fixed">
                 <tbody>
                   <tr>
-                    <TableHeader>Mandag</TableHeader>
-                    <TableHeader>Tirsdag</TableHeader>
-                    <TableHeader>Onsdag</TableHeader>
-                    <TableHeader>Torsdag</TableHeader>
-                    <TableHeader>Fredag</TableHeader>
-                    <TableHeader>Lørdag</TableHeader>
-                    <TableHeader>Søndag</TableHeader>
+                    <TableHeader>22. sep</TableHeader>
+                    <TableHeader>24. sep</TableHeader>
+                    <TableHeader>25. sep</TableHeader>
+                    <TableHeader>1. okt</TableHeader>
+                    <TableHeader>2. okt</TableHeader>
+                    <TableHeader>8. okt</TableHeader>
+                    <TableHeader>9. okt</TableHeader>
                   </tr>
                   <tr>
-                    <TableData noData>Ingen avgang</TableData>
-                    <TableData noData>Ingen avgang</TableData>
+                    <TableData>20:00</TableData>
+                    <TableData>10:00</TableData>
+                    <TableData>10:00</TableData>
+                    <TableData>10:00</TableData>
+                    <TableData>10:00</TableData>
+                    <TableData>10:00</TableData>
+                    <TableData>10:00</TableData>
+                  </tr>
+                  <tr>
+                    <TableData>21:00</TableData>
+                    <TableData>11:00</TableData>
                     <TableData>11:00</TableData>
                     <TableData>11:00</TableData>
                     <TableData>11:00</TableData>
@@ -74,8 +83,8 @@ export default function TimeTables() {
                     <TableData>11:00</TableData>
                   </tr>
                   <tr>
-                    <TableData noData />
-                    <TableData noData />
+                    <TableData>22:00</TableData>
+                    <TableData>12:00</TableData>
                     <TableData>12:00</TableData>
                     <TableData>12:00</TableData>
                     <TableData>12:00</TableData>
@@ -83,8 +92,8 @@ export default function TimeTables() {
                     <TableData>12:00</TableData>
                   </tr>
                   <tr>
-                    <TableData noData />
-                    <TableData noData />
+                    <TableData>23:00</TableData>
+                    <TableData>13:00</TableData>
                     <TableData>13:00</TableData>
                     <TableData>13:00</TableData>
                     <TableData>13:00</TableData>
@@ -92,40 +101,13 @@ export default function TimeTables() {
                     <TableData>13:00</TableData>
                   </tr>
                   <tr>
-                    <TableData noData />
                     <TableData noData />
                     <TableData>14:00</TableData>
                     <TableData>14:00</TableData>
                     <TableData>14:00</TableData>
                     <TableData>14:00</TableData>
                     <TableData>14:00</TableData>
-                  </tr>
-                  <tr>
-                    <TableData noData />
-                    <TableData noData />
-                    <TableData>15:00</TableData>
-                    <TableData>15:00</TableData>
-                    <TableData>15:00</TableData>
-                    <TableData>15:00</TableData>
-                    <TableData>15:00</TableData>
-                  </tr>
-                  <tr>
-                    <TableData noData />
-                    <TableData noData />
-                    <TableData>16:00</TableData>
-                    <TableData>16:00</TableData>
-                    <TableData>16:00</TableData>
-                    <TableData>16:00</TableData>
-                    <TableData>16:00</TableData>
-                  </tr>
-                  <tr>
-                    <TableData noData />
-                    <TableData noData />
-                    <TableData>17:00</TableData>
-                    <TableData>17:00</TableData>
-                    <TableData>17:00</TableData>
-                    <TableData>17:00</TableData>
-                    <TableData>17:00</TableData>
+                    <TableData>14:00</TableData>
                   </tr>
                 </tbody>
               </table>
