@@ -84,14 +84,14 @@ export default function ExhibitionPage({
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-50%" }}
       >
         <Container>
-          <h2 className="px-4 pt-48 text-center text-5xl text-white">
+          <h2 className="px-4 pt-56 text-center text-4xl text-white md:text-5xl">
             2022 vs 1932
           </h2>
 
-          <div className="mx-auto max-w-[40ch] px-2 pt-10 pb-36 text-center text-xl !leading-normal text-white md:text-2xl lg:text-2xl">
+          <div className="mx-auto max-w-[40ch] px-2 pt-8 pb-36 text-center text-xl !leading-normal text-white md:text-2xl lg:text-2xl">
             <p className="mb-4">
               Hvordan ser vi på Akerselva i 2022 vs 1932? Er fortellingen om
               Akerselva som et sosialt skille mellom øst og vest like aktuell i
@@ -105,9 +105,14 @@ export default function ExhibitionPage({
         </Container>
       </motion.section>
 
-      <section className="pb-56 pt-32">
+      <section className="pb-52 pt-20">
         <Container>
-          <CompactCTA cta={featuredLandingPageSection} />
+          <CompactCTA
+            title="Opplev Akerselvas nye rutebåt, gjennom kulverten."
+            text="Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene danner et av Oslos mest omtalte sosiale skiller. Bjørvika på den ene siden og Grønland på den andre. I samarbeid med Akerselva trebåtforening kan vi presentere, Lørja: Akerselvas nye rutebåt. Lørja går i rute mellom Vaterland og Inger Munchs brygge utenfor det nye Munchmuseet i Bjørvika."
+            imageSrc="/assets/kulvert.jpg"
+            url="/rutetider"
+          />
         </Container>
       </section>
 

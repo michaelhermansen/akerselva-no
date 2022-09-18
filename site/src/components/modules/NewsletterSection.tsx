@@ -8,7 +8,6 @@ import Container from "../Container";
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [formRef, formBounds] = useMeasure();
 
   function handleNewsletterSignUp(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -20,7 +19,6 @@ export default function NewsletterSection() {
     <Container>
       <section className="py-32 md:py-44">
         <form
-          ref={formRef}
           className="grid min-h-[300px] place-items-center pb-16"
           onSubmit={handleNewsletterSignUp}
         >
@@ -43,7 +41,7 @@ export default function NewsletterSection() {
                   duration: 0.2,
                   delay: 0.1,
                 }}
-                className="max-w-[25ch] pb-4 text-center text-3xl md:text-4xl"
+                className="max-w-[25ch] pb-4 text-center text-3xl leading-normal md:text-4xl"
               >
                 {!submitted &&
                   "Motta flaskepost for nye arrangementer og oppdateringer"}
@@ -76,7 +74,7 @@ export default function NewsletterSection() {
                       id="email"
                       required
                       placeholder="E-post"
-                      className="mb-3 w-full rounded-xs border border-black border-opacity-10 py-3 px-5"
+                      className="mb-3 w-full rounded-xs border border-black/5 py-3 px-5"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />

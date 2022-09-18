@@ -14,8 +14,8 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t border-white border-opacity-10 bg-black pt-12 text-white">
-      <Container className="grid gap-16 pt-20 lg:grid-cols-2 lg:pt-28">
+    <footer className="border-t border-white border-opacity-10 bg-black pt-32 text-white">
+      <Container className="grid gap-16 py-8 lg:grid-cols-2">
         <div className="">
           <Link href="/" className="block max-w-max text-xl leading-normal">
             Akerselva Friluftsmuseum
@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
       </Container>
 
-      <Container className="flex flex-col gap-20 pt-36 pb-16 lg:flex-row lg:items-center">
+      <Container className="flex flex-col gap-24 pt-36 pb-16 lg:flex-row lg:items-center">
         <p className="text-white/50">
           Designet og utviklet av
           <br />
@@ -63,36 +63,39 @@ export default function Footer() {
         <div className="flex items-center gap-8">
           <a
             href="https://akerselvatrebaatforening.org/"
+            title="Akerselva Trebåtforening"
             className="opacity-50 transition-opacity hover:opacity-100"
           >
             <Image
               src="/assets/footer-logos/logo-atf.png"
               alt="Logo for Akerselva Trebåtforening"
-              width={56}
-              height={56}
+              width={48}
+              height={48}
             />
           </a>
           <a
             href="https://www.oslomuseum.no/arbeidermuseet/"
+            title="Arbeidermuseet"
             className="opacity-50 transition-opacity hover:opacity-100"
           >
             <Image
               src="/assets/footer-logos/logo-omam.svg"
               alt="Logo for Arbeidermuseet"
-              width={224}
-              height={56}
+              width={192}
+              height={48}
             />
           </a>
           <a
             href="https://frittord.no/"
+            title="Fritt ord"
             className="opacity-50 transition-opacity hover:opacity-100"
           >
             <Image
               className="-translate-y-3"
               src="/assets/footer-logos/logo-fo.svg"
               alt="Logo for Fritt ord"
-              width={144}
-              height={56}
+              width={128}
+              height={48}
             />
           </a>
         </div>

@@ -27,7 +27,7 @@ const api = {
           Subtitle: "Aktivitet – Vår / Sommer",
           ImageTitle: "Opplev Akerselvas nye rutebåt, gjennom kulverten.",
           Image: {
-            url: "/assets/rutebat-thumb.png",
+            url: "/assets/kulvert.jpg",
           },
           Description:
             "Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene danner et av Oslos mest omtalte sosiale skiller. Bjørvika på den ene siden og Grønland på den andre. I samarbeid med Akerselva trebåtforening kan vi presentere, Lørja: Akerselvas nye rutebåt. Lørja går i rute mellom Vaterland og Inger Munchs brygge utenfor det nye Munchmuseet i Bjørvika.",

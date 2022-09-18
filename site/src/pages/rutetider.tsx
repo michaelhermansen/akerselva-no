@@ -49,7 +49,7 @@ export default function TimeTables({
         </Container>
       </div>
 
-      <div className="py-40">
+      <div className="pt-40">
         <section id="rutetider" className="py-6">
           <Container>
             <h2 className="text-center text-4xl">Rutetider</h2>
@@ -133,6 +133,17 @@ export default function TimeTables({
           </Container>
         </section>
       </div>
+
+      <section className="pb-52 pt-36">
+        <Container>
+          <CompactCTA
+            title="Inger Munch og Akerselva"
+            text="Inger Munch, søster av Edvard Munch, testamenterte ved sin død i 1952 over 200 negativer til Oslo Bymuseum. Blant negativene var mange av bildene i hennes bok «Akerselven» som ble utgitt i 1932. I 2022 er det 90 år siden boka kom ut, og 70 år siden Inger Munch døde. Vi markerer dette med utstillingen Inger Munch og Akerselva!"
+            url="/inger-munch"
+            imageSrc="/assets/inger-edvard.jpg"
+          />
+        </Container>
+      </section>
 
       <Footer />
     </>
