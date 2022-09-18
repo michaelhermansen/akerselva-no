@@ -17,7 +17,7 @@ export default function ImageScroller() {
   const router = useRouter();
   const { mapMobile, mapDesktop } = useMap();
 
-  const focusedItem = router.query.focus;
+  const focusedItem = router.query.image;
   const toggleMap = () => setShowMap((bool) => !bool);
 
   const [frameRef, frameBounds] = useMeasure();
@@ -28,7 +28,7 @@ export default function ImageScroller() {
 
   const selectedItem =
     scrollerItems.find(
-      (item) => String(item.id) === String(router.query.focus)
+      (item) => String(item.id) === String(router.query.image)
     ) || scrollerItems[0];
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function ImageScroller() {
         {/* Sticky frame on desktop */}
         <div
           ref={frameRef}
-          className="sticky top-[calc(40vh-30vh)] hidden h-[60vh] flex-1 overflow-hidden rounded-sm border border-black focus-within:border-gray-medium hover:border-gray-medium md:block"
+          className="sticky top-[calc(40vh-30vh)] hidden h-[60vh] flex-1 overflow-hidden rounded-sm md:block"
         >
           <button
             onClick={toggleMap}
@@ -66,7 +66,7 @@ export default function ImageScroller() {
         {/* Fixed frame on mobile */}
         <div
           className={classNames(
-            "fixed bottom-6 right-6 z-50 h-[60vw] w-[80vw] overflow-hidden rounded-sm border border-gray-medium transition-opacity duration-300 md:hidden",
+            "fixed bottom-6 right-6 z-50 h-[60vw] w-[80vw] overflow-hidden rounded-sm transition-opacity duration-300 md:hidden",
             { "pointer-events-none opacity-0": !inView }
           )}
         >

@@ -21,7 +21,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
 
   const focusImage = useCallback(
     (id: number) => {
-      router.replace({ query: { focus: id } }, undefined, { shallow: true });
+      router.push({ query: { image: id } }, undefined, { shallow: true });
     },
     [router]
   );
@@ -63,40 +63,6 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
     const prevButtonEl = prevImageButtonRef.current;
     const nextButtonEl = nextImageButtonRef.current;
 
-    let touchStartY: number | undefined;
-    let touchStartX: number | undefined;
-
-    function handleTouchStart(e: TouchEvent) {
-      if (e.touches.length > 1) return;
-
-      touchStartY = e.touches[0].clientY;
-      touchStartX = e.touches[0].clientX;
-    }
-
-    function handleTouchMove(e: TouchEvent) {
-      if (e.touches.length > 1) return;
-
-      if (!touchStartY || !touchStartX) return;
-      if (e.target === nextButtonEl || e.target === prevButtonEl) return;
-
-      const touchEndY = e.changedTouches[0].clientY;
-      const touchEndX = e.changedTouches[0].clientX;
-      const deltaX = touchEndX - touchStartX;
-      const deltaY = touchEndY - touchStartY;
-
-      const threshold = 50;
-
-      const swipe = {
-        up: deltaY < threshold * -1,
-        down: deltaY > threshold,
-        left: deltaX < threshold * -1,
-        right: deltaX > threshold,
-      };
-
-      if (swipe.left) return nextImage();
-      if (swipe.right) return prevImage();
-    }
-
     function handleClick(e: MouseEvent) {
       if (e.target === wrapperEl) closeFocus();
     }
@@ -129,14 +95,10 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
       }
     }
 
-    wrapperEl?.addEventListener("touchstart", handleTouchStart);
-    wrapperEl?.addEventListener("touchmove", handleTouchMove);
     wrapperEl?.addEventListener("click", handleClick);
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      wrapperEl?.removeEventListener("touchstart", handleTouchStart);
-      wrapperEl?.removeEventListener("touchmove", handleTouchMove);
       wrapperEl?.removeEventListener("click", handleClick);
       document?.removeEventListener("keydown", handleKeyDown);
     };
@@ -157,14 +119,15 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="fixed inset-0 isolate z-[99] flex items-center justify-center gap-10 overflow-y-scroll overscroll-y-contain bg-black px-8 pt-8 pb-56 md:pb-8"
+      className="fixed inset-0 isolate z-[99] flex items-center justify-center gap-10 overflow-y-scroll bg-black/90 px-8 pt-8 pb-56 backdrop-blur-md md:pb-8"
     >
-      <div className="fixed bottom-12 z-30 -translate-x-14 md:relative md:translate-x-0">
+      <div className="fixed bottom-12 z-30 -translate-x-24 md:relative md:translate-x-0">
         <button
           disabled={selectedItem.id === scrollerItems[0].id}
           className="rounded-full bg-gray-medium p-6 text-white transition-colors active:bg-opacity-75 disabled:cursor-not-allowed disabled:opacity-40"
           ref={prevImageButtonRef}
           onClick={prevImage}
+          title="Forrige bilde"
         >
           <MdArrowBack size={24} />
         </button>
@@ -179,30 +142,50 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
           exit="hidden"
           className="w-full max-w-6xl"
         >
-          <div className="relative grid aspect-square max-h-[60vh] w-full place-items-center rounded-md border border-gray-medium bg-black md:max-h-[70vh]">
+          <div className="relative grid aspect-square max-h-[60vh] w-full place-items-center rounded-sm bg-black md:max-h-[70vh]">
             <Image
               src={`/assets/exhibition-scroller/${selectedItem.id}.jpg`}
               alt={selectedItem.text}
               fill
               sizes="80vw"
-              className="object-contain"
+              className="w-full object-contain"
+              draggable={false}
             />
           </div>
           <div className="relative z-20 flex items-baseline justify-between gap-6 px-2 pt-6">
             <p className="max-w-3xl  text-white text-opacity-75">
               {selectedItem.text}
             </p>
+
+            {/* Close button desktop */}
             <button
               onClick={closeFocus}
-              className="rounded-full border border-gray-medium px-6 py-2 text-white text-opacity-60 transition-colors hover:text-opacity-100"
+              className="group hidden items-center gap-3 rounded-full bg-gray-medium py-2 pl-2 pr-6 leading-[0] text-white/60 transition-colors hover:text-white md:flex"
             >
-              Lukk
+              <div className="rounded-full bg-white/60 p-1 transition-colors group-hover:bg-white">
+                <MdClose size={16} className="text-gray-medium" />
+              </div>
+              <span>Lukk</span>
             </button>
           </div>
         </motion.div>
       </AnimatePresence>
 
-      <div className="fixed bottom-12 z-30 translate-x-14 md:relative md:translate-x-0">
+      <div className="fixed bottom-12 md:hidden">
+        <button
+          disabled={
+            selectedItem.id === scrollerItems[scrollerItems.length - 1].id
+          }
+          className="rounded-full bg-gray-medium p-6 text-white transition-colors active:opacity-75 disabled:cursor-not-allowed disabled:opacity-40"
+          ref={nextImageButtonRef}
+          onClick={closeFocus}
+          title="Lukk"
+        >
+          <MdClose size={24} />
+        </button>
+      </div>
+
+      <div className="fixed bottom-12 z-30 translate-x-24 md:relative md:translate-x-0">
         <button
           disabled={
             selectedItem.id === scrollerItems[scrollerItems.length - 1].id
@@ -210,6 +193,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
           className="rounded-full bg-gray-medium p-6 text-white transition-colors active:opacity-75 disabled:cursor-not-allowed disabled:opacity-40"
           ref={nextImageButtonRef}
           onClick={nextImage}
+          title="Neste bilde"
         >
           <MdArrowForward size={24} />
         </button>

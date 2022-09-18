@@ -970,7 +970,7 @@ const scrollerItems: ScrollerItem[] = [
   },
   {
     id: 120,
-    text: "barn ved ferjen Hovedøens bad. Bispebryggen.",
+    text: "Barn ved ferjen Hovedøens bad. Bispebryggen.",
     geopoint: {
       lng: 10.7554017632176,
       lat: 59.90628532676564,

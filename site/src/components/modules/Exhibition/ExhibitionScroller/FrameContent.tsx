@@ -25,7 +25,7 @@ export default function FrameContent({
   const buttonRef = useRef(null);
 
   function handleFocusImage() {
-    router.replace({ query: { focus: itemInView.id } }, undefined, {
+    router.push({ query: { image: itemInView.id } }, undefined, {
       shallow: true,
     });
   }

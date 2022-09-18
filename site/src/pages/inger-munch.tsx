@@ -11,14 +11,12 @@ import Footer from "../components/modules/Footer";
 import { fadeUp } from "../lib/animations";
 import { getEntry } from "../lib/api";
 
-export default function ExhibitionPage({
-  featuredLandingPageSection,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function ExhibitionPage() {
   return (
     <>
       <Metadata
         title="Inger Munch og Akerselva – Akerselva Friluftsmuseum"
-        description="..."
+        description="Inger Munch, søster av Edvard Munch, testamenterte ved sin død i 1952 over 200 negativer til Oslo Bymuseum. Blant negativene var mange av bildene i hennes bok «Akerselven», som ble utgitt i 1932. I 2022 er det 90 år siden boka kom ut, og 70 år siden Inger Munch døde. Vi markerer dette med utstillingen Inger Munch og Akerselva!"
       />
 
       <ExhHeader />
@@ -126,14 +124,4 @@ export default function ExhibitionPage({
       `}</style>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const featuredLandingPageSection = await getEntry("landing-page-sections", 2);
-
-  return {
-    props: {
-      featuredLandingPageSection,
-    },
-  };
 }

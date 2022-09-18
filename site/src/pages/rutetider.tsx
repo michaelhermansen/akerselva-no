@@ -8,12 +8,13 @@ import ImageTextRow from "../components/modules/ImageTextRow";
 import PageHeader from "../components/PageHeader";
 import { getEntry } from "../lib/api";
 
-export default function TimeTables({
-  featuredLandingPageSection,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function TimeTables() {
   return (
     <>
-      <Metadata title="Rutetider" description="..." />
+      <Metadata
+        title="Rutetider"
+        description="Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene danner et av Oslos mest omtalte sosiale skiller. Bjørvika på den ene siden og Grønland på den andre. I samarbeid med Akerselva trebåtforening kan vi presentere, Lørja: Akerselvas nye rutebåt. Lørja går i rute mellom Vaterland og Inger Munchs brygge utenfor det nye Munchmuseet i Bjørvika."
+      />
 
       <PageHeader />
 
@@ -167,14 +168,4 @@ function TableData({ children, noData }: { children?: string; noData?: true }) {
       </div>
     </td>
   );
-}
-
-export async function getStaticProps() {
-  const featuredLandingPageSection = await getEntry("landing-page-sections", 1);
-
-  return {
-    props: {
-      featuredLandingPageSection,
-    },
-  };
 }
