@@ -7,11 +7,28 @@ import Container from "../Container";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  function handleNewsletterSignUp(event: FormEvent<HTMLFormElement>) {
+  async function handleNewsletterSignUp(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log({ email });
+    setLoading(true);
+    setError(false);
+
+    const response = await fetch("/api/flaskepost", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    });
+
+    if (response.status !== 200) {
+      setError(true);
+      setLoading(false);
+      return;
+    }
+
+    setLoading(false);
     setSubmitted(true);
   }
 
@@ -39,7 +56,7 @@ export default function NewsletterSection() {
                   type: "tween",
                   ease: "easeOut",
                   duration: 0.2,
-                  delay: 0.1,
+                  delay: 0.4,
                 }}
                 className="max-w-[25ch] pb-4 text-center text-3xl leading-normal md:text-4xl"
               >
@@ -58,7 +75,7 @@ export default function NewsletterSection() {
                 transition={{
                   type: "spring",
                   duration: 0.8,
-                  delay: 0.5,
+                  delay: 0.8,
                 }}
                 key={`input-${submitted}`}
                 className="w-full max-w-sm justify-center"
@@ -74,15 +91,36 @@ export default function NewsletterSection() {
                       id="email"
                       required
                       placeholder="E-post"
-                      className="mb-3 w-full rounded-xs border border-black/5 py-3 px-5"
+                      className="mb-2 w-full rounded-xs border border-black/5 py-4 px-5"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
-                    <Button className="mx-auto" type="submit">
-                      Meld meg på
+
+                    <motion.div
+                      animate={{
+                        height: error ? "auto" : 0,
+                        opacity: error ? 1 : 0,
+                        transition: { delay: 0.1 },
+                      }}
+                      className="mx-auto max-w-max overflow-hidden rounded-xs bg-yellow/75"
+                      aria-hidden={!error}
+                      role="alert"
+                    >
+                      <p className="py-2 px-5">
+                        Noe gikk galt. Sjekk at e-posten er gyldig
+                      </p>
+                    </motion.div>
+
+                    <Button
+                      disabled={loading}
+                      className="mx-auto mt-3"
+                      type="submit"
+                    >
+                      {loading ? "Vennligst vent …" : "Meld meg på"}
                     </Button>
                   </>
                 )}
+
                 {submitted && (
                   <p className="pb-10 text-center text-lg text-black text-opacity-60 md:text-xl">
                     Du er nå meldt på vårt nyhetsbrev.

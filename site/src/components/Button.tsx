@@ -11,17 +11,26 @@ interface ButtonLinkProps extends LinkProps {
   children: ReactNode;
 }
 
-export default function Button({ className, children, ...rest }: ButtonProps) {
+export default function Button({
+  className,
+  disabled,
+  children,
+  ...rest
+}: ButtonProps) {
   const [hover, setHover] = useState(false);
 
   return (
     <button
-      className={classNames("btn", className)}
+      className={classNames(
+        "btn disabled:cursor-not-allowed disabled:opacity-75",
+        className
+      )}
       onMouseOver={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      disabled={disabled}
       {...rest}
     >
-      <ArrowIcon visible={hover} />
+      <ArrowIcon visible={hover && !disabled} />
       <span>{children}</span>
     </button>
   );
