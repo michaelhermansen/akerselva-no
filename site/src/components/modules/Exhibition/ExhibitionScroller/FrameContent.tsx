@@ -65,7 +65,7 @@ export default function FrameContent({
       </div>
 
       <div
-        className={"pointer-events-none absolute inset-0 z-30"}
+        className={"pointer-events-none absolute inset-0 z-30 bg-white/30"}
         aria-hidden={!showMap}
         hidden={!showMap}
       >

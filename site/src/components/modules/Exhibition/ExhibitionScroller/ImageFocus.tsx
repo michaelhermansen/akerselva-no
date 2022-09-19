@@ -57,7 +57,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
     focusImage(prevItem.id);
   }, [focusImage, selectedItem]);
 
-  // Handle keyboard/swipe events
+  // Handle keyboard events
   useEffect(() => {
     const wrapperEl = wrapperRef.current;
     const prevButtonEl = prevImageButtonRef.current;
@@ -104,11 +104,11 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
     };
   }, [closeFocus, prevImage, nextImage]);
 
-  useEffect(() => {
-    // const target = wrapperRef.current;
-    lock();
-    return () => unlock();
-  }, []);
+  // useEffect(() => {
+  // const target = wrapperRef.current;
+  // lock(target);
+  // return () => unlock(target);
+  // }, []);
 
   if (!selectedItem.id) return null;
 

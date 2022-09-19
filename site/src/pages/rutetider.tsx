@@ -30,7 +30,7 @@ export default function TimeTables() {
             text="«Ferjen går fullastet. Til høireprammer som fører Oslos søppel til Langøene. To øer forenes, og det er en frodig vekst der ute.»"
             caption="Foto av Inger Munch"
             imageOrientation="landscape"
-            imageSrc="/assets/exhibition-scroller/2.jpg"
+            imageSrc="/assets/timetables/1.jpg"
           />
 
           <ImageTextRow
@@ -38,14 +38,7 @@ export default function TimeTables() {
             caption="Her på sjøen ved Bjørvika"
             imageOrientation="portrait"
             reverse
-            imageSrc="/assets/exhibition-scroller/2.jpg"
-          />
-
-          <ImageTextRow
-            text="«Ferjen går fullastet. Til høireprammer som fører Oslos søppel til Langøene. To øer forenes, og det er en frodig vekst der ute.»"
-            caption="Foto av Inger Munch"
-            imageOrientation="landscape"
-            imageSrc="/assets/exhibition-scroller/2.jpg"
+            imageSrc="/assets/timetables/2.jpg"
           />
         </Container>
       </div>
