@@ -31,7 +31,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
       const listItem: HTMLLIElement | null = document.querySelector(
         `#image-${selectedItem.id}`
       );
-      return (listItem?.offsetTop || 0) - window.innerHeight * 0.4;
+      return (listItem?.offsetTop || 0) - window.innerHeight * 0.4 + 8;
     }
 
     window.scroll({ top: getListItemScrollPos() });
@@ -106,7 +106,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
 
   useEffect(() => {
     const target = wrapperRef.current;
-    lock(target);
+    // lock(target);
     return () => unlock(target);
   }, []);
 
