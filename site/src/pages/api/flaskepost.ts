@@ -19,10 +19,9 @@ export default async function handler(
       email,
     };
 
-    console.log(newSignup);
-
     const response = await client.create(newSignup);
-    console.log(response);
+
+    console.log({ response });
 
     return res.status(200).json({ message: "Email successfully submitted" });
   } catch (error) {
