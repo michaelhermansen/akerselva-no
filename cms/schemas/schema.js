@@ -8,6 +8,7 @@ import link from "./link";
 import siteSettings from "./siteSettings";
 import homePage from "./homePage";
 import exhibitionPage from "./exhibitionPage";
+import newsletterSignup from "./newsletterSignup";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -18,5 +19,6 @@ export default createSchema({
     exhibitionPage,
     landingPageSection,
     link,
+    newsletterSignup,
   ]),
 });
