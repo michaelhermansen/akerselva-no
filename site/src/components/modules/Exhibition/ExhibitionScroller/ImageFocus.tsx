@@ -105,9 +105,9 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
   }, [closeFocus, prevImage, nextImage]);
 
   useEffect(() => {
-    const target = wrapperRef.current;
-    // lock(target);
-    return () => unlock(target);
+    // const target = wrapperRef.current;
+    lock();
+    return () => unlock();
   }, []);
 
   if (!selectedItem.id) return null;
