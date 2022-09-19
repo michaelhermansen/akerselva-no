@@ -41,7 +41,7 @@ export default function LandingPageSection({
               height={600}
             />
 
-            <p className="absolute top-0 my-10 w-full max-w-[30ch] px-8 text-4xl leading-normal text-white lg:px-14 lg:text-5xl">
+            <p className="absolute top-0 my-10 w-full max-w-[30ch] px-8 text-4xl !leading-small text-white drop-shadow-lg lg:px-14 lg:text-5xl">
               {section.attributes.ImageTitle}
             </p>
           </Link>
