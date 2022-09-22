@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { InferGetStaticPropsType } from "next";
 import { MapProvider } from "react-map-gl";
 import Container from "../components/Container";
 import Metadata from "../components/Metadata";
@@ -9,7 +8,6 @@ import ExhibitionScroller from "../components/modules/Exhibition/ExhibitionScrol
 import ExhImageQuote from "../components/modules/Exhibition/ExhImageQuote";
 import Footer from "../components/modules/Footer";
 import { fadeUp } from "../lib/animations";
-import { getEntry } from "../lib/api";
 
 export default function ExhibitionPage() {
   return (
@@ -17,6 +15,7 @@ export default function ExhibitionPage() {
       <Metadata
         title="Inger Munch og Akerselva – Akerselva Friluftsmuseum"
         description="Inger Munch, søster av Edvard Munch, testamenterte ved sin død i 1952 over 200 negativer til Oslo Bymuseum. Blant negativene var mange av bildene i hennes bok «Akerselven», som ble utgitt i 1932. I 2022 er det 90 år siden boka kom ut, og 70 år siden Inger Munch døde. Vi markerer dette med utstillingen Inger Munch og Akerselva!"
+        imageUrl="/assets/open-graph/og_inger-munch.jpg"
       />
 
       <ExhHeader />

@@ -15,7 +15,7 @@ export default async function handler(
 
     const newSignup = {
       _type: "newsletterSignup",
-      signupDate: new Date().toISOString().split("T")[0],
+      signupDate: new Date().toISOString().split("T")[0], // DD-MM-YYYY
       email,
     };
 

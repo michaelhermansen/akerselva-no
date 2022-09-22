@@ -58,7 +58,7 @@ export default function NewsletterSection() {
                   duration: 0.2,
                   delay: 0.4,
                 }}
-                className="max-w-[25ch] pb-4 text-center text-3xl leading-normal md:text-4xl"
+                className="max-w-[16ch] pb-4 text-center text-2xl leading-normal md:max-w-[25ch] md:text-4xl"
               >
                 {!submitted &&
                   "Motta flaskepost for nye arrangementer og oppdateringer"}

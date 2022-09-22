@@ -20,27 +20,29 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
       <header className="grid gap-12 py-12 lg:grid-cols-4">
         <div className="col-span-2 md:col-span-1">
           <Link href="/">
-            <h1 className="mb-8 max-w-max text-xl leading-normal">
+            <h1 className="max-w-max text-xl leading-normal lg:mb-8">
               Akerselva
               <br />
               Friluftsmuseum
             </h1>
           </Link>
 
-          <p className="pb-1 text-black/50">Opplevelser</p>
-          <ul className="text-lg">
-            {navigationLinks.map((link) => (
-              <li key={link.hash}>
-                <Link
-                  onTouchStart={() => videoRef.current?.play()}
-                  className="inline-block py-1 text-black/50 transition-colors hover:text-black"
-                  href={{ hash: link.hash }}
-                >
-                  {link.linkText}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden lg:block">
+            <p className="pb-2 text-black/50">Opplevelser</p>
+            <ul className="text-lg">
+              {navigationLinks.map((link) => (
+                <li key={link.hash}>
+                  <Link
+                    onTouchStart={() => videoRef.current?.play()}
+                    className="inline-block py-1 text-black/50 transition-colors hover:text-black"
+                    href={{ hash: link.hash }}
+                  >
+                    {link.linkText}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <motion.div

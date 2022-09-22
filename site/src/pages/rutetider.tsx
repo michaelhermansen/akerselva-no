@@ -14,6 +14,7 @@ export default function TimeTables() {
       <Metadata
         title="Rutetider"
         description="Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene danner et av Oslos mest omtalte sosiale skiller. Bjørvika på den ene siden og Grønland på den andre. I samarbeid med Akerselva trebåtforening kan vi presentere, Lørja: Akerselvas nye rutebåt. Lørja går i rute mellom Vaterland og Inger Munchs brygge utenfor det nye Munchmuseet i Bjørvika."
+        imageUrl="/assets/open-graph/og_boat.jpg"
       />
 
       <PageHeader />
@@ -27,15 +28,13 @@ export default function TimeTables() {
           </p>
 
           <ImageTextRow
-            text="«Ferjen går fullastet. Til høireprammer som fører Oslos søppel til Langøene. To øer forenes, og det er en frodig vekst der ute.»"
-            caption="Foto av Inger Munch"
+            text="Akerselva trebåtforening hadde lenge drømt om å bygge en ferje som kunne gå i rute mellom Vaterland og Bjørvika."
             imageOrientation="landscape"
             imageSrc="/assets/timetables/1.jpg"
           />
 
           <ImageTextRow
-            text="Inspirert av den britiske Punten og den norske Lørja har Akerselva trebåtforening  bygget en båt som går mellom Vaterland og Bjørvika, med støtte fra Eckbos legat og Kulturrådet."
-            caption="Her på sjøen ved Bjørvika"
+            text="Med støtte fra Eckbos legat og Kulturrådet har drømmen blitt virkelighet. Båten er inspirert av den britiske Punten og den norske Lørja."
             imageOrientation="portrait"
             reverse
             imageSrc="/assets/timetables/2.jpg"

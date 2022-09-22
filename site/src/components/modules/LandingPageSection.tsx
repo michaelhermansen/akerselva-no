@@ -34,7 +34,7 @@ export default function LandingPageSection({
             className="group relative block"
           >
             <Image
-              className="h-[390px] scale-[1.01] rounded-md bg-gray-medium object-cover transition-all duration-300 hover:scale-100 group-hover:rounded-lg md:h-[490px]"
+              className="h-[390px] scale-[1.01] rounded-md bg-gray-medium object-cover brightness-50 transition-all duration-300 hover:scale-100 group-hover:rounded-lg md:h-[490px]"
               src={section.attributes.Image.url}
               alt=""
               width={1200}

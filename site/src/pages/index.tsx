@@ -21,7 +21,11 @@ export default function Home({
 
   return (
     <>
-      <Metadata title="Akerselva Friluftsmuseum" description="..." />
+      <Metadata
+        title="Akerselva Friluftsmuseum"
+        description="Akerselva Friluftsmuseum lager utstillinger og aktiviteter som forsterker opplevelsen av Oslos viktigste byrom."
+        imageUrl="/assets/open-graph/og_home.jpg"
+      />
 
       <div className="bg-gray-light">
         <HeaderSection navigationLinks={navigationLinks} />

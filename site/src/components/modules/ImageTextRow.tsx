@@ -5,7 +5,6 @@ import { fadeUp } from "../../lib/animations";
 
 interface ImageTextRowProps {
   text: string;
-  caption: string;
   imageOrientation: "landscape" | "portrait";
   imageSrc: string;
   reverse?: true;
@@ -13,7 +12,6 @@ interface ImageTextRowProps {
 
 export default function ImageTextRow({
   text,
-  caption,
   imageOrientation,
   imageSrc,
   reverse,
@@ -41,19 +39,14 @@ export default function ImageTextRow({
         <Image src={imageSrc} alt="" fill className="object-cover" />
       </div>
 
-      <figure
+      <div
         className={classNames("col-span-2 max-w-md md:max-w-full", {
           "flex-[1]": imageOrientation === "landscape",
           "flex-[3]": imageOrientation === "portrait",
         })}
       >
-        <blockquote>
-          <p className="max-w-[40ch] pb-2 text-lg md:text-2xl">{text}</p>
-        </blockquote>
-        <figcaption>
-          <cite className="not-italic text-black/50">{caption}</cite>
-        </figcaption>
-      </figure>
+        <p className="max-w-[40ch] pb-2 text-lg md:text-2xl">{text}</p>
+      </div>
     </motion.div>
   );
 }

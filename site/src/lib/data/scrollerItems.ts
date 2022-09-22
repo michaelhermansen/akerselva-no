@@ -314,7 +314,7 @@ const scrollerItems: ScrollerItem[] = [
   },
   {
     id: 46,
-    text: "I urskogen. (2)",
+    text: "I urskogen.",
     geopoint: {
       lng: 10.766679565197407,
       lat: 59.942717824132274,
@@ -330,7 +330,7 @@ const scrollerItems: ScrollerItem[] = [
   },
   {
     id: 45,
-    text: "I urskogen. (1)",
+    text: "I urskogen.",
     geopoint: {
       lng: 10.76612902514279,
       lat: 59.94201523507432,
@@ -506,7 +506,7 @@ const scrollerItems: ScrollerItem[] = [
   },
   {
     id: 66,
-    text: "Fra fossen nedenfor Beierbroen. (1)",
+    text: "Fra fossen nedenfor Beierbroen.",
     geopoint: {
       lng: 10.757375542191852,
       lat: 59.930803524006315,
@@ -538,7 +538,7 @@ const scrollerItems: ScrollerItem[] = [
   },
   {
     id: 69,
-    text: "Fra fossen nedenfor Beierbroen. (2)",
+    text: "Fra fossen nedenfor Beierbroen.",
     geopoint: {
       lng: 10.757394690931275,
       lat: 59.930301886712165,
@@ -762,7 +762,7 @@ const scrollerItems: ScrollerItem[] = [
   },
   {
     id: 98,
-    text: "Fra Ankerbroen. (1)",
+    text: "Fra Ankerbroen.",
     geopoint: {
       lng: 10.756864979631484,
       lat: 59.917994878615424,
