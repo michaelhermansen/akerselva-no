@@ -41,8 +41,8 @@ export default function Footer() {
         </div>
       </Container>
 
-      <Container className="flex flex-col gap-16 pt-36 pb-16 lg:flex-row lg:items-center">
-        <p className="text-white/50">
+      <Container className="flex flex-col gap-10 pt-36 pb-16 lg:flex-row lg:items-center">
+        <p className="text-sm text-white/50">
           Designet og utviklet av
           <br />
           <a

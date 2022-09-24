@@ -6,7 +6,8 @@ export const apiLandingPageSection = z.object({
     NavigationTitle: z.string(),
     Title: z.string(),
     Subtitle: z.string(),
-    ImageTitle: z.string(),
+    ImageTitle: z.string().optional(),
+    ImageOverlay: z.string().optional(),
     Image: z.object({
       url: z.string(),
     }),

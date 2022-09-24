@@ -41,9 +41,23 @@ export default function LandingPageSection({
               height={600}
             />
 
-            <p className="absolute top-0 my-10 w-full max-w-[30ch] px-8 text-4xl !leading-small text-white drop-shadow-lg lg:px-14 lg:text-5xl">
-              {section.attributes.ImageTitle}
-            </p>
+            {section.attributes.ImageTitle && (
+              <p className="absolute top-0 my-10 w-full max-w-[30ch] px-8 text-4xl !leading-small text-white drop-shadow-lg lg:px-14 lg:text-5xl">
+                {section.attributes.ImageTitle}
+              </p>
+            )}
+
+            {section.attributes.ImageOverlay && (
+              <div className="pointer-events-none absolute inset-0 grid place-items-center">
+                <Image
+                  src={section.attributes.ImageOverlay}
+                  alt=""
+                  width={280}
+                  height={280}
+                  className="object-contain drop-shadow-lg"
+                />
+              </div>
+            )}
           </Link>
 
           <div className="col-span-1 lg:hidden">
