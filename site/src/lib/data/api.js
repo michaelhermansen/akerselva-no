@@ -13,7 +13,7 @@ const api = {
           ImageTitle: "",
           ImageOverlay: "/assets/ima-logo.svg",
           Description:
-            "Inger Munch, søster av Edvard Munch, testamenterte ved sin død i 1952 over 200 negativer til Oslo Bymuseum. Blant negativene var mange av bildene i hennes bok «Akerselven» som ble utgitt i 1932. I 2022 er det 90 år siden boka kom ut, og 70 år siden Inger Munch døde. Vi markerer dette med utstillingen Inger Munch og Akerselva!",
+            "Inger Munch, søster av Edvard Munch, testamenterte ved sin død i 1952 over 200 negativer til Oslo Bymuseum. Blant negativene var mange av bildene fra hennes bok «Akerselven» som ble utgitt i 1932. I 2022 er det 90 år siden boka kom ut, og 70 år siden Inger Munch døde. Vi markerer dette med utstillingen Inger Munch og Akerselva!",
           Link: {
             LinkText: "Se digital utstilling",
             LinkUrl: "/inger-munch",
@@ -25,8 +25,8 @@ const api = {
         attributes: {
           NavigationTitle: "Lørja: Akerselvas nye rutebåt",
           Title: "Rutebåt mellom Vaterland og Bjørvika",
-          Subtitle: "Aktivitet – Vår / Sommer",
-          ImageTitle: "Opplev Akerselvas nye rutebåt, gjennom kulverten.",
+          Subtitle: "Aktivitet – Høst",
+          ImageTitle: "Opplev Akerselvas nye rutebåt gjennom kulverten.",
           Image: {
             url: "/assets/kulvert.jpg",
           },

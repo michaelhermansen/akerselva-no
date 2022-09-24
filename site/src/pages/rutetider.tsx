@@ -21,11 +21,18 @@ export default function TimeTables() {
 
       <div id="content">
         <Container>
-          <p className="mx-auto max-w-4xl px-4 py-24 text-center text-xl !leading-normal sm:text-2xl md:py-44 md:text-3xl">
-            Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene
-            danner et av Oslos mest omtalte sosiale skiller, med Bjørvika på den
-            ene siden og Grønland på den andre.
-          </p>
+          <div className="mx-auto max-w-4xl px-4 py-24 text-center text-xl !leading-normal sm:text-2xl md:py-44 md:text-3xl">
+            <p className="mb-6">
+              Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene
+              danner et av Oslos mest omtalte sosiale skiller, med Bjørvika på
+              den ene siden og Grønland på den andre.
+            </p>
+            <p>
+              I samarbeid med Akerselva trebåtforening har vi bygget Lørja;
+              Akerselvas nye rutebåt. Den skal gå i rute mellom Vaterland og
+              Inger Munchs brygge.
+            </p>
+          </div>
 
           <ImageTextRow
             text="Akerselva trebåtforening hadde lenge drømt om å bygge en ferje som kunne gå i rute mellom Vaterland og Bjørvika."
@@ -46,9 +53,6 @@ export default function TimeTables() {
         <section id="rutetider" className="py-6">
           <Container>
             <h2 className="text-center text-4xl">Rutetider</h2>
-            <p className="py-2 text-center text-lg">
-              Å reise med rutebåten er gratis for alle!
-            </p>
 
             <div className="mx-auto mt-12 max-w-6xl overflow-x-auto rounded-md border border-black/5 bg-white px-4 py-8">
               <table className="w-full min-w-[700px] table-fixed">
@@ -131,7 +135,7 @@ export default function TimeTables() {
         <Container>
           <CompactCTA
             title="Inger Munch og Akerselva"
-            text="Inger Munch, søster av Edvard Munch, testamenterte ved sin død i 1952 over 200 negativer til Oslo Bymuseum. Blant negativene var mange av bildene i hennes bok «Akerselven» som ble utgitt i 1932. I 2022 er det 90 år siden boka kom ut, og 70 år siden Inger Munch døde. Vi markerer dette med utstillingen Inger Munch og Akerselva!"
+            text="Inger Munch, søster av Edvard Munch, testamenterte ved sin død i 1952 over 200 negativer til Oslo Bymuseum. Blant negativene var mange av bildene fra hennes bok «Akerselven» som ble utgitt i 1932. I 2022 er det 90 år siden boka kom ut, og 70 år siden Inger Munch døde. Vi markerer dette med utstillingen Inger Munch og Akerselva!"
             url="/inger-munch"
             imageSrc="/assets/inger-edvard.jpg"
           />
