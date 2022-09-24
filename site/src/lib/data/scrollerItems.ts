@@ -897,14 +897,6 @@ const scrollerItems: ScrollerItem[] = [
     },
   },
   {
-    id: 126,
-    text: "Ut på fiske. I bakgrunnen Schweigaards bro.",
-    geopoint: {
-      lng: 10.757605287202379,
-      lat: 59.911271821616026,
-    },
-  },
-  {
     id: 125,
     text: "Schweigaards bro, bygget i 1882.",
     geopoint: {
