@@ -55,7 +55,7 @@ export default function LandingPageSection({
                   alt=""
                   width={280}
                   height={280}
-                  className="object-contain drop-shadow-lg"
+                  className="max-w-[50%] object-contain drop-shadow-lg"
                   draggable={false}
                 />
               </div>
