@@ -35,16 +35,16 @@ export default function TimeTables() {
           </div>
 
           <ImageTextRow
-            text="Akerselva trebåtforening hadde lenge drømt om å bygge en ferje som kunne gå i rute mellom Vaterland og Bjørvika."
-            imageOrientation="landscape"
-            imageSrc="/assets/timetables/1.jpg"
-          />
-
-          <ImageTextRow
-            text="Med støtte fra Eckbos legat og Kulturrådet har drømmen blitt virkelighet. Båten er inspirert av den britiske Punten og den norske Lørja."
+            text="Båtens utforming er inspirert av den britiske Punten og den norske Lørja. Rutebåten ble bygget med støtte fra Eckbos legater og Kulturrådet."
             imageOrientation="portrait"
             reverse
             imageSrc="/assets/timetables/2.jpg"
+          />
+
+          <ImageTextRow
+            text="Akerselva trebåtforening hadde lenge drømt om å bygge en ferje som kunne gå i rute mellom Vaterland og Bjørvika."
+            imageOrientation="landscape"
+            imageSrc="/assets/timetables/1.jpg"
           />
         </Container>
       </div>

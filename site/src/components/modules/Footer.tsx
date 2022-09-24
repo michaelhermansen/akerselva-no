@@ -33,7 +33,9 @@ export default function Footer() {
         <div className="justify-center text-lg lg:flex">
           <ul>
             <ListLink href="tel:+47 98 69 20 42">+47 98 69 20 42</ListLink>
-            <ListLink href="mailto:hei@akerselva.no">hei@akerselva.no</ListLink>
+            <ListLink href="mailto:post@akerselva.no">
+              post@akerselva.no
+            </ListLink>
             <ListLink href="https://www.instagram.com/akerselva_friluftsmuseum/">
               @akerselva_friluftsmuseum
             </ListLink>

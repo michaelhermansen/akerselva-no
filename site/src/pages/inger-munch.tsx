@@ -68,7 +68,7 @@ export default function ExhibitionPage() {
             viewport={{ once: true }}
             className="px-4 pt-48 pb-20 text-center text-2xl text-white sm:text-3xl md:pb-24"
           >
-            Opplev Akerselva slik Inger&nbsp;Munch&nbsp;så&nbsp;den
+            Følg Inger Munchs fotospor langs Akerselva
           </motion.h2>
 
           <MapProvider>
