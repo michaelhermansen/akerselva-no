@@ -12,7 +12,7 @@ export default function TimeTables() {
   return (
     <>
       <Metadata
-        title="Rutetider"
+        title="Lørja: Akerselvas nye rutebåt – Akerselva Friluftsmuseum"
         description="Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene danner et av Oslos mest omtalte sosiale skiller. Bjørvika på den ene siden og Grønland på den andre. I samarbeid med Akerselva trebåtforening kan vi presentere, Lørja: Akerselvas nye rutebåt. Lørja går i rute mellom Vaterland og Inger Munchs brygge utenfor det nye Munchmuseet i Bjørvika."
         imageUrl="/assets/open-graph/og_boat.jpg"
       />
