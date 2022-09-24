@@ -142,7 +142,7 @@ export default function ImageFocus({ selectedItem }: ImageFocusProps) {
           exit="hidden"
           className="w-full max-w-6xl"
         >
-          <div className="relative grid aspect-square max-h-[60vh] w-full place-items-center rounded-sm bg-black md:max-h-[70vh]">
+          <div className="relative grid h-[70vh] w-full place-items-center rounded-sm bg-black md:max-h-[70vh]">
             <Image
               src={`/assets/exhibition-scroller/${selectedItem.id}.jpg`}
               alt={selectedItem.text}
