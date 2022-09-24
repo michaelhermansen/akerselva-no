@@ -1,12 +1,10 @@
 import classNames from "classnames";
-import { InferGetStaticPropsType } from "next";
 import Container from "../components/Container";
 import Metadata from "../components/Metadata";
 import CompactCTA from "../components/modules/CompactCTA";
 import Footer from "../components/modules/Footer";
 import ImageTextRow from "../components/modules/ImageTextRow";
 import PageHeader from "../components/PageHeader";
-import { getEntry } from "../lib/api";
 
 export default function TimeTables() {
   return (
