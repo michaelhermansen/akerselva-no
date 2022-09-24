@@ -11,7 +11,6 @@ export default function ExhNewsletterSection() {
 
   function handleNewsletterSignUp(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log({ email });
     setSubmitted(true);
   }
 

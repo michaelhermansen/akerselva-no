@@ -21,8 +21,6 @@ export default async function handler(
 
     const response = await client.create(newSignup);
 
-    console.log({ response });
-
     return res.status(200).json({ message: "Email successfully submitted" });
   } catch (error) {
     if (error instanceof ZodError) {
