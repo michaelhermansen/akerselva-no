@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/future/image";
 import Link from "next/link";
 import { MdArrowBack, MdArrowDownward } from "react-icons/md";
+import { ButtonLink } from "../../Button";
 import Container from "../../Container";
 import IngerMunchLogo from "../../IngerMunchLogo";
 
@@ -34,10 +35,9 @@ export default function ExhHeader() {
             </p>
           </Link>
 
-          <Link className="hidden items-center gap-2 lg:flex" href="/">
-            <MdArrowBack />
-            <span className="text-lg">Tilbake</span>
-          </Link>
+          <ButtonLink href="/" back transparent>
+            Tilbake
+          </ButtonLink>
         </div>
 
         <motion.h1

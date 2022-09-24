@@ -18,7 +18,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
   return (
     <Container>
       <header className="grid gap-12 py-12 lg:grid-cols-4">
-        <div className="col-span-2 md:col-span-1">
+        <div className="col-span-2 pt-3 md:col-span-1">
           <Link href="/">
             <h1 className="max-w-max text-xl leading-normal lg:mb-8">
               Akerselva
