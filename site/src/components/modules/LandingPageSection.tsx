@@ -39,10 +39,11 @@ export default function LandingPageSection({
               alt=""
               width={1200}
               height={600}
+              draggable={false}
             />
 
             {section.attributes.ImageTitle && (
-              <p className="absolute top-0 my-10 w-full max-w-[30ch] px-8 text-4xl !leading-small text-white drop-shadow-lg lg:px-14 lg:text-5xl">
+              <p className="pointer-events-none absolute top-0 my-10 w-full max-w-[30ch] px-8 text-4xl !leading-small text-white drop-shadow-lg lg:px-14 lg:text-5xl">
                 {section.attributes.ImageTitle}
               </p>
             )}
@@ -55,6 +56,7 @@ export default function LandingPageSection({
                   width={280}
                   height={280}
                   className="object-contain drop-shadow-lg"
+                  draggable={false}
                 />
               </div>
             )}
