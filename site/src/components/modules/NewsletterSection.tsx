@@ -44,7 +44,7 @@ export default function NewsletterSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid place-items-center gap-4"
+            className="grid place-items-center gap-5"
           >
             <AnimatePresence initial={false} mode="popLayout">
               <motion.h2
@@ -91,7 +91,7 @@ export default function NewsletterSection() {
                       id="email"
                       required
                       placeholder="E-post"
-                      className="mb-2 w-full rounded-xs border border-black/5 py-4 px-5"
+                      className="mb-2 w-full rounded-xs border border-black/5 py-3 px-5"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -122,7 +122,7 @@ export default function NewsletterSection() {
                 )}
 
                 {submitted && (
-                  <p className="pb-10 text-center text-lg text-black text-opacity-60 md:text-xl">
+                  <p className="pb-10 text-center text-lg text-black/60 md:text-xl">
                     Du er nå meldt på vårt nyhetsbrev.
                   </p>
                 )}

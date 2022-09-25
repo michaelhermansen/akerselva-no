@@ -28,7 +28,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
           </Link>
 
           <div className="hidden lg:block">
-            <p className="pb-2 text-black/50">Opplevelser</p>
+            <p className="pb-2 text-black/60">Opplevelser</p>
             <ul className="text-lg">
               {navigationLinks.map((link) => (
                 <li key={link.hash}>

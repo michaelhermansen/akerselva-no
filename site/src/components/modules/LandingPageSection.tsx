@@ -23,9 +23,7 @@ export default function LandingPageSection({
           <h2 className="pb-3 text-xl leading-normal">
             {section.attributes.Title}
           </h2>
-          <p className="text-black text-opacity-50">
-            {section.attributes.Subtitle}
-          </p>
+          <p className="text-black/60">{section.attributes.Subtitle}</p>
         </div>
 
         <div className="col-span-3 space-y-4 md:space-y-6">
@@ -52,7 +50,7 @@ export default function LandingPageSection({
               <div className="pointer-events-none absolute inset-0 grid place-items-center">
                 <Image
                   src={section.attributes.ImageOverlay}
-                  alt=""
+                  alt={section.attributes.Title}
                   width={280}
                   height={280}
                   className="max-w-[50%] object-contain drop-shadow-lg"
@@ -63,7 +61,7 @@ export default function LandingPageSection({
           </Link>
 
           <div className="col-span-1 lg:hidden">
-            <p className="pt-4 pb-1 text-black text-opacity-50">
+            <p className="pt-4 pb-1 text-black/60">
               {section.attributes.Subtitle}
             </p>
             <h2 className="text-2xl font-medium leading-normal">

@@ -19,7 +19,7 @@ export default function TimeTables() {
 
       <div id="content">
         <Container>
-          <div className="mx-auto max-w-4xl px-4 py-24 text-center text-xl !leading-normal sm:text-2xl md:py-44 md:text-3xl">
+          <div className="mx-auto max-w-4xl px-4 py-20 text-center text-lg !leading-normal sm:text-2xl md:py-44 md:text-3xl">
             <p className="mb-6">
               Under togsporene på Oslo S ligger Akerselva i kulvert. Togsporene
               danner et av Oslos mest omtalte sosiale skiller, med Bjørvika på
@@ -146,12 +146,12 @@ export default function TimeTables() {
 }
 
 function TableHeader({ children }: { children: string }) {
-  return <th className="pb-8 pt-4 text-xl font-normal">{children}</th>;
+  return <th className="pb-8 pt-4 font-normal md:text-lg">{children}</th>;
 }
 
 function TableData({ children, noData }: { children?: string; noData?: true }) {
   return (
-    <td className="p-1">
+    <td className="p-1 text-sm md:text-base">
       <div
         className={classNames("rounded-xs py-3 text-center opacity-60", {
           "bg-gray-medium/5": !noData,
