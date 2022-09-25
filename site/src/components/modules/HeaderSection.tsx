@@ -34,7 +34,7 @@ export default function HeaderSection({ navigationLinks }: HeaderSectionProps) {
                 <li key={link.hash}>
                   <Link
                     onTouchStart={() => videoRef.current?.play()}
-                    className="inline-block py-1 text-black/50 transition-colors hover:text-black"
+                    className="inline-block py-1 text-black/60 transition-colors hover:text-black"
                     href={{ hash: link.hash }}
                   >
                     {link.linkText}
