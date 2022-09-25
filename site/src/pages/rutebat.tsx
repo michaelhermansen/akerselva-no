@@ -120,7 +120,7 @@ export default function TimeTables() {
                   Avganger fra Vaterland
                 </span>
               </div>
-              <p className="text-black/50">
+              <p className="text-black/60">
                 Vi respekterer Akerselvas krefter og opererer derfor med
                 forholdsforbehold.
               </p>
@@ -155,7 +155,7 @@ function TableData({ children, noData }: { children?: string; noData?: true }) {
       <div
         className={classNames("rounded-xs py-3 text-center opacity-60", {
           "bg-gray-medium/5": !noData,
-          "text-black/50": noData,
+          "text-black/60": noData,
         })}
       >
         {children}
