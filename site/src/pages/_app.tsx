@@ -2,6 +2,8 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { IconContext } from "react-icons";
+import NoSSR from "react-no-ssr";
+import CookieBanner from "../components/modules/CookieBanner";
 import "../styles/global.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -41,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <IconContext.Provider value={{ size: "18px" }}>
       <Component {...pageProps} />
+      <CookieBanner />
     </IconContext.Provider>
   );
 }
