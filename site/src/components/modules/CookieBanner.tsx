@@ -21,17 +21,12 @@ export default function CookieBanner() {
       {cookieStatus === "allowed" && (
         <>
           <Script
-            strategy="afterInteractive"
             src="https://www.googletagmanager.com/gtag/js?id=G-V6CCVYKWQ2"
+            strategy="afterInteractive"
           />
-
-          <script
-            type="text/partytown"
-            dangerouslySetInnerHTML={{
-              __html:
-                "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-V6CCVYKWQ2');",
-            }}
-          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`window.dataLayer = window.dataLayer || []; function gtag(){window.dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-V6CCVYKWQ2');`}
+          </Script>
         </>
       )}
 
