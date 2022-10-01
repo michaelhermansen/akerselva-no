@@ -9,7 +9,6 @@ const nextConfig = {
   experimental: {
     newNextLinkBehavior: true,
     images: { allowFutureImage: true },
-    nextScriptWorkers: true,
   },
 };
 
