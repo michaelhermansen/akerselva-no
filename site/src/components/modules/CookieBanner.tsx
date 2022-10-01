@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
-import Head from "next/head";
 import NoSSR from "react-no-ssr";
 import useLocalStorage from "../../lib/use-local-storage";
+import Script from "next/script";
 
 export default function CookieBanner() {
   const [cookieStatus, setCookieStatus] = useLocalStorage<
@@ -18,7 +18,22 @@ export default function CookieBanner() {
 
   return (
     <NoSSR>
-      <Head>{cookieStatus === "allowed" && null}</Head>
+      {cookieStatus === "allowed" && (
+        <>
+          <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-V6CCVYKWQ2"
+          />
+
+          <script
+            type="text/partytown"
+            dangerouslySetInnerHTML={{
+              __html:
+                "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-V6CCVYKWQ2');",
+            }}
+          />
+        </>
+      )}
 
       <AnimatePresence>
         {cookieStatus === "unset" && (

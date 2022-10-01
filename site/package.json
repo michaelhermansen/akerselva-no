@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.0",
     "@react-aria/button": "^3.6.1",
     "@sanity/client": "^3.3.5",
     "@types/react-no-ssr": "^1.1.3",
