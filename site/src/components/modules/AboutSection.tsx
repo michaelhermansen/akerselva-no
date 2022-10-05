@@ -17,14 +17,13 @@ export default function AboutSection() {
           <div className="max-w-[70ch] leading-normal text-black md:text-xl md:leading-normal">
             <p className="mb-4">
               Akerselva Friluftsmuseum lager utstillinger og aktiviteter som
-              forsterker opplevelsen av Oslos viktigste byrom. Museet er
-              skybasert, men regner ned i byrommet i form av stedsspesifikke
-              prosjekter. I samarbeid med institusjoner og aktører langs
-              Akerselva trekker vi linjer mellom fortid, nåtid og fremtid.
+              forsterker opplevelsen av Oslos viktigste byrom. Vi samarbeider
+              med institusjoner og aktører langs Akerselva og trekker linjer
+              mellom fortid, nåtid og fremtid.
             </p>
             <p>
               Med Maridalsvannet i ryggen har vi en beskjeden ambisjon om å
-              seile frem som et av verdens beste friluftsmuseer!
+              seile frem som et av verdens beste friluftsmuseer.
             </p>
           </div>
         </div>

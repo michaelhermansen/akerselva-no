@@ -33,16 +33,16 @@ export default function TimeTables() {
           </div>
 
           <ImageTextRow
-            text="Båtens utforming er inspirert av den britiske Punten og den norske Lørja. Rutebåten ble bygget med støtte fra Eckbos legater og Kulturrådet."
-            imageOrientation="portrait"
-            reverse
-            imageSrc="/assets/timetables/2.jpg"
+            text="I samarbeid med Akerselva trebåtforening kan vi endelig presentere Lørja; Akerselvas nye rutebåt som skal gå mellom Vaterland og Inger Munchs brygge."
+            imageOrientation="landscape"
+            imageSrc="/assets/timetables/1.jpg"
           />
 
           <ImageTextRow
-            text="Akerselva trebåtforening hadde lenge drømt om å bygge en ferje som kunne gå i rute mellom Vaterland og Bjørvika."
+            text="Lørja er en flatbunnet pram bygget på dugnad av Akerselva trebåtforening. Den kan frakte opp til 10 personer i tillegg til en Lørjekaptein."
             imageOrientation="landscape"
-            imageSrc="/assets/timetables/1.jpg"
+            reverse
+            imageSrc="/assets/timetables/2.jpg"
           />
         </Container>
       </div>
