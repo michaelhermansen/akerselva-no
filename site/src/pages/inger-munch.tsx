@@ -22,7 +22,7 @@ export default function ExhibitionPage() {
 
       <section id="content">
         <Container>
-          <figure className="mx-auto max-w-[50ch] px-2 pt-32 pb-40 text-center text-xl !leading-normal text-white md:pt-52 md:text-2xl lg:text-2xl">
+          <figure className="mx-auto max-w-[50ch] px-2 pt-32 pb-40 text-xl !leading-normal text-white md:pt-52 md:text-center md:text-2xl lg:text-2xl">
             <blockquote>
               <p className="mb-4">
                 «Sommeren 1929 foreslo min bror, Edvard Munch, mig at jeg skulde
@@ -91,11 +91,11 @@ export default function ExhibitionPage() {
         viewport={{ once: true, margin: "-50%" }}
       >
         <Container>
-          <h2 className="px-4 pt-56 text-center text-4xl text-white md:text-5xl">
+          <h2 className="mx-auto max-w-lg px-2 pt-56 text-4xl text-white md:text-center md:text-5xl">
             2022 vs 1932
           </h2>
 
-          <div className="mx-auto max-w-[40ch] px-2 pt-8 pb-36 text-center text-xl !leading-normal text-white md:text-2xl lg:text-2xl">
+          <div className="mx-auto max-w-lg px-2 pt-8 pb-36 text-xl !leading-normal text-white md:text-center md:text-2xl lg:text-2xl">
             <p className="mb-4">
               Hvordan ser vi på Akerselva i 2022 vs 1932? Er fortellingen om
               Akerselva som et sosialt skille mellom øst og vest like aktuell i
