@@ -53,10 +53,10 @@ export default function TimeTables() {
             <h2 className="text-center text-4xl">Rutetider</h2>
 
             <div className="relative grid place-items-center overflow-hidden">
-              <div className="absolute z-50 rounded-md bg-gray-medium py-3 px-6 text-lg text-white shadow-md">
+              <div className="absolute z-20 rounded-md bg-gray-medium py-3 px-6 text-lg text-white shadow-md">
                 Kommer snart
               </div>
-              <div className="absolute inset-0 z-40 bg-gray-light/50 backdrop-blur-sm" />
+              <div className="absolute inset-0 z-10 bg-gray-light/50 backdrop-blur-sm" />
 
               <div aria-hidden className="pointer-events-none select-none">
                 <div className="mx-auto mt-12 max-w-6xl overflow-x-auto rounded-md border border-black/5 bg-white px-4 py-8">
