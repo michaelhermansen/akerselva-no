@@ -52,78 +52,86 @@ export default function TimeTables() {
           <Container>
             <h2 className="text-center text-4xl">Rutetider</h2>
 
-            <div className="mx-auto mt-12 max-w-6xl overflow-x-auto rounded-md border border-black/5 bg-white px-4 py-8">
-              <table className="w-full min-w-[700px] table-fixed">
-                <tbody>
-                  <tr>
-                    <TableHeader>22. sep</TableHeader>
-                    <TableHeader>24. sep</TableHeader>
-                    <TableHeader>25. sep</TableHeader>
-                    <TableHeader>1. okt</TableHeader>
-                    <TableHeader>2. okt</TableHeader>
-                    <TableHeader>8. okt</TableHeader>
-                    <TableHeader>9. okt</TableHeader>
-                  </tr>
-                  <tr>
-                    <TableData>20:00</TableData>
-                    <TableData>10:00</TableData>
-                    <TableData>10:00</TableData>
-                    <TableData>10:00</TableData>
-                    <TableData>10:00</TableData>
-                    <TableData>10:00</TableData>
-                    <TableData>10:00</TableData>
-                  </tr>
-                  <tr>
-                    <TableData>21:00</TableData>
-                    <TableData>11:00</TableData>
-                    <TableData>11:00</TableData>
-                    <TableData>11:00</TableData>
-                    <TableData>11:00</TableData>
-                    <TableData>11:00</TableData>
-                    <TableData>11:00</TableData>
-                  </tr>
-                  <tr>
-                    <TableData>22:00</TableData>
-                    <TableData>12:00</TableData>
-                    <TableData>12:00</TableData>
-                    <TableData>12:00</TableData>
-                    <TableData>12:00</TableData>
-                    <TableData>12:00</TableData>
-                    <TableData>12:00</TableData>
-                  </tr>
-                  <tr>
-                    <TableData>23:00</TableData>
-                    <TableData>13:00</TableData>
-                    <TableData>13:00</TableData>
-                    <TableData>13:00</TableData>
-                    <TableData>13:00</TableData>
-                    <TableData>13:00</TableData>
-                    <TableData>13:00</TableData>
-                  </tr>
-                  <tr>
-                    <TableData noData />
-                    <TableData>14:00</TableData>
-                    <TableData>14:00</TableData>
-                    <TableData>14:00</TableData>
-                    <TableData>14:00</TableData>
-                    <TableData>14:00</TableData>
-                    <TableData>14:00</TableData>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-5">
-              <div className="flex items-center gap-3">
-                <div className="h-5 w-5 shrink-0 rounded-full bg-black/5" />
-                <span className="whitespace-nowrap">
-                  Avganger fra Vaterland
-                </span>
+            <div className="relative grid place-items-center overflow-hidden">
+              <div className="absolute z-50 rounded-md bg-gray-medium py-3 px-6 text-lg text-white shadow-md">
+                Kommer snart
               </div>
-              <p className="text-black/60">
-                Vi respekterer Akerselvas krefter og opererer derfor med
-                forholdsforbehold.
-              </p>
+              <div className="absolute inset-0 z-40 bg-gray-light/50 backdrop-blur-sm" />
+
+              <div aria-hidden className="pointer-events-none select-none">
+                <div className="mx-auto mt-12 max-w-6xl overflow-x-auto rounded-md border border-black/5 bg-white px-4 py-8">
+                  <table className="w-full min-w-[700px] table-fixed">
+                    <tbody>
+                      <tr>
+                        <TableHeader>22. sep</TableHeader>
+                        <TableHeader>24. sep</TableHeader>
+                        <TableHeader>25. sep</TableHeader>
+                        <TableHeader>1. okt</TableHeader>
+                        <TableHeader>2. okt</TableHeader>
+                        <TableHeader>8. okt</TableHeader>
+                        <TableHeader>9. okt</TableHeader>
+                      </tr>
+                      <tr>
+                        <TableData>20:00</TableData>
+                        <TableData>10:00</TableData>
+                        <TableData>10:00</TableData>
+                        <TableData>10:00</TableData>
+                        <TableData>10:00</TableData>
+                        <TableData>10:00</TableData>
+                        <TableData>10:00</TableData>
+                      </tr>
+                      <tr>
+                        <TableData>21:00</TableData>
+                        <TableData>11:00</TableData>
+                        <TableData>11:00</TableData>
+                        <TableData>11:00</TableData>
+                        <TableData>11:00</TableData>
+                        <TableData>11:00</TableData>
+                        <TableData>11:00</TableData>
+                      </tr>
+                      <tr>
+                        <TableData>22:00</TableData>
+                        <TableData>12:00</TableData>
+                        <TableData>12:00</TableData>
+                        <TableData>12:00</TableData>
+                        <TableData>12:00</TableData>
+                        <TableData>12:00</TableData>
+                        <TableData>12:00</TableData>
+                      </tr>
+                      <tr>
+                        <TableData>23:00</TableData>
+                        <TableData>13:00</TableData>
+                        <TableData>13:00</TableData>
+                        <TableData>13:00</TableData>
+                        <TableData>13:00</TableData>
+                        <TableData>13:00</TableData>
+                        <TableData>13:00</TableData>
+                      </tr>
+                      <tr>
+                        <TableData noData />
+                        <TableData>14:00</TableData>
+                        <TableData>14:00</TableData>
+                        <TableData>14:00</TableData>
+                        <TableData>14:00</TableData>
+                        <TableData>14:00</TableData>
+                        <TableData>14:00</TableData>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-5">
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 shrink-0 rounded-full bg-black/5" />
+                    <span className="whitespace-nowrap">
+                      Avganger fra Vaterland
+                    </span>
+                  </div>
+                  <p className="text-black/60">
+                    Vi respekterer Akerselvas krefter og opererer derfor med
+                    forholdsforbehold.
+                  </p>
+                </div>
+              </div>
             </div>
           </Container>
         </section>
