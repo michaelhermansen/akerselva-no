@@ -46,15 +46,15 @@ export default function PageHeader() {
             </h1>
             <p className="py-6 text-xl">
               I samarbeid med Akerselva trebåtforening kan vi presentere, Lørja:
-              Akerselvas nye rutebåt. Lørja går i rute mellom Vaterland og Inger
-              Munchs brygge utenfor det nye Munchmuseet i Bjørvika.
+              Akerselvas nye rutebåt. Lørja vil gå i rute mellom Vaterland og
+              Inger Munchs brygge utenfor det nye Munchmuseet i Bjørvika.
             </p>
-            <Link
+            {/* <Link
               className="block max-w-max rounded-sm bg-white py-3 px-8 text-black transition-colors hover:bg-opacity-75"
               href="#rutetider"
             >
               Se rutetider
-            </Link>
+            </Link> */}
           </div>
         </div>
 

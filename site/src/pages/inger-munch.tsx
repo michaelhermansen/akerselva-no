@@ -37,8 +37,8 @@ export default function ExhibitionPage() {
               </p>
             </blockquote>
             <figcaption className="pt-4">
-              <cite className="text-lg not-italic text-white text-opacity-75 md:text-xl">
-                Inger Munch
+              <cite className="text-lg not-italic text-white text-opacity-75">
+                Forord fra Inger Munchs Akerselven, 1932
               </cite>
             </figcaption>
           </figure>
@@ -61,15 +61,22 @@ export default function ExhibitionPage() {
 
       <section>
         <Container>
-          <motion.h2
+          <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="px-4 pt-48 pb-20 text-center text-2xl text-white sm:text-3xl md:pb-24"
+            className="px-4 pt-48 pb-20 text-center text-white md:pb-24"
           >
-            Følg Inger Munchs fotospor langs Akerselva
-          </motion.h2>
+            <h2 className="text-2xl sm:text-3xl">
+              Følg Inger Munchs fotospor langs Akerselva
+            </h2>
+            <p className="mx-auto max-w-2xl pt-4 text-white/50">
+              Fotografiene er hentet fra oslobilder.no. Bildene er gjengitt i
+              kronologisk rekkefølge og følger elven fra Maridalsvannet til
+              Oslofjorden.
+            </p>
+          </motion.div>
 
           <MapProvider>
             <ExhibitionScroller />

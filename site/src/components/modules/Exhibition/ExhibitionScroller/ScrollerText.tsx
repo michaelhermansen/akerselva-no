@@ -32,8 +32,8 @@ export default function ScrollerText({
       id={`image-${item.id}`}
       ref={ref}
       className={classNames(
-        "py-3 text-xl text-white text-opacity-50 sm:text-2xl",
-        { "text-opacity-100": itemInView.id === item.id }
+        "py-3 text-xl text-white sm:text-2xl",
+        itemInView.id === item.id ? "text-opacity-100" : "text-opacity-20"
       )}
     >
       {item.text}
