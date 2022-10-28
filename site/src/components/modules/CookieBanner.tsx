@@ -40,7 +40,7 @@ export default function CookieBanner() {
               y: 32,
               transition: { opacity: { duration: 0.2 } },
             }}
-            className="fixed bottom-6 right-6 ml-6 flex flex-col items-center gap-4 rounded-md bg-white/90 py-4 px-6 backdrop-blur-lg sm:flex-row sm:gap-8"
+            className="fixed bottom-6 right-6 z-50 ml-6 flex flex-col items-center gap-4 rounded-md bg-white/90 py-4 px-6 backdrop-blur-lg sm:flex-row sm:gap-8"
           >
             <p>Vi bruker cookies</p>
 
